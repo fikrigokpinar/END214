@@ -20,12 +20,12 @@
 
 <header class="page-header page-header-ga">
   <div class="page-header-inner">
-    <span class="topic-tag tag-ga">Konu 1 · 4 Soru</span>
+    <span class="topic-tag tag-ga">Konu 1 · 5 Soru</span>
     <h1><em class="ga">Güven</em> Aralığı</h1>
     <p class="subtitle">Ortalama ve oran için aralık tahminleri. Örnek büyüklüğü hesaplama. Bağımsız grup karşılaştırmaları.</p>
     <div class="meta-row">
-      <span class="meta-item"><span class="dot"></span>4 çözümlü soru</span>
-      <span class="meta-item"><span class="dot"></span>5 formül kartı</span>
+      <span class="meta-item"><span class="dot"></span>5 çözümlü soru</span>
+      <span class="meta-item"><span class="dot"></span>6 formül kartı</span>
       <span class="meta-item"><span class="dot"></span>z · t dağılımları</span>
     </div>
   </div>
@@ -33,9 +33,9 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val amber">4</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val amber">5</div><div class="stat-label">Soru</div></div>
     <div class="stat-cell"><div class="stat-val amber">1</div><div class="stat-label">Temel</div></div>
-    <div class="stat-cell"><div class="stat-val amber">3</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val amber">4</div><div class="stat-label">Orta</div></div>
     <div class="stat-cell"><div class="stat-val amber">—</div><div class="stat-label">İleri</div></div>
   </div>
 
@@ -175,6 +175,38 @@
       </div>
     </div>
 
+    <!-- GA-05 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA (Yığın Varyansları Biliniyor)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · σ bilinir</span>
+            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı şehirdeki benzin istasyonlarında yakıt fiyatları (TL/litre) incelenmektedir. A şehrinden rastgele seçilen <strong>n₁ = 40</strong> istasyonun ortalama fiyatı <strong>x̄₁ = 42.80 TL</strong>, B şehrinden rastgele seçilen <strong>n₂ = 35</strong> istasyonun ortalama fiyatı <strong>x̄₂ = 41.50 TL</strong> olarak bulunmuştur. Yığın standart sapmaları <strong>σ₁ = 1.20 TL</strong> ve <strong>σ₂ = 1.50 TL</strong> olarak bilinmektedir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%95 güven düzeyinde iki şehrin ortalama yakıt fiyatı farkı μ₁ − μ₂ için güven aralığını oluşturunuz. <em>(12 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığına dayanarak iki şehrin ortalama yakıt fiyatları arasında %95 güven düzeyinde anlamlı bir fark olup olmadığını yorumlayınız. <em>(8 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n₁=40, x̄₁=42.80, σ₁=1.20 &nbsp;|&nbsp; n₂=35, x̄₂=41.50, σ₂=1.50<br>α=0.05 → z<sub>0.025</sub> = 1.96 &nbsp;(σ bilindiğinden z-dağılımı kullanılır)</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">SE</span><div class="step-text">SE = √(σ₁²/n₁ + σ₂²/n₂) = √(1.44/40 + 2.25/35) = √(0.0360 + 0.0643) = √0.1003 = <span class="result">0.3167</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">(x̄₁ − x̄₂) ± z<sub>α/2</sub> · SE = (42.80 − 41.50) ± 1.96 · 0.3167<br>= 1.30 ± 0.620<br><span class="result">GA: (0.680 , 1.920) TL</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Güven aralığı tamamen sıfırın sağında (0.680 > 0) olduğundan %95 güvenle A şehrindeki ortalama yakıt fiyatı B şehrinden <span class="result">anlamlı biçimde yüksektir.</span></div></div>
+        </div>
+      </div>
+    </div>
 
   </div><!-- /questions-grid -->
 
@@ -208,6 +240,15 @@
           <span class="dim">─────────────────</span><br>
           Örnek büyüklüğü:<br>
           n ≥ z²<sub>α/2</sub> · p·(1−p) / E²
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">İki Ortalama Farkı · σ₁, σ₂ Bilinir (z)</div>
+        <div class="f-body">
+          SE = √(σ₁²/n₁ + σ₂²/n₂)<br>
+          <span class="hi">(x̄₁−x̄₂) ± z<sub>α/2</sub> · SE</span><br>
+          <span class="dim">GA sıfır içermiyorsa → fark anlamlı</span>
         </div>
       </div>
 

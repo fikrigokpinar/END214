@@ -474,3 +474,55 @@ footer strong { color: var(--amber); }
   .topnav { padding: .5rem .9rem; gap: 1rem; }
   .formula-grid { grid-template-columns: 1fr; }
 }
+
+/* ── NOKTA TAHMİN SAYFASI — mor/violet tema ── */
+:root {
+  --violet: #a78bfa;
+}
+.page-header-tahmin::after {
+  background: radial-gradient(circle, rgba(167,139,250,.14) 0%, transparent 70%);
+}
+.tag-tahmin  { color: var(--violet); border: 1px solid rgba(167,139,250,.3); background: rgba(167,139,250,.06); }
+.sh-violet::before { background: var(--violet); }
+.stat-val.violet { color: var(--violet); }
+.q-num.qn-violet  { color: var(--violet); background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.22); }
+.q-card.tahmin-card:hover { border-color: rgba(167,139,250,.25); }
+.badge-topic-v { background: rgba(167,139,250,.1); color: var(--violet); border: 1px solid rgba(167,139,250,.2); }
+.part-label.pl-violet { color: var(--violet); }
+.sol-btn-v { color: var(--violet); background: rgba(167,139,250,.08); border: 1px solid rgba(167,139,250,.2); }
+.sol-btn-v:hover { background: rgba(167,139,250,.16); }
+.solution-v { border-left-color: var(--violet); }
+.sol-title-v { color: var(--violet); }
+.sn-violet { background: rgba(167,139,250,.14); color: var(--violet); }
+.th-violet { background: rgba(167,139,250,.08); color: var(--violet); }
+.hc-tahmin:hover { border-color: rgba(167,139,250,.4); }
+.hc-tahmin .hc-glow { background: radial-gradient(circle, rgba(167,139,250,.15) 0%, transparent 70%); }
+.hc-tahmin .hc-count { color: var(--violet); }
+
+/* ── INDEX BÖLÜM AYIRAÇ ── */
+.exam-divider {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 2rem 0 1.5rem;
+}
+.exam-divider-line {
+  flex: 1; height: 1px; background: var(--border);
+}
+.exam-divider-label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .28rem .9rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.edl-oncesi {
+  color: var(--violet);
+  border: 1px solid rgba(167,139,250,.3);
+  background: rgba(167,139,250,.07);
+}
+.edl-sonrasi {
+  color: var(--amber);
+  border: 1px solid rgba(232,184,109,.3);
+  background: rgba(232,184,109,.07);
+}

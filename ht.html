@@ -20,23 +20,23 @@
 
 <header class="page-header page-header-ht">
   <div class="page-header-inner">
-    <span class="topic-tag tag-ht">Konu 2 · 6 Soru</span>
+    <span class="topic-tag tag-ht">Konu 2 · 5 Soru</span>
     <h1><em class="ht">Hipotez</em> Testi</h1>
-    <p class="subtitle">z-testi, t-testi, χ²-testi ve oran testleri. Tek ve çift kuyruklu hipotezler. Ret bölgesi ve karar kuralı.</p>
+    <p class="subtitle">z-testi, t-testi ve oran testleri. Tek ve çift kuyruklu hipotezler. Ret bölgesi ve karar kuralı.</p>
     <div class="meta-row">
-      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>6 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>5 çözümlü soru</span>
       <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>6 formül kartı</span>
-      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>z · t · χ² testleri</span>
+      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>z · t testleri</span>
     </div>
   </div>
 </header>
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val blue">6</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val blue">5</div><div class="stat-label">Soru</div></div>
     <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">Temel</div></div>
-    <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">Orta</div></div>
-    <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">İleri</div></div>
+    <div class="stat-cell"><div class="stat-val blue">3</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val blue">—</div><div class="stat-label">İleri</div></div>
   </div>
 
   <div class="section-heading sh-blue">Sorular</div>
@@ -51,7 +51,7 @@
           <div class="q-badges">
             <span class="badge badge-topic-b">z-testi</span>
             <span class="badge badge-easy">Temel</span>
-            <span class="badge badge-pts">20 puan</span>
+            
           </div>
         </div>
         <span class="q-toggle">▾</span>
@@ -81,7 +81,7 @@
           <div class="q-badges">
             <span class="badge badge-topic-b">Eşleştirilmiş t</span>
             <span class="badge badge-med">Orta</span>
-            <span class="badge badge-pts">20 puan</span>
+            
           </div>
         </div>
         <span class="q-toggle">▾</span>
@@ -116,7 +116,7 @@
           <div class="q-badges">
             <span class="badge badge-topic-b">İki örneklem z</span>
             <span class="badge badge-med">Orta</span>
-            <span class="badge badge-pts">20 puan</span>
+            
           </div>
         </div>
         <span class="q-toggle">▾</span>
@@ -146,11 +146,11 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-blue">HT–04</span>
         <div class="q-title-wrap">
-          <div class="q-title">Oran Testi (z-testi, tek örneklem)</div>
+          <div class="q-title">Tek Örneklemde Oran Testi (z-testi, π için)</div>
           <div class="q-badges">
-            <span class="badge badge-topic-b">Oran testi</span>
+            <span class="badge badge-topic-b">Oran testi · π</span>
             <span class="badge badge-easy">Temel</span>
-            <span class="badge badge-pts">20 puan</span>
+            
           </div>
         </div>
         <span class="q-toggle">▾</span>
@@ -163,9 +163,9 @@
         <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
         <div class="solution">
           <div class="sol-title">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: p ≤ 0.40 &nbsp;|&nbsp; H₁: p > 0.40 &nbsp;(sağ kuyruklu)</div></div>
-          <div class="sol-step"><span class="step-n sn-blue">p̂</span><div class="step-text">p̂ = 90/200 = 0.45</div></div>
-          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (p̂−p₀)/√(p₀q₀/n) = 0.05/√(0.40·0.60/200) = 0.05/0.03464 = <span class="result">1.443</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: π ≤ 0.40 &nbsp;|&nbsp; H₁: π > 0.40 &nbsp;(sağ kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">p</span><div class="step-text">p = 90/200 = 0.45 &nbsp;(örneklem oranı)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (p−π₀)/√(π₀(1−π₀)/n) = (0.45−0.40)/√(0.40·0.60/200) = 0.05/0.03464 = <span class="result">1.443</span></div></div>
           <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">z<sub>0.05</sub>=1.645 (tek kuyruk)<br>1.443 < 1.645 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>İnternet alışverişinin %40'ın üzerinde olduğu istatistiksel olarak desteklenmemektedir.</div></div>
         </div>
       </div>
@@ -176,61 +176,31 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-blue">HT–05</span>
         <div class="q-title-wrap">
-          <div class="q-title">Varyans için Hipotez Testi (χ²-testi)</div>
+          <div class="q-title">İki Bağımsız Örneklemde Ortalama Farkı Testi — Pooled t</div>
           <div class="q-badges">
-            <span class="badge badge-topic-b">χ²-testi</span>
-            <span class="badge badge-hard">İleri</span>
-            <span class="badge badge-pts">20 puan</span>
+            <span class="badge badge-topic-b">İki örneklem · pooled t</span>
+            <span class="badge badge-med">Orta</span>
           </div>
         </div>
         <span class="q-toggle">▾</span>
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir dolum makinesinin standart sapmasının <strong>σ = 5 ml</strong>'yi aşmaması gerekmektedir. Kalite kontrol uzmanı <strong>n = 20</strong> şişeyi incelemiş ve <strong>s = 6.8 ml</strong> bulmuştur.<br><br>
-          <strong>%5 anlamlılık düzeyinde</strong> makinenin tolerans dışına çıkıp çıkmadığını test ediniz.
-        </div>
-        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
-        <div class="solution">
-          <div class="sol-title">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: σ² ≤ 25 &nbsp;|&nbsp; H₁: σ² > 25 &nbsp;(sağ kuyruklu)</div></div>
-          <div class="sol-step"><span class="step-n sn-blue">χ²</span><div class="step-text">χ² = (n−1)s²/σ₀² = 19·(6.8)²/25 = 19·46.24/25 = <span class="result">35.14</span></div></div>
-          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">df=19, χ²<sub>0.05,19</sub>=30.144<br>35.14 > 30.144 → Ret bölgesinde<br><span class="decision reject">H₀ REDDEDİLİR</span><br>Makinenin standart sapması 5 ml'yi aşmıştır; tolerans dışında çalışmaktadır.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HT-06 -->
-    <div class="q-card ht-card">
-      <div class="q-header" onclick="toggleCard(this)">
-        <span class="q-num qn-blue">HT–06</span>
-        <div class="q-title-wrap">
-          <div class="q-title">İki Oran Farkı Testi</div>
-          <div class="q-badges">
-            <span class="badge badge-topic-b">p₁−p₂ testi</span>
-            <span class="badge badge-hard">İleri</span>
-            <span class="badge badge-pts">20 puan</span>
-          </div>
-        </div>
-        <span class="q-toggle">▾</span>
-      </div>
-      <div class="q-body">
-        <div class="q-text">
-          İki farklı reklam kampanyasının tıklama oranları karşılaştırılmaktadır.
+          İki farklı diyet programının katılımcılara bir ay sonunda verdirdiği kilo kaybı (kg) karşılaştırılmaktadır. Yığın varyanslarının eşit olduğu varsayılmaktadır.
           <table>
-            <tr><th class="th-blue">Kampanya</th><th class="th-blue">Gönderilen (n)</th><th class="th-blue">Tıklama (x)</th></tr>
-            <tr><td>A</td><td>500</td><td>75</td></tr>
-            <tr><td>B</td><td>600</td><td>108</td></tr>
+            <tr><th class="th-blue">Program</th><th class="th-blue">n</th><th class="th-blue">x̄ (kg)</th><th class="th-blue">s (kg)</th></tr>
+            <tr><td>A</td><td>12</td><td>5.8</td><td>1.4</td></tr>
+            <tr><td>B</td><td>10</td><td>4.6</td><td>1.6</td></tr>
           </table>
-          <strong>%5 anlamlılık düzeyinde</strong> iki kampanyanın tıklama oranlarının eşit olup olmadığını test ediniz.
+          <strong>%5 anlamlılık düzeyinde</strong> iki programın ortalama kilo kaybının eşit olup olmadığını test ediniz.
         </div>
         <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
         <div class="solution">
           <div class="sol-title">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: p₁=p₂ &nbsp;|&nbsp; H₁: p₁≠p₂ &nbsp;(çift kuyruklu)</div></div>
-          <div class="sol-step"><span class="step-n sn-blue">p̂</span><div class="step-text">p̂₁=0.15, p̂₂=0.18<br>p̂<sub>birleşik</sub>=(75+108)/1100=183/1100=0.1664</div></div>
-          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (p̂₁−p̂₂)/√[p̂q̂(1/n₁+1/n₂)] = −0.03/√[0.1664·0.8336·0.003667]<br>= −0.03/0.02255 = <span class="result">−1.330</span></div></div>
-          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">|z|=1.330 < 1.96 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>İki kampanyanın tıklama oranları arasında anlamlı fark bulunamamıştır.</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: μ₁=μ₂ &nbsp;|&nbsp; H₁: μ₁≠μ₂ &nbsp;(çift kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">s<sub>p</sub></span><div class="step-text">s<sub>p</sub>² = [(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2)<br>= [11·1.96 + 9·2.56]/20 = [21.56+23.04]/20 = 44.6/20 = 2.23<br><span class="result">s<sub>p</sub> = 1.493</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">t</span><div class="step-text">t = (x̄₁−x̄₂) / (s<sub>p</sub>·√(1/n₁+1/n₂)) = (5.8−4.6) / (1.493·√(1/12+1/10))<br>= 1.2 / (1.493·0.4282) = 1.2/0.6393 = <span class="result">1.877</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">df=20, t<sub>0.025,20</sub>=2.086 (çift kuyruk)<br>|t|=1.877 < 2.086 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>%5 anlamlılık düzeyinde iki programın ortalama kilo kaybı arasında anlamlı bir fark bulunamamıştır.</div></div>
         </div>
       </div>
     </div>
@@ -278,22 +248,18 @@
       </div>
 
       <div class="f-card">
-        <div class="f-title">Oran Testi</div>
+        <div class="f-title">İki Bağımsız Ortalama — Pooled t</div>
         <div class="f-body">
-          <span class="hi">z = (p̂−p₀)/√(p₀q₀/n)</span><br>
-          <span class="dim">─────────────────</span><br>
-          İki oran: p̂ = (x₁+x₂)/(n₁+n₂)<br>
-          <span class="hi2">z = (p̂₁−p̂₂)/√[p̂q̂(1/n₁+1/n₂)]</span>
+          s<sub>p</sub>² = [(n₁−1)s₁²+(n₂−1)s₂²]/(n₁+n₂−2)<br>
+          <span class="hi">t = (x̄₁−x̄₂)/(s<sub>p</sub>·√(1/n₁+1/n₂))</span><br>
+          <span class="dim">df = n₁+n₂−2</span>
         </div>
       </div>
 
       <div class="f-card">
-        <div class="f-title">Varyans Testi (χ²)</div>
+        <div class="f-title">Oran Testi &nbsp;(π yığın, p örneklem)</div>
         <div class="f-body">
-          <span class="hi">χ² = (n−1)s²/σ₀²</span><br>
-          <span class="dim">df = n−1</span><br>
-          H₁: σ²>σ₀² → sağ kuyruk<br>
-          H₁: σ²≠σ₀² → çift kuyruk
+          <span class="hi">z = (p−π₀)/√(π₀(1−π₀)/n)</span>
         </div>
       </div>
 

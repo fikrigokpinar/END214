@@ -60,7 +60,7 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Gazi Hastanesinde yatan 7 hastan&inın hastanede kal&inodot;ş süreleri (gün) rasgele seçilerek aşağıdaki gibi saptanmıştır:<br><br>
+          Bir otomotiv fabrikasında rastgele seçilen 7 işçinin günlük ürettikleri parça sayısı aşağıdaki gibi saptanmıştır:<br><br>
           <strong>20, 40, 10, 10, 26, 17, 17</strong>
         </div>
         <div class="q-parts">
@@ -71,7 +71,7 @@
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
           <div class="sol-step"><span class="step-n sn-orange">a &mdash; Formül</span><div class="step-text">x&#772; = (1/n) &sum;x&#7522; = (1/n)(x&#8321;+x&#8322;+&hellip;+x&#8345;)</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Hesap</span><div class="step-text">n = 7<br>x&#772; = (20+40+10+10+26+17+17)/7 = 140/7 = <span class="result">20 gün</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Hesap</span><div class="step-text">n = 7<br>x&#772; = (20+40+10+10+26+17+17)/7 = 140/7 = <span class="result">20 parça</span></div></div>
           <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text"><strong>&mu;</strong>: yığın (N birim) için aritmetik ortalama; &mu; = (1/N)&sum;X&#7522;<br><strong>x&#772;</strong>: örneklem (n birim) için aritmetik ortalama; x&#772; = (1/n)&sum;x&#7522;<br>Yığın parametresi &mu; genellikle bilinmez; örneklemden x&#772; ile tahmin edilir.</div></div>
         </div>
       </div>
@@ -82,9 +82,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;02</span>
         <div class="q-title-wrap">
-          <div class="q-title">Ağırlıklı Aritmetik Ortalama</div>
+          <div class="q-title">Basit Dizide AO — Negatif Değerler ve Yorum</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">AO · Ağırlıklı</span>
+            <span class="badge badge-topic-o">AO · Basit Dizi · Yorum</span>
             <span class="badge badge-easy">Temel</span>
           </div>
         </div>
@@ -92,23 +92,18 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir öğrencinin 7 dersten aldığı puanlar ve derslerin ağırlıkları aşağıdaki gibidir:
-          <table>
-            <tr><th class="th-orange">Ders</th><th class="th-orange">A</th><th class="th-orange">B</th><th class="th-orange">C</th><th class="th-orange">D</th><th class="th-orange">E</th><th class="th-orange">F</th><th class="th-orange">G</th></tr>
-            <tr><td>Ağırlık (w)</td><td>3</td><td>2</td><td>2</td><td>1</td><td>4</td><td>2</td><td>2</td></tr>
-            <tr><td>Puan (x)</td><td>30</td><td>45</td><td>25</td><td>40</td><td>15</td><td>6</td><td>55</td></tr>
-          </table>
+          Ankara'nın Ocak ayının son haftasındaki ortalama günlük sıcaklıkları (&deg;C) aşağıdaki gibidir:<br><br>
+          <strong>3, 2, 0, 1, &minus;1, &minus;2, 1</strong>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Sade aritmetik ortalamayı hesaplayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Ağırlıklı aritmetik ortalamayı hesaplayınız ve (a) şıkkıyla karşılaştırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Yığın aritmetik ortalamasını hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Bu verinin 7 günlük tam yığını mı yoksa büyük bir yığından seçilmiş örneklem mi olduğunu belirleyiniz. Kullanılacak notasyonu (&mu; ya da x&#772;) gerekçesiyle belirtiniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">&mu; = (30+45+25+40+15+6+55)/7 = 216/7 = <span class="result">30.86</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; w&middot;x tablosu</span><div class="step-text">3&middot;30=90 &nbsp;| 2&middot;45=90 &nbsp;| 2&middot;25=50 &nbsp;| 1&middot;40=40 &nbsp;| 4&middot;15=60 &nbsp;| 2&middot;6=12 &nbsp;| 2&middot;55=110<br>&sum;w = 3+2+2+1+4+2+2 = 16 &nbsp;&nbsp; &sum;wx = 90+90+50+40+60+12+110 = 452</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Sonuç</span><div class="step-text">&mu;<sub>w</sub> = &sum;wx / &sum;w = 452/16 = <span class="result">28.25</span><br>Yorum: E dersi (puan 15, ağırlık 4) düşük puan alarak ortalamayı aşağı çekmiştir. Ağırlıklı ortalama sade ortalamadan küçük çıkmıştır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">&mu; = (3+2+0+1&minus;1&minus;2+1)/7 = 4/7 = <span class="result">0.57 &deg;C</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">Bu veri o haftanın tüm 7 gününü kapsar; yani tam yığındır. Dolayısıyla <strong>&mu;</strong> notasyonu kullanılır.<br>Eğer yıllık 365 günden seçilen 7 rasgele gün olsaydı bu bir örneklem olurdu ve <strong>x&#772;</strong> kullanılırdı.</div></div>
         </div>
       </div>
     </div>
@@ -118,9 +113,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;03</span>
         <div class="q-title-wrap">
-          <div class="q-title">Çokluk Dağılımında Aritmetik Ortalama</div>
+          <div class="q-title">Çokluk Dağılımında Aritmetik Ortalama — Dengesiz Sınıflar</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">AO · Frekans Tablosu</span>
+            <span class="badge badge-topic-o">AO · Frekans Tablosu · Dengesiz Sınıf</span>
             <span class="badge badge-med">Orta</span>
           </div>
         </div>
@@ -128,30 +123,28 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir ülkedeki hastanelerin yatak kapasitesine göre dağılımı aşağıdaki gibidir:
+          Bir ilin sanayi bölgelerindeki işletmelerin yıllık elektrik tüketimine (MWh) göre dağılımı:
           <table>
-            <tr><th class="th-orange">Yatak kapasitesi</th><th class="th-orange">Hastane sayısı (f)</th></tr>
-            <tr><td>100 &le; x &lt; 200</td><td>10</td></tr>
-            <tr><td>200 &le; x &lt; 300</td><td>40</td></tr>
-            <tr><td>300 &le; x &lt; 400</td><td>60</td></tr>
-            <tr><td>400 &le; x &lt; 600</td><td>100</td></tr>
-            <tr><td>600 &le; x &lt; 800</td><td>50</td></tr>
-            <tr><td>800 &le; x &lt; 1200</td><td>30</td></tr>
-            <tr><td>1200 &le; x &lt; 1400</td><td>10</td></tr>
-            <tr><td><strong>Toplam</strong></td><td><strong>300</strong></td></tr>
+            <tr><th class="th-orange">Elektrik tüketimi (MWh/yıl)</th><th class="th-orange">İşletme sayısı (f)</th></tr>
+            <tr><td>0 &le; x &lt; 100</td><td>15</td></tr>
+            <tr><td>100 &le; x &lt; 200</td><td>35</td></tr>
+            <tr><td>200 &le; x &lt; 400</td><td>80</td></tr>
+            <tr><td>400 &le; x &lt; 600</td><td>50</td></tr>
+            <tr><td>600 &le; x &lt; 1000</td><td>30</td></tr>
+            <tr><td>1000 &le; x &lt; 2000</td><td>10</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>220</strong></td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Sınıf aralıklarının eşit olmadığına dikkat ederek aritmetik ortalamayı hesaplayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Farklı genişlikteki sınıf aralıklarının hesabı nasıl etkilediğini açıklayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Her sınıfın orta değerini bulunuz. Sınıf genişliklerinin farklı olması orta değer hesabını nasıl etkiler?</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Aritmetik ortalama elektrik tüketimini hesaplayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Sınıf orta değerleri x&#772;&#11338;</span><div class="step-text">150, 250, 350, 500, 700, 1000, 1300<br>(400&le;x&lt;600 genişliği 200; orta değeri 500. 800&le;x&lt;1200 genişliği 400; orta değeri 1000.)</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; x&#772;&#11338; f tablosu</span><div class="step-text">150&middot;10=1500 &nbsp;| 250&middot;40=10000 &nbsp;| 350&middot;60=21000 &nbsp;| 500&middot;100=50000<br>700&middot;50=35000 &nbsp;| 1000&middot;30=30000 &nbsp;| 1300&middot;10=13000<br>&sum;x&#772;&#11338;f = 1500+10000+21000+50000+35000+30000+13000 = <span class="result">160500</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Ortalama</span><div class="step-text">&mu; = (1/N)&sum;x&#772;&#11338;f = 160500/300 = <span class="result">535 yatak</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">Farklı genişlikli sınıflar aritmetik ortalama hesabını etkilemez; çünkü her sınıfın orta değeri hesabı genişlikten bağımsızdır ve &mu; = &sum;x&#772;&#11338;f/N formülü doğrudan uygulanır. Ancak medyan ve mod için sınıf aralıklarının eşitlenmesi gerekir.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Orta değerler</span><div class="step-text">50, 150, 300, 500, 800, 1500<br>Sınıf genişliği farklı olsa da orta değer her zaman (alt+üst)/2'dir; AO formülü &mu;=&sum;x&#772;&#11338;f/N doğrudan uygulanır, genişlik AO'yu etkilemez.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; x&#772;&#11338;f tablosu</span><div class="step-text">50&middot;15=750 &nbsp;| 150&middot;35=5250 &nbsp;| 300&middot;80=24000 &nbsp;| 500&middot;50=25000 &nbsp;| 800&middot;30=24000 &nbsp;| 1500&middot;10=15000<br>&sum;x&#772;&#11338;f = 94000</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; AO</span><div class="step-text">&mu; = 94000/220 = <span class="result">427.3 MWh/yıl</span></div></div>
         </div>
       </div>
     </div>
@@ -223,7 +216,7 @@
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Problem</span><div class="step-text">İlk iki sınıf (15&ndash;19, 20&ndash;24) aralığı 5; diğerleri (25&ndash;34, 35&ndash;44, 45&ndash;54) aralığı 10. Medyan formülü eşit aralıklı sınıflar gerektirir. Çözüm: aralığı 5 olan ilk iki sınıfı birleştirerek 15&ndash;24 aralığı elde ederiz → tüm sınıflar 10'ar aralıklı olur.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Problem</span><div class="step-text">İlk iki sınıf (15&ndash;19, 20&ndash;24) aralığı 5; diğerleri (25&ndash;34, 35&ndash;44, 45&ndash;54) aralığı 10. Medyan formülü L+(c/f)(N/2&minus;d) sınıf aralığını (c) parametre olarak kullanır; farklı genişlikteki sınıflar uygulamayı zorlaştırır. Bu nedenle genişliği küçük olan ilk iki sınıfı birleştirerek 15&ndash;24 şeklinde tek bir 10'luk sınıf elde ederiz. Böylece tüm sınıflar eşit (10'ar) aralıklı olur ve formül güvenle uygulanabilir.<br><span class="dim">Not: Bu birleştirme işlemi zorunlu değil, uygulamayı kolaylaştırıcı bir adımdır. Medyan sınıfı zaten farklı genişlikteyse c o sınıfın kendi aralığı olarak kullanılır.</span></div></div>
           <div class="sol-step"><span class="step-n sn-orange">a &mdash; Birleştirilmiş tablo</span><div class="step-text">15&ndash;24: 196 &nbsp;| 25&ndash;34: 236 &nbsp;| 35&ndash;44: 204 &nbsp;| 45&ndash;54: 96 &nbsp;| 55+: 72 (açık sınıf, işlem dışı)<br>N = 196+236+204+96 = 732 (55+ açık sınıf hariç)</div></div>
           <div class="sol-step"><span class="step-n sn-orange">b &mdash; Birikimli frekans</span><div class="step-text">15&ndash;24: 1&ndash;196 &nbsp;| 25&ndash;34: 197&ndash;432 ← Medyan sınıfı &nbsp;| 35&ndash;44: 433&ndash;636 &nbsp;| 45&ndash;54: 637&ndash;732<br>N/2 = 732/2 = 366. 366. sıra 197&ndash;432 aralığında → medyan sınıfı: 25&ndash;34.</div></div>
           <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül</span><div class="step-text">L=25, c=10, f=236, d=196<br>Medyan = L + (c/f)(N/2 &minus; d) = 25 + (10/236)(366 &minus; 196) = 25 + (10/236)(170)<br>= 25 + 7.20 = <span class="result">32.20 yaş</span></div></div>
@@ -246,9 +239,9 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          400 hastanın bir ilaca göre etki süresine ilişkin dağılım:
+          Bir araç servis merkezine gelen 400 aracın bakım süresine (dakika) ilişkin dağılım:
           <table>
-            <tr><th class="th-orange">Etki süresi (dak)</th><th class="th-orange">Hasta sayısı (f)</th></tr>
+            <tr><th class="th-orange">Bakım süresi (dak)</th><th class="th-orange">Araç sayısı (f)</th></tr>
             <tr><td>5 &le; x &lt; 15</td><td>30</td></tr>
             <tr><td>15 &le; x &lt; 25</td><td>60</td></tr>
             <tr><td>25 &le; x &lt; 35</td><td>90</td></tr>
@@ -289,7 +282,7 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Hastalardan alınan ölçümlerin normal (simetrik) dağılımlı olduğu bilinen bir veri seti aşağıda verilmiştir:
+          Bir üretim hattında ölçülen parça boyutlarının normal (simetrik) dağılımlı olduğu bilinmektedir. 100 parçanın işlem süresine (dakika) ilişkin dağılım aşağıda verilmiştir:
           <table>
             <tr><th class="th-orange">Süre (dak)</th><th class="th-orange">f</th></tr>
             <tr><td>5 &le; x &lt; 15</td><td>10</td></tr>
@@ -330,9 +323,9 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          200 kişinin kan basıncına (mm) ilişkin dağılım:
+          Bir gıda fabrikasında 200 paketin dolum ağırlığına (gr) ilişkin kalite kontrol ölçümleri:
           <table>
-            <tr><th class="th-orange">Kan basıncı</th><th class="th-orange">f</th></tr>
+            <tr><th class="th-orange">Ağırlık (gr)</th><th class="th-orange">f</th></tr>
             <tr><td>90 &le; x &lt; 100</td><td>30</td></tr>
             <tr><td>100 &le; x &lt; 110</td><td>105</td></tr>
             <tr><td>110 &le; x &lt; 120</td><td>30</td></tr>
@@ -350,9 +343,9 @@
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; AO</span><div class="step-text">x&#772;&#11338;: 95, 105, 115, 125, 135, 145<br>&sum;x&#772;&#11338;f = 95&middot;30+105&middot;105+115&middot;30+125&middot;20+135&middot;10+145&middot;5<br>= 2850+11025+3450+2500+1350+725 = 21900<br>&mu; = 21900/200 = <span class="result">109.5</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Medyan</span><div class="step-text">N/2=100. Birikimli: 1&ndash;30, 31&ndash;135 ← medyan sınıfı, 136&ndash;165, ...<br>L=100, c=10, f=105, d=30<br>Medyan = 100 + (10/105)(100&minus;30) = 100 + 700/105 = 100 + 6.67 = <span class="result">106.67</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">c &mdash; Mod</span><div class="step-text">Mod sınıfı: 100&le;x&lt;110 (f=105). L=100, f&#8347;=30, f&#8320;=30, c=10<br>Mod = 100 + 30/(30+30) &middot; 10 = 100 + 5 = <span class="result">105</span><br><br>Doğrulama: <span class="result">Mod(105) &lt; Medyan(106.67) &lt; AO(109.5)</span> ✓<br>Sağa (pozitif) çarpık dağılımlarda küçük sayıda çok büyük değer aritmetik ortalamayı yukarı çeker; mod en küçük, AO en büyük konumdadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; AO</span><div class="step-text">x&#772;&#11338;: 95, 105, 115, 125, 135, 145<br>&sum;x&#772;&#11338;f = 95&middot;30+105&middot;105+115&middot;30+125&middot;20+135&middot;10+145&middot;5<br>= 2850+11025+3450+2500+1350+725 = 21900<br>&mu; = 21900/200 = <span class="result">109.5 gr</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Medyan</span><div class="step-text">N/2=100. Birikimli: 1&ndash;30, 31&ndash;135 ← medyan sınıfı, 136&ndash;165, &hellip;<br>L=100, c=10, f=105, d=30<br>Medyan = 100 + (10/105)(100&minus;30) = 100 + 6.67 = <span class="result">106.67 gr</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">c &mdash; Mod</span><div class="step-text">Mod sınıfı: 100&le;x&lt;110 (f=105). L=100, f&#8347;=30, f&#8320;=30, c=10<br>Mod = 100 + 30/(30+30) &middot; 10 = 100 + 5 = <span class="result">105 gr</span><br><br>Doğrulama: <span class="result">Mod(105) &lt; Medyan(106.67) &lt; AO(109.5)</span> ✓<br>Sağa çarpık dağılımda az sayıda büyük değer (aşırı dolum) AO'yu yukarı çeker; mod en küçük, AO en büyük konumdadır. Kalite kontrolde medyan daha güvenilir referanstır.</div></div>
         </div>
       </div>
     </div>
@@ -372,9 +365,9 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          100 erkeğin kanında bulunan albümin miktarına (gr) ilişkin dağılım:
+          Bir rulman fabrikasında 100 adet rulmanın iç çap ölçülerine (mm) ilişkin dağılım:
           <table>
-            <tr><th class="th-orange">Albümin (gr)</th><th class="th-orange">f</th></tr>
+            <tr><th class="th-orange">İç çap (mm)</th><th class="th-orange">f</th></tr>
             <tr><td>100 &le; x &lt; 110</td><td>5</td></tr>
             <tr><td>110 &le; x &lt; 120</td><td>10</td></tr>
             <tr><td>120 &le; x &lt; 130</td><td>20</td></tr>
@@ -390,10 +383,10 @@
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; AO</span><div class="step-text">&sum;x&#772;&#11338;f = 105&middot;5+115&middot;10+125&middot;20+135&middot;50+145&middot;15<br>= 525+1150+2500+6750+2175 = 13100<br>&mu; = 13100/100 = <span class="result">131</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Medyan</span><div class="step-text">N/2=50. Birikimli: 1&ndash;5, 6&ndash;15, 16&ndash;35, 36&ndash;85 ← medyan sınıfı, 86&ndash;100<br>L=130, c=10, f=50, d=35<br>Medyan = 130 + (10/50)(50&minus;35) = 130 + 3 = <span class="result">133</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Mod</span><div class="step-text">Mod sınıfı: 130&le;x&lt;140 (f=50). L=130, f&#8347;=15, f&#8320;=20, c=10<br>Mod = 130 + 20/(20+15) &middot; 10 = 130 + 200/35 = 130 + 5.71 = <span class="result">135.71</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text"><span class="result">AO(131) &lt; Medyan(133) &lt; Mod(135.71)</span> ✓<br>Sola (negatif) çarpık dağılımlarda küçük değerler kuyruk oluşturur ve AO'yı aşağı çeker; mod en büyük, AO en küçük konumdadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; AO</span><div class="step-text">&sum;x&#772;&#11338;f = 105&middot;5+115&middot;10+125&middot;20+135&middot;50+145&middot;15<br>= 525+1150+2500+6750+2175 = 13100<br>&mu; = 13100/100 = <span class="result">131 mm</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Medyan</span><div class="step-text">N/2=50. Birikimli: 1&ndash;5, 6&ndash;15, 16&ndash;35, 36&ndash;85 ← medyan sınıfı, 86&ndash;100<br>L=130, c=10, f=50, d=35<br>Medyan = 130 + (10/50)(50&minus;35) = 130 + 3 = <span class="result">133 mm</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Mod</span><div class="step-text">Mod sınıfı: 130&le;x&lt;140 (f=50). L=130, f&#8347;=15, f&#8320;=20, c=10<br>Mod = 130 + 20/(20+15) &middot; 10 = 130 + 5.71 = <span class="result">135.71 mm</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text"><span class="result">AO(131) &lt; Medyan(133) &lt; Mod(135.71)</span> ✓<br>Sola çarpık dağılımda az sayıda küçük değer (tolerans dışı düşük çaplı rulmanlar) AO'yu aşağı çeker; mod en büyük, AO en küçük konumdadır. Üretim sürecinin büyük çoğunluğu nominal çap değerine yakın, fakat sol kuyrukta ıskarta parçalar mevcuttur.</div></div>
         </div>
       </div>
     </div>
@@ -403,9 +396,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;10</span>
         <div class="q-title-wrap">
-          <div class="q-title">Geometrik Ortalama — Büyüme Hızı</div>
+          <div class="q-title">Frekans Tablosunda Medyan ve Mod — Tam Hesap</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">Geometrik Ortalama</span>
+            <span class="badge badge-topic-o">Medyan · Mod · Frekans Tablosu</span>
             <span class="badge badge-med">Orta</span>
           </div>
         </div>
@@ -413,22 +406,30 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Ankara'da ev kiraları:<br><br>
+          Bir inşaat şirketinin 150 projesinin tamamlanma süresine (ay) ilişkin dağılım:
           <table>
-            <tr><th class="th-orange">Yıl</th><th class="th-orange">1980</th><th class="th-orange">1990</th><th class="th-orange">2000</th></tr>
-            <tr><td>Kira (bin TL)</td><td>100</td><td>200</td><td>600</td></tr>
-          </table><br>
-          Ayrıca: 3, 5, 6, 6, 7, 10 dizisi verilmiştir.
+            <tr><th class="th-orange">Süre (ay)</th><th class="th-orange">f</th></tr>
+            <tr><td>4 &le; x &lt; 8</td><td>12</td></tr>
+            <tr><td>8 &le; x &lt; 12</td><td>33</td></tr>
+            <tr><td>12 &le; x &lt; 16</td><td>55</td></tr>
+            <tr><td>16 &le; x &lt; 20</td><td>30</td></tr>
+            <tr><td>20 &le; x &lt; 24</td><td>20</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>150</strong></td></tr>
+          </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">1980&ndash;2000 arasında kiralar ortalama kaç kat artmıştır? Geometrik ortalamayla hesaplayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">3, 5, 6, 6, 7, 10 dizisinin geometrik ortalamasını logaritma yöntemiyle bulunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Medyanı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Modu Formül 1 ve Formül 2 ile hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">AO'yu hesaplayınız. AO, Medyan ve Mod'u karşılaştırarak dağılımın şekli hakkında yorum yapınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">1990: 200/100=2 kat &nbsp;| 2000: 600/200=3 kat<br>G = &radic;(2&middot;3) = &radic;6 = <span class="result">2.449 kat/dönem</span><br>Yorum: Geometrik ortalama, oransal büyümelerde doğru sonucu verir. Aritmetik ortalama (2+3)/2=2.5 burada yanıltıcı olurdu.</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Logaritma yöntemi</span><div class="step-text">log G = (1/6)(log3+log5+log6+log6+log7+log10)<br>= (1/6)(0.4771+0.6990+0.7782+0.7782+0.8451+1.0000)<br>= (1/6)(4.5776) = 0.7629<br>G = antilog(0.7629) = <span class="result">5.79</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Medyan</span><div class="step-text">N/2 = 75. Birikimli: 1&ndash;12, 13&ndash;45, 46&ndash;100 ← medyan sınıfı, 101&ndash;130, 131&ndash;150<br>L=12, c=4, f=55, d=45<br>Medyan = 12 + (4/55)(75&minus;45) = 12 + 120/55 = 12 + 2.18 = <span class="result">14.18 ay</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Mod sınıfı</span><div class="step-text">En büyük çokluk f=55 ile 12&le;x&lt;16 sınıfı → Mod sınıfı: 12&le;x&lt;16</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül 1</span><div class="step-text">L=12, f&#8347;=30 (bir sonraki), f&#8320;=33 (bir önceki), c=4<br>Mod = 12 + 30/(30+33) &middot; 4 = 12 + 120/63 = 12 + 1.90 = <span class="result">13.90 ay</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül 2</span><div class="step-text">&Delta;&#8321; = 55&minus;33 = 22 &nbsp;| &Delta;&#8322; = 55&minus;30 = 25, c=4<br>Mod = 12 + 22/(22+25) &middot; 4 = 12 + 88/47 = 12 + 1.87 = <span class="result">13.87 ay</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">c &mdash; AO</span><div class="step-text">x&#772;&#11338;: 6, 10, 14, 18, 22<br>&sum;x&#772;&#11338;f = 6&middot;12+10&middot;33+14&middot;55+18&middot;30+22&middot;20 = 72+330+770+540+440 = 2152<br>&mu; = 2152/150 = <span class="result">14.35 ay</span><br>Mod(&asymp;13.9) &lt; Medyan(14.18) &lt; AO(14.35): Hafif sağa çarpık dağılım; bir kısım projenin gecikmesi ortalamayı yukarı çekmektedir.</div></div>
         </div>
       </div>
     </div>
@@ -438,9 +439,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;11</span>
         <div class="q-title-wrap">
-          <div class="q-title">Harmonik Ortalama — Hız ve Fiyat Problemleri</div>
+          <div class="q-title">Açık Uçlu Sınıf — Medyan ve Mod</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">Harmonik Ortalama · Hız</span>
+            <span class="badge badge-topic-o">Medyan · Mod · Açık Uçlu Sınıf</span>
             <span class="badge badge-med">Orta</span>
           </div>
         </div>
@@ -448,17 +449,29 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          A, B ve C şehirleri eşit uzaklıktadır. Bir otomobil A&rarr;B'ye 60 km/h, B&rarr;C'ye 80 km/h, C&rarr;A'ya 100 km/h gitmiştir.
+          Bir yazılım firmasının 200 çalışanının yıllık izin gün sayısına ilişkin dağılım:
+          <table>
+            <tr><th class="th-orange">İzin süresi (gün)</th><th class="th-orange">f</th></tr>
+            <tr><td>x &lt; 5</td><td>8</td></tr>
+            <tr><td>5 &le; x &lt; 10</td><td>32</td></tr>
+            <tr><td>10 &le; x &lt; 15</td><td>75</td></tr>
+            <tr><td>15 &le; x &lt; 20</td><td>55</td></tr>
+            <tr><td>20 &le; x &lt; 25</td><td>22</td></tr>
+            <tr><td>25 &le; x</td><td>8</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>200</strong></td></tr>
+          </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Ortalama hızı harmonik ortalama ile bulunuz.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Aritmetik ve geometrik ortalamayı da hesaplayınız. Neden harmonik ortalama kullanılmalıdır?</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Açık uçlu sınıfların (x&lt;5 ve 25&le;x) medyan ve mod hesabını etkileyip etkilemeyeceğini tartışınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Medyanı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">Modu Formül 1 ile hesaplayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">H = N / &sum;(1/x&#7522;) = 3 / (1/60+1/80+1/100)<br>= 3 / (0.01667+0.01250+0.01000) = 3/0.03917 = <span class="result">76.6 km/h</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">AO = (60+80+100)/3 = 80 km/h<br>G = &radic;&sup3;(60&middot;80&middot;100) = &radic;&sup3;480000 &asymp; 78.3 km/h<br>Doğrulama: Her parça eşit mesafe, farklı süre &rarr; toplam mesafe 3d, toplam süre = d/60+d/80+d/100 = d&middot;0.03917<br>Gerçek ort. hız = 3d/(d&middot;0.03917) = 3/0.03917 = 76.6 ✓<br><span class="result">Eşit mesafe, farklı hız söz konusu olduğunda harmonik ortalama kullanılır.</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">Mod sınıfı en yüksek frekanslı sınıftır (10&le;x&lt;15, f=75); açık uçlu sınıflar mod sınıfı değildir, dolayısıyla <strong>mod hesabını etkilemez</strong>.<br>N/2=100. sıra birikimli frekanslara göre 10&le;x&lt;15 sınıfına düşer; açık uçlu sınıflar medyan sınıfı değildir, dolayısıyla <strong>medyan hesabını da etkilemez</strong>.<br>AO için ise açık uçlu sınıfların orta değeri bilinmediğinden AO hesaplanamaz.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Medyan</span><div class="step-text">Birikimli: 1&ndash;8, 9&ndash;40, 41&ndash;115 ← medyan sınıfı, 116&ndash;170, 171&ndash;192, 193&ndash;200<br>N/2=100. L=10, c=5, f=75, d=40<br>Medyan = 10 + (5/75)(100&minus;40) = 10 + 300/75 = 10 + 4 = <span class="result">14 gün</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">c &mdash; Mod</span><div class="step-text">Mod sınıfı: 10&le;x&lt;15 (f=75). L=10, f&#8347;=55 (bir sonraki), f&#8320;=32 (bir önceki), c=5<br>Mod = 10 + 55/(55+32) &middot; 5 = 10 + 275/87 = 10 + 3.16 = <span class="result">13.16 gün</span></div></div>
         </div>
       </div>
     </div>
@@ -468,9 +481,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;12</span>
         <div class="q-title-wrap">
-          <div class="q-title">Hangi Ortalama Kullanılmalı? — Kapsamlı Kıyaslama</div>
+          <div class="q-title">Hangi Merkezi Ölçü? — AO · Medyan · Mod Kıyaslaması</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">AO · Medyan · Mod · G · H · Kıyaslama</span>
+            <span class="badge badge-topic-o">AO · Medyan · Mod · Kıyaslama</span>
             <span class="badge badge-med">Orta</span>
           </div>
         </div>
@@ -478,21 +491,19 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Aşağıdaki beş farklı durumu ele alınız:
+          Aşağıdaki üç farklı mühendislik/üretim senaryosunu inceleyiniz:
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Bir fabrikada işçilerin aylık ücretleri: 5000, 5200, 5100, 5300, 45000 TL. Hangi ölçü daha temsil edici?</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Bir hissenin 5 yıllık artış oranları: %10, %20, %15, %25, %5. Ortalama artışı nasıl hesaplarsınız?</span></div>
-          <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">Bir tır, 500 km'yi 80 km/h, ardından 500 km'yi 100 km/h ile gitmiştir. Ortalama hız nedir?</span></div>
-          <div class="q-part"><span class="part-label pl-orange">d)</span><span class="part-text">Bir bölgedeki çocukların en sık görülen boy uzunluğu isteniyorsa hangi ölçü kullanılır?</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Bir fabrikada 5 operatörün günlük hatalı ürün sayısı: 2, 3, 2, 4, 38. Hangi merkezi ölçü daha temsil edicidir? Hesaplayarak karşılaştırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Bir elektronik mağazasının en çok satan ürününü tespit etmek istiyorsunuz. Aylık satış adetleri: 45, 12, 45, 30, 45, 20, 8. Hangi ölçüyü kullanırsınız?</span></div>
+          <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">Bir şehirdeki 500 konutun büyüklüğü (m²) incelenmektedir. Dağılım sağa çarpık olduğu bilinmektedir. Ortalama konut büyüklüğünü temsil etmek için hangi ölçü daha uygun olur ve neden?</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">AO = (5000+5200+5100+5300+45000)/5 = 13120 TL → Uç değer (45000) AO'yu çarpıtır.<br>Medyan: sıralı dizi 5000,5100,5200,5300,45000 → ortanca = 5200 TL<br><span class="result">Uç değer varsa Medyan daha temsil edicidir.</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">Artış oranları: 1.10, 1.20, 1.15, 1.25, 1.05<br>G = (1.10&middot;1.20&middot;1.15&middot;1.25&middot;1.05)^{1/5} = (2.077)^{0.2} &asymp; 1.158<br><span class="result">Oransal büyümede Geometrik Ortalama kullanılır; ortalama artış &asymp;%15.8/yıl.</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">c</span><div class="step-text">Eşit mesafe, farklı hız → Harmonik Ortalama<br>H = 2/(1/80+1/100) = 2/(0.0125+0.0100) = 2/0.0225 = <span class="result">88.9 km/h</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">d</span><div class="step-text"><span class="result">Mod</span>: En çok tekrarlanan (ya da en yüksek çokluklu sınıf) değeri verir. En sık görülen değer istendiğinde mod kullanılır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">AO = (2+3+2+4+38)/5 = 49/5 = 9.8 hatalı ürün → 38 aykırı değeri ortalamayı yukarı çekiyor.<br>Medyan: sıralı: 2,2,3,4,38 → 3. sıra = 3<br><span class="result">Medyan (3) daha temsil edicidir.</span> Aykırı değer (makine arızası gibi istisna durum) AO'yu çarpıtır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">AO = (45+12+45+30+45+20+8)/7 = 205/7 = 29.3<br>Medyan: sıralı: 8,12,20,30,45,45,45 → 4. sıra = 30<br>Mod = 45 (en çok tekrarlanan)<br><span class="result">Mod (45) kullanılır.</span> "En çok satan ürünü" belirlemek için en sık görülen değer gereklidir.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">c</span><div class="step-text">Sağa çarpık dağılımda az sayıda çok büyük konut (villa, rezidans vb.) AO'yu yukarı çeker ve tipik konutu temsil etmez.<br><span class="result">Medyan daha uygun olur.</span> Medyan, sıralanmış dağılımın ortasındaki değeri verdiğinden uç değerlerden etkilenmez ve "tipik" konutu daha iyi temsil eder.</div></div>
         </div>
       </div>
     </div>
@@ -509,19 +520,17 @@
         <div class="f-body">
           <span class="hi">Basit dizi:</span> &mu; = (1/N)&sum;X&#7522;<br>
           <span class="hi">Çokluk dağılımı:</span> &mu; = (1/N)&sum;x&#772;&#11338;f&#11338;<br>
-          <span class="hi">Ağırlıklı:</span> &mu;<sub>w</sub> = &sum;wx / &sum;w<br>
-          <span class="dim">x&#772;&#11338;: sınıf orta değeri &nbsp;|&nbsp; f&#11338;: sınıf çokluğu</span>
+          <span class="dim">x&#772;&#11338;: sınıf orta değeri = (alt+üst)/2<br>Sınıf genişliği AO'yu etkilemez.</span>
         </div>
       </div>
 
       <div class="f-card">
         <div class="f-title">Medyan</div>
         <div class="f-body">
-          <span class="hi">N tek:</span> Medyan = a<sub>(N+1)/2</sub><br>
-          <span class="hi">N çift:</span> Medyan = (a<sub>N/2</sub>+a<sub>(N+2)/2</sub>)/2<br>
+          <span class="hi">N tek:</span> a<sub>(N+1)/2</sub><br>
+          <span class="hi">N çift:</span> (a<sub>N/2</sub> + a<sub>(N+2)/2</sub>) / 2<br>
           <span class="hi">Çokluk:</span> L + (c/f)(N/2 &minus; d)<br>
-          <span class="dim">L: alt sınır &nbsp;c: aralık &nbsp;f: sınıf çokluğu &nbsp;d: önceki birikimli</span><br>
-          <span class="dim">&#9888; Sınıf aralıkları farklıysa önce eşitle!</span>
+          <span class="dim">L: alt sınır &nbsp;c: medyan sınıfı aralığı<br>f: medyan sınıfı çokluğu &nbsp;d: önceki birikimli</span>
         </div>
       </div>
 
@@ -530,41 +539,17 @@
         <div class="f-body">
           <span class="hi">Formül 1:</span> L + f&#8347;/(f&#8347;+f&#8320;) &middot; c<br>
           <span class="hi">Formül 2:</span> L + &Delta;&#8321;/(&Delta;&#8321;+&Delta;&#8322;) &middot; c<br>
-          <span class="dim">f&#8320;: önceki sınıf çokluğu &nbsp;f&#8347;: sonraki sınıf çokluğu</span><br>
-          <span class="dim">&Delta;&#8321;=f&#8320;&#8320;&#8320;&minus;f&#8320; &nbsp;&Delta;&#8322;=f&#8320;&#8320;&#8320;&minus;f&#8347; (f&#8320;&#8320;&#8320;: mod sınıfı)</span>
+          <span class="dim">f&#8320;: önceki sınıf çokluğu<br>f&#8347;: sonraki sınıf çokluğu<br>&Delta;&#8321; = f<sub>mod</sub>&minus;f&#8320; &nbsp;&nbsp; &Delta;&#8322; = f<sub>mod</sub>&minus;f&#8347;</span>
         </div>
       </div>
 
       <div class="f-card">
-        <div class="f-title">Geometrik Ortalama</div>
+        <div class="f-title">Çarpıklık ve Ölçü Seçimi</div>
         <div class="f-body">
-          <span class="hi">G = (x&#8321;&middot;x&#8322;&middot;&hellip;&middot;x&#8345;)<sup>1/N</sup></span><br>
-          Logaritma yöntemi:<br>
-          <span class="hi">log G = (1/N)&sum;log x&#7522;</span><br>
-          <span class="dim">Sıfır veya negatif değerde tanımsız</span><br>
-          <span class="dim">Oransal büyüme problemleri için kullanılır</span>
-        </div>
-      </div>
-
-      <div class="f-card">
-        <div class="f-title">Harmonik Ortalama</div>
-        <div class="f-body">
-          <span class="hi">H = N / &sum;(1/x&#7522;)</span><br>
-          Çokluk dağılımı:<br>
-          <span class="hi">H = N / &sum;(f&#11338;/x&#772;&#11338;)</span><br>
-          <span class="dim">H &le; G &le; AO (her zaman)</span><br>
-          <span class="dim">Eşit mesafe, farklı hız problemleri için</span>
-        </div>
-      </div>
-
-      <div class="f-card">
-        <div class="f-title">Çarpıklık ve Kıyaslama</div>
-        <div class="f-body">
-          <span class="hi">Simetrik (Normal):</span> AO = Medyan = Mod<br>
-          <span class="hi2">Sağa çarpık (+):</span> Mod &lt; Medyan &lt; AO<br>
-          <span class="hi2">Sola çarpık (&minus;):</span> AO &lt; Medyan &lt; Mod<br>
-          <span class="dim">Uç değer varsa: Medyan tercih edilir</span><br>
-          <span class="dim">Oransal değişim: Geometrik ortalama</span>
+          <span class="hi">Simetrik:</span> AO = Medyan = Mod<br>
+          <span class="hi2">Sağa çarpık:</span> Mod &lt; Medyan &lt; AO<br>
+          <span class="hi2">Sola çarpık:</span> AO &lt; Medyan &lt; Mod<br>
+          <span class="dim">Aykırı değer varsa → Medyan<br>En sık görülen değer → Mod<br>Genel merkezi eğilim → AO</span>
         </div>
       </div>
 

@@ -170,8 +170,11 @@
           <div class="sol-step"><span class="step-n sn-violet">Log-olabilirlik</span><div class="step-text">&#8467;(&mu;,&sigma;²) = &minus;n/2 · ln(2&pi;) &minus; n/2 · ln(&sigma;²) &minus; &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;²)</div></div>
           <div class="sol-step"><span class="step-n sn-violet">a — &part;/&part;&mu;</span><div class="step-text">&part;&#8467;/&part;&mu; = &minus;&#8721; 2(x&#7522;&minus;&mu;)·(&minus;1)/(2&sigma;²) = &#8721;(x&#7522;&minus;&mu;)/&sigma;² = 0<br>&#8721;x&#7522; &minus; n&mu; = 0 &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770; = X&#772; = &#8721;X&#7522;/n</span></div></div>
           <div class="sol-step"><span class="step-n sn-violet">a — &part;/&part;&sigma;²</span><div class="step-text">&part;&#8467;/&part;&sigma;² = &minus;n/(2&sigma;²) + &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;&#8308;) = 0<br>&#8721;(x&#7522;&minus;&mu;&#770;)² = n&sigma;² &nbsp;&#8594;&nbsp; <span class="result">&sigma;&#770;² = &#8721;(X&#7522;&minus;X&#772;)²/n</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — E(&sigma;&#770;²)</span><div class="step-text">&#8721;(X&#7522;&minus;X&#772;)² = &#8721;X&#7522;² &minus; nX&#772;² olduğundan:<br>E[&#8721;(X&#7522;&minus;X&#772;)²] = &#8721;E(X&#7522;²) &minus; nE(X&#772;²)<br>= n(&mu;²+&sigma;²) &minus; n[&mu;²+&sigma;²/n] = n&sigma;² &minus; &sigma;² = <span class="result">(n&minus;1)&sigma;²</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — Sonuç</span><div class="step-text">E(&sigma;&#770;²) = E[&#8721;(X&#7522;&minus;X&#772;)²/n] = (n&minus;1)&sigma;²/n &#8800; &sigma;²<br><span class="result">&#8594; &sigma;&#770;² yansız değildir.</span><br>Yansız tahmin edici: <strong>S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1)</strong><br>Çünkü E(S²) = (n&minus;1)&sigma;²/(n&minus;1) = &sigma;² ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Açılım</span><div class="step-text">&#8721;(X&#7522;&minus;X&#772;)² = &#8721;[X&#7522;²&minus;2X&#7522;X&#772;+X&#772;²] = &#8721;X&#7522;² &minus; 2X&#772;·nX&#772; + nX&#772;² = &#8721;X&#7522;² &minus; nX&#772;²</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — E(X&#7522;²)</span><div class="step-text">E(X&#7522;²) = Var(X&#7522;) + [E(X&#7522;)]² = &sigma;² + &mu;²</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — E(X&#772;²)</span><div class="step-text">E(X&#772;²) = Var(X&#772;) + [E(X&#772;)]² = &sigma;²/n + &mu;²</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — E[&#8721;(X&#7522;&minus;X&#772;)²]</span><div class="step-text">E[&#8721;X&#7522;²] &minus; nE[X&#772;²]<br>= n(&sigma;²+&mu;²) &minus; n(&sigma;²/n+&mu;²)<br>= n&sigma;²+n&mu;² &minus; &sigma;² &minus; n&mu;²<br>= <span class="result">(n&minus;1)&sigma;²</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Sonuç</span><div class="step-text">E(&sigma;&#770;²) = E[&#8721;(X&#7522;&minus;X&#772;)²] / n = (n&minus;1)&sigma;²/n &#8800; &sigma;²<br><span class="result">&#8594; &sigma;&#770;² yansız değildir; (n&minus;1)/n kadar küçük tahmin eder.</span><br>Yansız hale getirmek için paydayı (n&minus;1) yaparız:<br><strong>S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1) &nbsp;&#8594;&nbsp; E(S²) = &sigma;² ✓</strong></div></div>
         </div>
       </div>
     </div>
@@ -330,15 +333,14 @@
         </div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">Her iki tahmin edicinin yansız olduğunu gösteriniz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Varyanslılıklarını karşılaştırınız. Hangisi daha etkindir?</span></div>
-          <div class="q-part"><span class="part-label pl-violet">c)</span><span class="part-text">Göreli etkinlik (RE) değerini hesaplayınız ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Varyanslılıklarını karşılaştırınız. Hangisi daha etkindir ve neden?</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">E(T&#8321;) = E(X&#772;) = &mu; ✓<br>E(T&#8322;) = (E(X&#8321;)+E(X&#8345;))/2 = &mu; ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">Var(T&#8321;) = &sigma;²/n<br>Var(T&#8322;) = (Var(X&#8321;)+Var(X&#8345;))/4 = 2&sigma;²/4 = <span class="result">&sigma;²/2</span><br>n &ge; 3 için: &sigma;²/n &lt; &sigma;²/2 &nbsp;&#8594;&nbsp; <span class="result">T&#8321; = X&#772; daha etkindir.</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">c</span><div class="step-text">RE(T&#8321;, T&#8322;) = Var(T&#8322;)/Var(T&#8321;) = (&sigma;²/2)/(&sigma;²/n) = <span class="result">n/2</span><br>n = 10 için RE = 5 → T&#8322; aynı hassasiyete ulaşmak için 5 kat daha fazla bilgiye ihtiyaç duyar.</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">E(T&#8321;) = E(X&#772;) = &mu; ✓<br>E(T&#8322;) = (E(X&#8321;)+E(X&#8345;))/2 = (&mu;+&mu;)/2 = &mu; ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Varyanslar</span><div class="step-text">Var(T&#8321;) = Var(X&#772;) = &sigma;²/n<br>Var(T&#8322;) = (Var(X&#8321;)+Var(X&#8345;))/4 = (2&sigma;²)/4 = <span class="result">&sigma;²/2</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Karşılaştırma</span><div class="step-text">n &ge; 3 için: Var(T&#8321;) = &sigma;²/n &lt; &sigma;²/2 = Var(T&#8322;)<br><span class="result">&#8594; T&#8321; = X&#772; daha etkindir.</span><br>T&#8322; yalnızca iki gözlem kullandığından, n&minus;2 gözlemin taşıdığı bilgiyi tamamen göz ardı eder. T&#8321; ise tüm n gözlemi ortalayarak çok daha küçük bir varyansa ulaşır. Örneğin n = 10 için Var(T&#8321;) = &sigma;²/10, Var(T&#8322;) = &sigma;²/2; T&#8321; beş kat daha hassastır.</div></div>
         </div>
       </div>
     </div>
@@ -438,7 +440,7 @@
           <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">Her iki yöntem de &lambda;&#770; = X&#772; verir.<br>&lambda;&#770; = 48/16 = <span class="result">3.0</span></div></div>
           <div class="sol-step"><span class="step-n sn-violet">b — Yansızlık</span><div class="step-text">E(X&#772;) = &lambda; ✓</div></div>
           <div class="sol-step"><span class="step-n sn-violet">b — Tutarlılık</span><div class="step-text">Var(X&#772;) = &lambda;/n &#8594; 0 &nbsp;&amp;&amp;&nbsp; Bias = 0 &#8594; <span class="result">tutarlı ✓</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — Etkinlik</span><div class="step-text">Cramér-Rao alt sınırı = 1/I(&lambda;) = &lambda;/n<br>Var(X&#772;) = &lambda;/n = alt sınır &#8594; <span class="result">etkin (UMVUE) ✓</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Etkinlik</span><div class="step-text">Fisher bilgi miktarı için iki eşdeğer form kullanılabilir:<br>Form 1: I(&lambda;) = E&#8304;[(&part;ln f/&part;&lambda;)²] = n/&lambda;<br>Form 2: I(&lambda;) = &minus;E[&part;²ln f/&part;&lambda;²] = n/&lambda;<br>Cramér-Rao alt sınırı: Var(T) &ge; 1/I(&lambda;) = &lambda;/n<br>Var(X&#772;) = &lambda;/n = alt sınır &nbsp;&#8594;&nbsp; <span class="result">X&#772; etkindir (UMVUE) ✓</span></div></div>
         </div>
       </div>
     </div>
@@ -483,10 +485,12 @@
       <div class="f-card">
         <div class="f-title">Cramér-Rao Alt Sınırı</div>
         <div class="f-body">
-          I(&theta;) = &minus;E[&#8706;²ln f/&#8706;&theta;²]<br>
-          <span class="hi">Var(T) &ge; 1/I(&theta;)</span><br>
-          <span class="dim">EÇO asimptotik olarak bu sınıra ulaşır</span><br>
-          <span class="hi2">UMVUE:</span> alt sınıra ulaşan yansız T
+          <span class="dim">Fisher bilgi miktarı — iki eşdeğer form:</span><br>
+          <span class="hi">I(&theta;) = E&#8304;[(&part;ln f<sub>&theta;</sub>(x)/&part;&theta;)²]</span><br>
+          <span class="hi">I(&theta;) = &minus;nE[&part;²ln f<sub>&theta;</sub>(x)/&part;&theta;²]</span><br>
+          <span class="dim">─────────────────</span><br>
+          <span class="hi2">Var(T&#770;) &ge; 1/I(&theta;)</span><br>
+          <span class="dim">T&#770; yansız ise; alt sınıra ulaşan T&#770; etkindir (UMVUE)</span>
         </div>
       </div>
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Soru Bankası</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Ana Sayfa</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header page-header-home">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-home">END 214 · Gazi Üniversitesi</span>
+    <h1>Olasılık ve İstatistik&nbsp;II<br><em style="color:var(--amber)">Soru Bankası</em></h1>
+    <p class="subtitle">Güven aralıkları · Hipotez testleri · Doğrusal regresyon — formüller ve çözümlü sorularla kapsamlı hazırlık.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot"></span>Prof.&nbsp;Dr.&nbsp;Fikri Gökpınar</span>
+      <span class="meta-item"><span class="dot"></span>Güz 2025–2026</span>
+      <span class="meta-item"><span class="dot"></span>İstatistik Bölümü</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val amber">18</div><div class="stat-label">Toplam Soru</div></div>
+    <div class="stat-cell"><div class="stat-val blue">3</div><div class="stat-label">Konu Başlığı</div></div>
+    <div class="stat-cell"><div class="stat-val teal">18</div><div class="stat-label">Formül Kartı</div></div>
+    <div class="stat-cell"><div class="stat-val amber">✓</div><div class="stat-label">Tümü Çözümlü</div></div>
+  </div>
+
+  <!-- TOPIC CARDS -->
+  <div class="section-heading sh-amber">Konular</div>
+  <div class="home-grid">
+
+    <a href="ga.html" class="home-card hc-ga">
+      <div class="hc-glow"></div>
+      <div class="hc-icon">📐</div>
+      <div class="hc-title">Güven Aralığı</div>
+      <div class="hc-desc">Ortalama, oran ve varyans için güven aralıkları. Örnek büyüklüğü belirleme. Bağımlı ve bağımsız gruplar.</div>
+      <div class="hc-count">6 SORU · 7 FORMÜL KARTI</div>
+      <span class="hc-arrow">→</span>
+    </a>
+
+    <a href="ht.html" class="home-card hc-ht">
+      <div class="hc-glow"></div>
+      <div class="hc-icon">🔬</div>
+      <div class="hc-title">Hipotez Testi</div>
+      <div class="hc-desc">z-testi, t-testi, χ²-testi ve oran testleri. Tek ve çift kuyruklu hipotezler. p-değeri ve karar kuralı.</div>
+      <div class="hc-count">6 SORU · 6 FORMÜL KARTI</div>
+      <span class="hc-arrow">→</span>
+    </a>
+
+    <a href="reg.html" class="home-card hc-reg">
+      <div class="hc-glow"></div>
+      <div class="hc-icon">📈</div>
+      <div class="hc-title">Doğrusal Regresyon</div>
+      <div class="hc-desc">Parametre tahmini, R², ANOVA tablosu. Güven ve tahmin aralıkları. Artık analizi ve varsayımlar.</div>
+      <div class="hc-count">6 SORU · 5 FORMÜL KARTI</div>
+      <span class="hc-arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- QUICK TIPS -->
+  <div class="section-heading sh-amber">Sınava Hazırlık İpuçları</div>
+  <div class="formula-grid" style="margin-bottom:2rem;">
+    <div class="f-card">
+      <div class="f-title">σ Bilinir mi?</div>
+      <div class="f-body">
+        <span class="hi">σ biliniyorsa</span> → z-testi / z-dağılımı<br>
+        <span class="hi2">σ bilinmiyorsa</span> → t-testi, df = n−1<br>
+        <span class="dim">n ≥ 30 olsa da σ bilinmiyorsa t kullan</span>
+      </div>
+    </div>
+    <div class="f-card">
+      <div class="f-title">Bağımlı mı, Bağımsız mı?</div>
+      <div class="f-body">
+        <span class="hi">Önce–Sonra</span> = Bağımlı → eşleştirilmiş t<br>
+        <span class="hi2">Farklı gruplar</span> = Bağımsız → pooled t / z<br>
+        <span class="dim">Aynı birim iki kez ölçüldüyse: bağımlı</span>
+      </div>
+    </div>
+    <div class="f-card">
+      <div class="f-title">Karar Kuralı</div>
+      <div class="f-body">
+        <span class="hi">|T| &gt; t_krit</span> → H₀ reddet<br>
+        <span class="hi2">GA sıfırı içermiyorsa</span> → fark anlamlı<br>
+        <span class="dim">Her iki yol da aynı karara ulaşır</span>
+      </div>
+    </div>
+    <div class="f-card">
+      <div class="f-title">R² Yorumu</div>
+      <div class="f-body">
+        <span class="hi">R² ≈ 0.90+</span> → Çok güçlü model<br>
+        <span class="hi2">R² ≈ 0.70–0.89</span> → Güçlü model<br>
+        <span class="dim">R² tek başına model kalitesini garantilemez</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>END 214 – Olasılık ve İstatistik II</strong> · Gazi Üniversitesi Fen Fakültesi İstatistik Bölümü<br>
+  Prof. Dr. Fikri Gökpınar · Güz 2025–2026
+</footer>
+
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s = btn.nextElementSibling;
+  s.classList.toggle('visible');
+  btn.textContent = s.classList.contains('visible') ? '▼ Çözümü Gizle' : '▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

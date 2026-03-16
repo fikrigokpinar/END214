@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Hipotez Testi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html" class="active">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-ht">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-ht">Konu 2 · 6 Soru</span>
+    <h1><em class="ht">Hipotez</em> Testi</h1>
+    <p class="subtitle">z-testi, t-testi, χ²-testi ve oran testleri. Tek ve çift kuyruklu hipotezler. Ret bölgesi ve karar kuralı.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>6 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>6 formül kartı</span>
+      <span class="meta-item"><span class="dot" style="background:var(--blue)"></span>z · t · χ² testleri</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val blue">6</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val blue">2</div><div class="stat-label">İleri</div></div>
+  </div>
+
+  <div class="section-heading sh-blue">Sorular</div>
+  <div class="questions-grid">
+
+    <!-- HT-01 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–01</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Tek Örneklemde Ortalama Testi (z-testi, σ bilinir)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">z-testi</span>
+            <span class="badge badge-easy">Temel</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir içecek şirketinin otomatik dolum makinesi her şişeye <strong>500 ml</strong> doldurmaktadır. Kalite kontrol müdürü makinenin doğru çalışıp çalışmadığını kontrol etmek istemektedir. Rastgele seçilen <strong>n = 49</strong> şişenin ortalama dolumu <strong>x̄ = 497 ml</strong> olarak ölçülmüştür. Yığın standart sapması <strong>σ = 14 ml</strong> bilinmektedir.<br><br>
+          <strong>%5 anlamlılık düzeyinde</strong> makinenin doğru çalışıp çalışmadığını test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: μ = 500 &nbsp;|&nbsp; H₁: μ ≠ 500 &nbsp;(çift kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">α</span><div class="step-text">α=0.05 → Kritik değer: ±z<sub>0.025</sub> = <span class="result">±1.96</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (x̄−μ₀)/(σ/√n) = (497−500)/(14/7) = −3/2 = <span class="result">−1.50</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">|z|=1.50 < 1.96 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>%5 anlamlılık düzeyinde makinenin 500 ml doldurduğu hipotezi reddedilemez.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HT-02 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–02</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bağımlı Örneklemde Hipotez Testi (Eşleştirilmiş t-testi)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">Eşleştirilmiş t</span>
+            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir fast-food zinciri, yeni menü düzenlemesinin sipariş hazırlama süresini <em>kısalttığını</em> iddia etmektedir. 6 farklı şubede eski ve yeni menüde sipariş hazırlama süreleri (saniye) ölçülmüştür:
+          <table>
+            <tr><th class="th-blue">Şube</th><th class="th-blue">1</th><th class="th-blue">2</th><th class="th-blue">3</th><th class="th-blue">4</th><th class="th-blue">5</th><th class="th-blue">6</th></tr>
+            <tr><td>Eski Menü</td><td>280</td><td>310</td><td>340</td><td>380</td><td>420</td><td>360</td></tr>
+            <tr><td>Yeni Menü</td><td>240</td><td>270</td><td>290</td><td>310</td><td>350</td><td>300</td></tr>
+          </table>
+          <strong>%5 anlamlılık düzeyinde</strong> şirketin iddiasını test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: μ<sub>D</sub> ≤ 0 &nbsp;|&nbsp; H₁: μ<sub>D</sub> > 0 &nbsp;(tek kuyruklu sağ) &nbsp;[d = eski−yeni]</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">d</span><div class="step-text">d = [40, 40, 50, 70, 70, 60] → d̄=55<br>s<sub>d</sub>²=[Σd²−n·d̄²]/(n−1)=[19400−18150]/5=250 → <span class="result">s<sub>d</sub>=15.81</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">t</span><div class="step-text">t = d̄/(s<sub>d</sub>/√n) = 55/(15.81/√6) = 55/6.45 = <span class="result">8.53</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">df=5, t<sub>0.05,5</sub>=2.015 (tek kuyruk)<br>t=8.53 > 2.015 → Ret bölgesinde<br><span class="decision reject">H₀ REDDEDİLİR</span><br>Yeni menü hazırlama süresini anlamlı ölçüde kısaltmıştır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HT-03 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–03</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Bağımsız Örneklemde Ortalama Farkı Testi (σ bilinir)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">İki örneklem z</span>
+            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı üretim hattında üretilen ampullerin ortalama ömürleri incelenmektedir.
+          <table>
+            <tr><th class="th-blue">Hat</th><th class="th-blue">n</th><th class="th-blue">x̄ (saat)</th><th class="th-blue">σ (saat)</th></tr>
+            <tr><td>Hat 1</td><td>40</td><td>1250</td><td>120</td></tr>
+            <tr><td>Hat 2</td><td>35</td><td>1180</td><td>100</td></tr>
+          </table>
+          <strong>%5 anlamlılık düzeyinde</strong> iki hattın ortalama ömürlerinin eşit olup olmadığını test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: μ₁=μ₂ &nbsp;|&nbsp; H₁: μ₁≠μ₂ &nbsp;(çift kuyruklu, σ biliniyor → z)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (x̄₁−x̄₂)/√(σ₁²/n₁+σ₂²/n₂) = 70/√(360+285.71) = 70/25.41 = <span class="result">2.754</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">|z|=2.754 > 1.96 → Ret bölgesinde<br><span class="decision reject">H₀ REDDEDİLİR</span><br>%5 anlamlılık düzeyinde iki hattın ampul ömürleri birbirinden farklıdır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HT-04 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–04</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Oran Testi (z-testi, tek örneklem)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">Oran testi</span>
+            <span class="badge badge-easy">Temel</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir anket şirketi, internet alışverişinin toplumda <strong>%40'ın üzerinde</strong> yaygınlaştığını öne sürmektedir. Yapılan bir araştırmada <strong>n = 200</strong> kişiden <strong>90 tanesi</strong> düzenli olarak internet alışverişi yaptığını belirtmiştir.<br><br>
+          <strong>%5 anlamlılık düzeyinde</strong> bu iddiayı test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: p ≤ 0.40 &nbsp;|&nbsp; H₁: p > 0.40 &nbsp;(sağ kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">p̂</span><div class="step-text">p̂ = 90/200 = 0.45</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (p̂−p₀)/√(p₀q₀/n) = 0.05/√(0.40·0.60/200) = 0.05/0.03464 = <span class="result">1.443</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">z<sub>0.05</sub>=1.645 (tek kuyruk)<br>1.443 < 1.645 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>İnternet alışverişinin %40'ın üzerinde olduğu istatistiksel olarak desteklenmemektedir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HT-05 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Varyans için Hipotez Testi (χ²-testi)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">χ²-testi</span>
+            <span class="badge badge-hard">İleri</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir dolum makinesinin standart sapmasının <strong>σ = 5 ml</strong>'yi aşmaması gerekmektedir. Kalite kontrol uzmanı <strong>n = 20</strong> şişeyi incelemiş ve <strong>s = 6.8 ml</strong> bulmuştur.<br><br>
+          <strong>%5 anlamlılık düzeyinde</strong> makinenin tolerans dışına çıkıp çıkmadığını test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: σ² ≤ 25 &nbsp;|&nbsp; H₁: σ² > 25 &nbsp;(sağ kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">χ²</span><div class="step-text">χ² = (n−1)s²/σ₀² = 19·(6.8)²/25 = 19·46.24/25 = <span class="result">35.14</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">df=19, χ²<sub>0.05,19</sub>=30.144<br>35.14 > 30.144 → Ret bölgesinde<br><span class="decision reject">H₀ REDDEDİLİR</span><br>Makinenin standart sapması 5 ml'yi aşmıştır; tolerans dışında çalışmaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HT-06 -->
+    <div class="q-card ht-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-blue">HT–06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Oran Farkı Testi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-b">p₁−p₂ testi</span>
+            <span class="badge badge-hard">İleri</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı reklam kampanyasının tıklama oranları karşılaştırılmaktadır.
+          <table>
+            <tr><th class="th-blue">Kampanya</th><th class="th-blue">Gönderilen (n)</th><th class="th-blue">Tıklama (x)</th></tr>
+            <tr><td>A</td><td>500</td><td>75</td></tr>
+            <tr><td>B</td><td>600</td><td>108</td></tr>
+          </table>
+          <strong>%5 anlamlılık düzeyinde</strong> iki kampanyanın tıklama oranlarının eşit olup olmadığını test ediniz.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-blue">H</span><div class="step-text">H₀: p₁=p₂ &nbsp;|&nbsp; H₁: p₁≠p₂ &nbsp;(çift kuyruklu)</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">p̂</span><div class="step-text">p̂₁=0.15, p̂₂=0.18<br>p̂<sub>birleşik</sub>=(75+108)/1100=183/1100=0.1664</div></div>
+          <div class="sol-step"><span class="step-n sn-blue">z</span><div class="step-text">z = (p̂₁−p̂₂)/√[p̂q̂(1/n₁+1/n₂)] = −0.03/√[0.1664·0.8336·0.003667]<br>= −0.03/0.02255 = <span class="result">−1.330</span></div></div>
+          <div class="sol-step"><span class="step-n sn-blue">Karar</span><div class="step-text">|z|=1.330 < 1.96 → Ret bölgesinde değil<br><span class="decision accept">H₀ REDDEDİLEMEZ</span><br>İki kampanyanın tıklama oranları arasında anlamlı fark bulunamamıştır.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions-grid -->
+
+  <!-- ═══ FORMÜLLER ═══ -->
+  <div class="formula-section">
+    <div class="section-heading sh-blue">📋 Formül Başvuru Kartları — Hipotez Testi</div>
+    <div class="formula-grid">
+
+      <div class="f-card">
+        <div class="f-title">Genel Test Akışı</div>
+        <div class="f-body">
+          1. H₀ ve H₁'i kur<br>
+          2. α ve kritik değeri belirle<br>
+          3. Test istatistiğini hesapla<br>
+          <span class="hi">4. Karar: |T| > t_krit → Reddet</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Tek Örneklem — Ortalama</div>
+        <div class="f-body">
+          σ biliniyor: <span class="hi">z = (x̄−μ₀)/(σ/√n)</span><br>
+          σ bilinmiyor: <span class="hi2">t = (x̄−μ₀)/(s/√n)</span><br>
+          <span class="dim">df = n−1 (t için)</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Eşleştirilmiş t-Testi</div>
+        <div class="f-body">
+          d<sub>i</sub>=x₁ᵢ−x₂ᵢ<br>
+          <span class="hi">t = d̄/(s<sub>d</sub>/√n)</span><br>
+          <span class="dim">df = n−1</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">İki Bağımsız Ortalama (σ biliniyor)</div>
+        <div class="f-body">
+          <span class="hi">z = (x̄₁−x̄₂)/√(σ₁²/n₁+σ₂²/n₂)</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Oran Testi</div>
+        <div class="f-body">
+          <span class="hi">z = (p̂−p₀)/√(p₀q₀/n)</span><br>
+          <span class="dim">─────────────────</span><br>
+          İki oran: p̂ = (x₁+x₂)/(n₁+n₂)<br>
+          <span class="hi2">z = (p̂₁−p̂₂)/√[p̂q̂(1/n₁+1/n₂)]</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Varyans Testi (χ²)</div>
+        <div class="f-body">
+          <span class="hi">χ² = (n−1)s²/σ₀²</span><br>
+          <span class="dim">df = n−1</span><br>
+          H₁: σ²>σ₀² → sağ kuyruk<br>
+          H₁: σ²≠σ₀² → çift kuyruk
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>END 214 – Olasılık ve İstatistik II</strong> · Gazi Üniversitesi Fen Fakültesi İstatistik Bölümü<br>
+  Prof. Dr. Fikri Gökpınar · Güz 2025–2026
+</footer>
+
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s = btn.nextElementSibling;
+  s.classList.toggle('visible');
+  btn.textContent = s.classList.contains('visible') ? '▼ Çözümü Gizle' : '▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

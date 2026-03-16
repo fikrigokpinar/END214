@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Doğrusal Regresyon</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html" class="active">Regresyon</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-reg">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-reg">Konu 3 · 6 Soru</span>
+    <h1>Doğrusal <em class="reg">Regresyon</em></h1>
+    <p class="subtitle">Parametre tahmini, R², ANOVA tablosu. Güven ve tahmin aralıkları. Artık analizi, korelasyon ve varsayımlar.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>6 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>5 formül kartı</span>
+      <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>EKK · ANOVA · Artık</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val teal">6</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val teal">2</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val teal">2</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val teal">2</div><div class="stat-label">İleri</div></div>
+  </div>
+
+  <div class="section-heading sh-teal">Sorular</div>
+  <div class="questions-grid">
+
+    <!-- REG-01 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–01</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Basit Doğrusal Regresyon: Parametre Tahmini ve R²</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">EKK · Parametre</span>
+            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir teknoloji şirketi, akıllı telefon batarya kapasitesi (x, ×1000 mAh) ile günlük kullanım süresi (y, saat) arasındaki ilişkiyi incelemektedir:
+          <table>
+            <tr><th class="th-teal">x (×10³ mAh)</th><th class="th-teal">2.0</th><th class="th-teal">2.5</th><th class="th-teal">3.0</th><th class="th-teal">3.5</th><th class="th-teal">4.0</th><th class="th-teal">4.5</th><th class="th-teal">5.0</th><th class="th-teal">5.5</th><th class="th-teal">6.0</th></tr>
+            <tr><td>y (saat)</td><td>8</td><td>7</td><td>8</td><td>8</td><td>9</td><td>10</td><td>13</td><td>12</td><td>15</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">En küçük kareler yöntemine göre β̂₀ ve β̂₁ parametrelerini tahmin ediniz ve regresyon denklemini yazınız. Katsayıları yorumlayınız. <em>(10 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">Belirleme katsayısı R²'yi hesaplayınız ve modelin açıklama gücü hakkında yorum yapınız. <em>(10 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">Σ</span><div class="step-text">n=9, Σx=37, Σy=90, Σxy=392.5, Σx²=162.5<br>x̄=4.111, ȳ=10</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">β̂₁</span><div class="step-text">S<sub>xy</sub>=392.5−9·4.111·10=22.5 &nbsp;|&nbsp; S<sub>xx</sub>=162.5−9·16.90=10.4<br>β̂₁ = 22.5/10.4 = <span class="result">2.163</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">β̂₀</span><div class="step-text">β̂₀ = ȳ−β̂₁·x̄ = 10−2.163·4.111 = <span class="result">1.11</span><br>Model: <strong>ŷ = 1.11 + 2.163x</strong></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">Yorum</span><div class="step-text">β̂₁=2.163: Batarya kapasitesi 1000 mAh arttığında kullanım süresi ortalama 2.163 saat artmaktadır. β̂₀=1.11 yorumu pratik anlam taşımaz (x=0 gözlem aralığı dışında).</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">R²</span><div class="step-text">SSR=β̂₁·S<sub>xy</sub>=2.163·22.5=48.67 &nbsp;|&nbsp; SST=Σy²−n·ȳ²=964−900=64<br>R²=48.67/64 = <span class="result">0.761</span><br>Batarya kapasitesi kullanım süresi değişiminin %76.1'ini açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-02 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–02</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Güven Aralığı ve Bireysel Tahmin Aralığı</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">Tahmin Aralığı</span>
+            <span class="badge badge-hard">İleri</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir perakende şirketinde müşteri sayısı (x) ile günlük satış tutarı (y, bin TL) arasındaki ilişki modellenmiştir. Yapılan analiz sonucunda:<br><br>
+          <strong>n=10, x̄=150, ȳ=45, β̂₁=0.28, β̂₀=3.0, s=2.5, S<sub>xx</sub>=4000</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">x = 180 müşteri için <em>ortalama satış tutarı</em>na ilişkin %95 güven aralığını oluşturunuz. <em>(10 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">x = 180 müşteri için <em>bireysel bir günün satış tutarı</em>na ilişkin %95 tahmin aralığını bulunuz ve (a) şıkkıyla farkını açıklayınız. <em>(10 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">ŷ</span><div class="step-text">ŷ(180) = 3.0 + 0.28·180 = <span class="result">53.4 bin TL</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">df=8, t<sub>0.025,8</sub>=2.306 &nbsp;|&nbsp; SE = s·√[1/n+(x*−x̄)²/S<sub>xx</sub>] = 2.5·√[0.1+0.225] = 2.5·0.5701 = 1.425<br>GA = 53.4 ± 2.306·1.425 = 53.4 ± 3.29<br><span class="result">Ortalama için GA: (50.11 , 56.69) bin TL</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">TA: SE = s·√[1+1/n+(x*−x̄)²/S<sub>xx</sub>] = 2.5·√1.325 = 2.5·1.151 = 2.878<br>TA = 53.4 ± 2.306·2.878 = 53.4 ± 6.63<br><span class="result">Bireysel tahmin aralığı: (46.77 , 60.03) bin TL</span><br>Tahmin aralığı daha geniştir; bireysel günlerde ε rassal hata terimi eklendiğinden belirsizlik artar.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-03 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–03</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Regresyon Anlamlılık Testi (F-testi ve β₁ için t-testi)</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">ANOVA · F-testi</span>
+            <span class="badge badge-hard">İleri</span>
+            <span class="badge badge-pts">20 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Reklam harcaması (x, bin TL) ile satış (y, bin adet) arasındaki ilişki incelenmiş ve şu ANOVA tablosu elde edilmiştir:
+          <table>
+            <tr><th class="th-teal">Kaynak</th><th class="th-teal">SS</th><th class="th-teal">df</th><th class="th-teal">MS</th><th class="th-teal">F</th></tr>
+            <tr><td>Regresyon</td><td>480</td><td>1</td><td>480</td><td>?</td></tr>
+            <tr><td>Hata</td><td>120</td><td>8</td><td>15</td><td>—</td></tr>
+            <tr><td>Toplam</td><td>600</td><td>9</td><td>—</td><td>—</td></tr>
+          </table>
+          Ayrıca: S<sub>xx</sub>=200, β̂₁=1.55
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">F istatistiğini hesaplayınız ve %5 anlamlılık düzeyinde regresyonun anlamlı olup olmadığını test ediniz. <em>(10 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">β₁ için t-istatistiğini hesaplayınız, yorumlayınız ve F ile t arasındaki ilişkiyi belirtiniz. <em>(10 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">F = MS<sub>R</sub>/MS<sub>E</sub> = 480/15 = <span class="result">32</span><br>F<sub>0.05, 1, 8</sub>=5.318 &nbsp;|&nbsp; F=32 > 5.318<br><span class="decision reject">H₀: β₁=0 REDDEDİLİR — Regresyon anlamlıdır</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">s=√15=3.873 &nbsp;|&nbsp; se(β̂₁)=s/√S<sub>xx</sub>=3.873/√200=0.2739<br>t = 1.55/0.2739 = <span class="result">5.658</span><br>t²=32=F ✓ &nbsp;— Basit regresyonda F = t² ilişkisi her zaman sağlanır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-04 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–04</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Regresyon Varsayımları ve Artık Analizi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">Artık Analizi</span>
+            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-pts">15 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Basit doğrusal regresyon modelinin dört temel varsayımını yazınız. Aşağıdaki artık grafikleri için her birinde olası ihlali ve çözüm önerisini belirtiniz:<br><br>
+          <strong>Grafik 1:</strong> Artıklar ŷ değerleri arttıkça düzensiz genişleyen yelpaze şeklinde dağılıyor.<br>
+          <strong>Grafik 2:</strong> Artıkların zaman sırasıyla çizildiğinde dalga benzeri örüntü görülüyor.<br>
+          <strong>Grafik 3:</strong> Normal Q-Q grafiğinde noktalar düz çizgiden belirgin şekilde sapıyor.
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">Var.</span><div class="step-text">① Doğrusallık: E(y|x)=β₀+β₁x &nbsp;&nbsp; ② Bağımsızlık: ε<sub>i</sub>'ler bağımsız &nbsp;&nbsp; ③ Sabit varyans: Var(ε)=σ² &nbsp;&nbsp; ④ Normallik: ε~N(0,σ²)</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">G1</span><div class="step-text"><span class="result">Değişen varyans (heteroskedastisite).</span> Çözüm: y veya x'in log/karekök dönüşümü; ağırlıklı regresyon (WLS).</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">G2</span><div class="step-text"><span class="result">Otokorelasyon</span> (Durbin-Watson testi). Çözüm: Zaman serisi modeli, gecikme değişkeni ekleme.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">G3</span><div class="step-text"><span class="result">Normallik ihlali</span> (Shapiro-Wilk testi). Çözüm: Box-Cox dönüşümü; büyük n'de Merkezi Limit Teoremi yardımcı olur.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-05 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Pearson Korelasyon Katsayısı ve Yorumu</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">Korelasyon</span>
+            <span class="badge badge-easy">Temel</span>
+            <span class="badge badge-pts">15 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          8 öğrencinin haftalık ders çalışma süresi (x, saat) ve sınav notu (y, 100 üzerinden) verilmiştir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">10</th><th class="th-teal">15</th><th class="th-teal">20</th><th class="th-teal">25</th><th class="th-teal">30</th><th class="th-teal">35</th><th class="th-teal">40</th><th class="th-teal">45</th></tr>
+            <tr><td>y</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>78</td><td>85</td><td>90</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">Pearson korelasyon katsayısı r'yi hesaplayınız ve ilişkiyi yorumlayınız. <em>(10 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">r ile R² arasındaki ilişkiyi açıklayınız. <em>(5 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">Σ</span><div class="step-text">n=8, Σx=220, Σy=578, Σxy=17310, Σx²=7300, Σy²=43288 &nbsp;|&nbsp; x̄=27.5, ȳ=72.25</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">r</span><div class="step-text">S<sub>xy</sub>=17310−8·27.5·72.25=1415 &nbsp;|&nbsp; S<sub>xx</sub>=7300−8·756.25=1250 &nbsp;|&nbsp; S<sub>yy</sub>=43288−8·5220.06=1527.5<br>r = 1415/√(1250·1527.5) = 1415/1381.8 = <span class="result">0.976</span><br>Çok güçlü pozitif doğrusal ilişki: ders çalışma arttıkça notlar artmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">Basit regresyonda <span class="result">R² = r² = 0.953</span>. Ders çalışma süresi not değişiminin %95.3'ünü açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-06 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG–06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Regresyon Katsayılarının Yorumlanması ve Ekstrapolasyon</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">Yorum · Kavram</span>
+            <span class="badge badge-easy">Temel</span>
+            <span class="badge badge-pts">15 puan</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir ev fiyatı modeli kurulmuş ve şu denklem elde edilmiştir:<br><br>
+          <strong>Fiyat (bin TL) = 120 + 1.8 × Metrekare</strong><br><br>
+          Model 60–200 m² aralığındaki evler kullanılarak tahmin edilmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">β̂₀ = 120 ve β̂₁ = 1.8 katsayılarını istatistiksel olarak yorumlayınız. <em>(8 puan)</em></span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">150 m² bir ev için tahmini fiyatı hesaplayınız. Bu modeli 300 m² bir ev için kullanmak neden risklidir? <em>(7 puan)</em></span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text"><strong>β̂₁=1.8:</strong> Her 1 m² artış için tahmini fiyat ortalama 1.8 bin TL (1800 TL) artar.<br><strong>β̂₀=120:</strong> Doğrusal modelin y-eksenini kestiği nokta; pratik yorumu yoktur (0 m²'lik ev anlamsız).</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">ŷ = 120+1.8·150 = <span class="result">390 bin TL</span><br>300 m²'lik ev veri aralığı (60–200 m²) dışındadır → Ekstrapolasyon hatası. Doğrusallık varsayımı o aralıkta geçerli olmayabilir; güvenilmez tahmin.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions-grid -->
+
+  <!-- ═══ FORMÜLLER ═══ -->
+  <div class="formula-section">
+    <div class="section-heading sh-teal">📋 Formül Başvuru Kartları — Doğrusal Regresyon</div>
+    <div class="formula-grid">
+
+      <div class="f-card">
+        <div class="f-title">EKK Parametre Tahmini</div>
+        <div class="f-body">
+          S<sub>xy</sub> = Σxy − nx̄ȳ<br>
+          S<sub>xx</sub> = Σx² − nx̄²<br>
+          <span class="hi">β̂₁ = S<sub>xy</sub>/S<sub>xx</sub></span><br>
+          <span class="hi">β̂₀ = ȳ − β̂₁x̄</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">R² ve Korelasyon</div>
+        <div class="f-body">
+          SST = S<sub>yy</sub> = Σy²−nȳ²<br>
+          SSR = β̂₁·S<sub>xy</sub><br>
+          <span class="hi">R² = SSR/SST</span><br>
+          <span class="hi2">r = S<sub>xy</sub>/√(S<sub>xx</sub>·S<sub>yy</sub>)</span> &nbsp; R²=r²
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Regresyon ANOVA</div>
+        <div class="f-body">
+          MS<sub>R</sub>=SSR/1 &nbsp;|&nbsp; MS<sub>E</sub>=SSE/(n−2)<br>
+          <span class="hi">F = MS<sub>R</sub>/MS<sub>E</sub></span><br>
+          <span class="dim">H₀: β₁=0 → F büyükse ret</span><br>
+          Basit regresyonda: <span class="hi2">F = t²</span>
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">β̂₁ için t-testi</div>
+        <div class="f-body">
+          s = √MS<sub>E</sub><br>
+          se(β̂₁) = s/√S<sub>xx</sub><br>
+          <span class="hi">t = β̂₁/se(β̂₁)</span> &nbsp; df=n−2
+        </div>
+      </div>
+
+      <div class="f-card">
+        <div class="f-title">Güven ve Tahmin Aralığı</div>
+        <div class="f-body">
+          ŷ* = β̂₀+β̂₁x*<br>
+          <span class="hi">GA (ort.): ŷ*±t·s·√[1/n+(x*−x̄)²/S<sub>xx</sub>]</span><br>
+          <span class="hi2">TA (bireysel): ŷ*±t·s·√[1+1/n+(x*−x̄)²/S<sub>xx</sub>]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>END 214 – Olasılık ve İstatistik II</strong> · Gazi Üniversitesi Fen Fakültesi İstatistik Bölümü<br>
+  Prof. Dr. Fikri Gökpınar · Güz 2025–2026
+</footer>
+
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s = btn.nextElementSibling;
+  s.classList.toggle('visible');
+  btn.textContent = s.classList.contains('visible') ? '▼ Çözümü Gizle' : '▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

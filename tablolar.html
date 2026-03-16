@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – İstatistik Tabloları</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── TABLO ÖZEL STİLLER ── */
+.tablo-wrap {
+  overflow-x: auto;
+  margin-bottom: 2.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.stat-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--mono);
+  font-size: .78rem;
+  min-width: 640px;
+}
+.stat-table th {
+  background: var(--surface);
+  color: var(--amber);
+  padding: .55rem .7rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+.stat-table th.row-head {
+  background: var(--surface);
+  color: var(--amber);
+  text-align: center;
+  min-width: 42px;
+}
+.stat-table td {
+  padding: .42rem .65rem;
+  border: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  transition: background .12s, color .12s;
+}
+.stat-table td.z-head {
+  background: rgba(232,184,109,.06);
+  color: var(--text);
+  font-weight: 500;
+}
+.stat-table td.t-head {
+  background: rgba(109,158,232,.06);
+  color: var(--text);
+  font-weight: 500;
+}
+.stat-table tr:hover td { background: rgba(255,255,255,.04); color: var(--text); }
+
+/* highlight önemli satırlar */
+.stat-table tr.hi-row td { color: var(--text); }
+.stat-table tr.hi-row td.z-head,
+.stat-table tr.hi-row td.t-head { color: var(--amber); }
+
+/* t tablosu başlıkları mavi */
+.t-table th { color: var(--blue); }
+.t-table td.t-head { background: rgba(109,158,232,.06); color: var(--blue); font-weight: 500; }
+.t-table tr.hi-row td.t-head { color: var(--blue); }
+
+/* öne çıkan kritik değerler */
+.hi-val { color: var(--teal) !important; font-weight: 500; }
+
+.tablo-note {
+  font-size: .78rem;
+  color: var(--muted);
+  margin-top: .6rem;
+  padding: .6rem .9rem;
+  border-left: 2px solid var(--border);
+  line-height: 1.6;
+}
+.tablo-note strong { color: var(--amber); }
+
+.alpha-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1rem 0 1.5rem;
+}
+.alpha-chip {
+  font-family: var(--mono);
+  font-size: .75rem;
+  padding: .28rem .75rem;
+  border-radius: 3px;
+  background: rgba(109,232,184,.08);
+  color: var(--teal);
+  border: 1px solid rgba(109,232,184,.2);
+}
+.alpha-chip.amber { background: rgba(232,184,109,.08); color: var(--amber); border-color: rgba(232,184,109,.2); }
+.alpha-chip.blue  { background: rgba(109,158,232,.08); color: var(--blue);  border-color: rgba(109,158,232,.2); }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+    <a href="tablolar.html" class="active">Tablolar</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-home">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-home">İstatistik Tabloları</span>
+    <h1><em style="color:var(--amber)">z</em> ve <em style="color:var(--blue)">t</em> Dağılım Tabloları</h1>
+    <p class="subtitle">Standart normal dağılım kümülatif alan tablosu ve t dağılımı kritik değer tablosu — sınav ve ödev için tam başvuru.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot"></span>Standart Normal (z)</span>
+      <span class="meta-item"><span class="dot"></span>t Dağılımı (df = 1 … ∞)</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ══════════════════════════════════════
+       T1: STANDART NORMAL TABLOSU
+  ══════════════════════════════════════ -->
+  <div class="section-heading sh-amber">T1 — Standart Normal Dağılım &nbsp;<span style="font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400">P(Z ≤ z)</span></div>
+
+  <p class="tablo-note"><strong>Nasıl okunur:</strong> Satır = z'nin tam ve birinci ondalık basamağı &nbsp;|&nbsp; Sütun = z'nin ikinci ondalık basamağı. Örneğin z = 1.96 için: satır 1.9, sütun .06 → <strong>0.9750</strong>.<br>
+  Sola kuyrukluluk için doğrudan değeri alın. Sağ kuyruk: 1 − P. Çift kuyruklu %95 → z = 1.96; %99 → z = 2.576.</p>
+
+  <div class="alpha-row">
+    <span class="alpha-chip amber">%90 tek kuyruk → z = 1.282</span>
+    <span class="alpha-chip amber">%95 tek kuyruk → z = 1.645</span>
+    <span class="alpha-chip amber">%99 tek kuyruk → z = 2.326</span>
+    <span class="alpha-chip">%90 çift kuyruk → z = ±1.645</span>
+    <span class="alpha-chip">%95 çift kuyruk → z = ±1.960</span>
+    <span class="alpha-chip">%99 çift kuyruk → z = ±2.576</span>
+  </div>
+
+  <div class="tablo-wrap">
+    <table class="stat-table">
+      <thead>
+        <tr>
+          <th class="row-head">z</th>
+          <th>.00</th><th>.01</th><th>.02</th><th>.03</th><th>.04</th>
+          <th>.05</th><th>.06</th><th>.07</th><th>.08</th><th>.09</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="z-head">0.0</td><td>0.5000</td><td>0.5040</td><td>0.5080</td><td>0.5120</td><td>0.5160</td><td>0.5199</td><td>0.5239</td><td>0.5279</td><td>0.5319</td><td>0.5359</td></tr>
+        <tr><td class="z-head">0.1</td><td>0.5398</td><td>0.5438</td><td>0.5478</td><td>0.5517</td><td>0.5557</td><td>0.5596</td><td>0.5636</td><td>0.5675</td><td>0.5714</td><td>0.5753</td></tr>
+        <tr><td class="z-head">0.2</td><td>0.5793</td><td>0.5832</td><td>0.5871</td><td>0.5910</td><td>0.5948</td><td>0.5987</td><td>0.6026</td><td>0.6064</td><td>0.6103</td><td>0.6141</td></tr>
+        <tr><td class="z-head">0.3</td><td>0.6179</td><td>0.6217</td><td>0.6255</td><td>0.6293</td><td>0.6331</td><td>0.6368</td><td>0.6406</td><td>0.6443</td><td>0.6480</td><td>0.6517</td></tr>
+        <tr><td class="z-head">0.4</td><td>0.6554</td><td>0.6591</td><td>0.6628</td><td>0.6664</td><td>0.6700</td><td>0.6736</td><td>0.6772</td><td>0.6808</td><td>0.6844</td><td>0.6879</td></tr>
+        <tr><td class="z-head">0.5</td><td>0.6915</td><td>0.6950</td><td>0.6985</td><td>0.7019</td><td>0.7054</td><td>0.7088</td><td>0.7123</td><td>0.7157</td><td>0.7190</td><td>0.7224</td></tr>
+        <tr><td class="z-head">0.6</td><td>0.7257</td><td>0.7291</td><td>0.7324</td><td>0.7357</td><td>0.7389</td><td>0.7422</td><td>0.7454</td><td>0.7486</td><td>0.7517</td><td>0.7549</td></tr>
+        <tr><td class="z-head">0.7</td><td>0.7580</td><td>0.7611</td><td>0.7642</td><td>0.7673</td><td>0.7704</td><td>0.7734</td><td>0.7764</td><td>0.7794</td><td>0.7823</td><td>0.7852</td></tr>
+        <tr><td class="z-head">0.8</td><td>0.7881</td><td>0.7910</td><td>0.7939</td><td>0.7967</td><td>0.7995</td><td>0.8023</td><td>0.8051</td><td>0.8078</td><td>0.8106</td><td>0.8133</td></tr>
+        <tr><td class="z-head">0.9</td><td>0.8159</td><td>0.8186</td><td>0.8212</td><td>0.8238</td><td>0.8264</td><td>0.8289</td><td>0.8315</td><td>0.8340</td><td>0.8365</td><td>0.8389</td></tr>
+        <tr class="hi-row"><td class="z-head">1.0</td><td>0.8413</td><td>0.8438</td><td>0.8461</td><td>0.8485</td><td>0.8508</td><td>0.8531</td><td>0.8554</td><td>0.8577</td><td>0.8599</td><td>0.8621</td></tr>
+        <tr><td class="z-head">1.1</td><td>0.8643</td><td>0.8665</td><td>0.8686</td><td>0.8708</td><td>0.8729</td><td>0.8749</td><td>0.8770</td><td>0.8790</td><td>0.8810</td><td>0.8830</td></tr>
+        <tr><td class="z-head">1.2</td><td>0.8849</td><td>0.8869</td><td>0.8888</td><td>0.8907</td><td>0.8925</td><td>0.8944</td><td>0.8962</td><td>0.8980</td><td>0.8997</td><td>0.9015</td></tr>
+        <tr><td class="z-head">1.3</td><td>0.9032</td><td>0.9049</td><td>0.9066</td><td>0.9082</td><td>0.9099</td><td>0.9115</td><td>0.9131</td><td>0.9147</td><td>0.9162</td><td>0.9177</td></tr>
+        <tr><td class="z-head">1.4</td><td>0.9192</td><td>0.9207</td><td>0.9222</td><td>0.9236</td><td>0.9251</td><td>0.9265</td><td>0.9279</td><td>0.9292</td><td>0.9306</td><td>0.9319</td></tr>
+        <tr class="hi-row"><td class="z-head">1.5</td><td>0.9332</td><td>0.9345</td><td>0.9357</td><td>0.9370</td><td>0.9382</td><td>0.9394</td><td>0.9406</td><td>0.9418</td><td>0.9429</td><td>0.9441</td></tr>
+        <tr><td class="z-head">1.6</td><td>0.9452</td><td>0.9463</td><td>0.9474</td><td>0.9484</td><td>0.9495</td><td>0.9505</td><td>0.9515</td><td>0.9525</td><td>0.9535</td><td>0.9545</td></tr>
+        <tr><td class="z-head">1.7</td><td>0.9554</td><td>0.9564</td><td>0.9573</td><td>0.9582</td><td>0.9591</td><td>0.9599</td><td>0.9608</td><td>0.9616</td><td>0.9625</td><td>0.9633</td></tr>
+        <tr><td class="z-head">1.8</td><td>0.9641</td><td>0.9649</td><td>0.9656</td><td>0.9664</td><td>0.9671</td><td>0.9678</td><td>0.9686</td><td>0.9693</td><td>0.9699</td><td>0.9706</td></tr>
+        <tr class="hi-row"><td class="z-head">1.9</td><td>0.9713</td><td>0.9719</td><td>0.9726</td><td>0.9732</td><td>0.9738</td><td>0.9744</td><td><span class="hi-val">0.9750</span></td><td>0.9756</td><td>0.9761</td><td>0.9767</td></tr>
+        <tr class="hi-row"><td class="z-head">2.0</td><td>0.9772</td><td>0.9778</td><td>0.9783</td><td>0.9788</td><td>0.9793</td><td>0.9798</td><td>0.9803</td><td>0.9808</td><td>0.9812</td><td>0.9817</td></tr>
+        <tr><td class="z-head">2.1</td><td>0.9821</td><td>0.9826</td><td>0.9830</td><td>0.9834</td><td>0.9838</td><td>0.9842</td><td>0.9846</td><td>0.9850</td><td>0.9854</td><td>0.9857</td></tr>
+        <tr><td class="z-head">2.2</td><td>0.9861</td><td>0.9864</td><td>0.9868</td><td>0.9871</td><td>0.9875</td><td>0.9878</td><td>0.9881</td><td>0.9884</td><td>0.9887</td><td>0.9890</td></tr>
+        <tr class="hi-row"><td class="z-head">2.3</td><td>0.9893</td><td>0.9896</td><td>0.9898</td><td>0.9901</td><td>0.9904</td><td>0.9906</td><td>0.9909</td><td>0.9911</td><td>0.9913</td><td>0.9916</td></tr>
+        <tr><td class="z-head">2.4</td><td>0.9918</td><td>0.9920</td><td>0.9922</td><td>0.9925</td><td>0.9927</td><td>0.9929</td><td>0.9931</td><td>0.9932</td><td>0.9934</td><td>0.9936</td></tr>
+        <tr class="hi-row"><td class="z-head">2.5</td><td>0.9938</td><td>0.9940</td><td>0.9941</td><td>0.9943</td><td>0.9945</td><td>0.9946</td><td>0.9948</td><td>0.9949</td><td>0.9951</td><td>0.9952</td></tr>
+        <tr><td class="z-head">2.6</td><td>0.9953</td><td>0.9955</td><td>0.9956</td><td>0.9957</td><td>0.9959</td><td>0.9960</td><td>0.9961</td><td>0.9962</td><td>0.9963</td><td>0.9964</td></tr>
+        <tr><td class="z-head">2.7</td><td>0.9965</td><td>0.9966</td><td>0.9967</td><td>0.9968</td><td>0.9969</td><td>0.9970</td><td>0.9971</td><td>0.9972</td><td>0.9973</td><td>0.9974</td></tr>
+        <tr><td class="z-head">2.8</td><td>0.9974</td><td>0.9975</td><td>0.9976</td><td>0.9977</td><td>0.9977</td><td>0.9978</td><td>0.9979</td><td>0.9979</td><td>0.9980</td><td>0.9981</td></tr>
+        <tr><td class="z-head">2.9</td><td>0.9981</td><td>0.9982</td><td>0.9982</td><td>0.9983</td><td>0.9984</td><td>0.9984</td><td>0.9985</td><td>0.9985</td><td>0.9986</td><td>0.9986</td></tr>
+        <tr class="hi-row"><td class="z-head">3.0</td><td>0.9987</td><td>0.9987</td><td>0.9987</td><td>0.9988</td><td>0.9988</td><td>0.9989</td><td>0.9989</td><td>0.9989</td><td>0.9990</td><td>0.9990</td></tr>
+        <tr><td class="z-head">3.1</td><td>0.9990</td><td>0.9991</td><td>0.9991</td><td>0.9991</td><td>0.9992</td><td>0.9992</td><td>0.9992</td><td>0.9992</td><td>0.9993</td><td>0.9993</td></tr>
+        <tr><td class="z-head">3.2</td><td>0.9993</td><td>0.9993</td><td>0.9994</td><td>0.9994</td><td>0.9994</td><td>0.9994</td><td>0.9994</td><td>0.9995</td><td>0.9995</td><td>0.9995</td></tr>
+        <tr><td class="z-head">3.3</td><td>0.9995</td><td>0.9995</td><td>0.9995</td><td>0.9996</td><td>0.9996</td><td>0.9996</td><td>0.9996</td><td>0.9996</td><td>0.9996</td><td>0.9997</td></tr>
+        <tr><td class="z-head">3.4</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9997</td><td>0.9998</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       T3: t DAĞILIMI TABLOSU
+  ══════════════════════════════════════ -->
+  <div class="section-heading sh-blue">T3 — t Dağılımı Kritik Değerleri &nbsp;<span style="font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400">P(T ≤ t)</span></div>
+
+  <p class="tablo-note"><strong>Nasıl okunur:</strong> Satır = serbestlik derecesi (s.d. = df = n − 1) &nbsp;|&nbsp; Sütun = kümülatif olasılık P. Örneğin df=10, %95 çift kuyruk (α=0.05) için: satır 10, sütun .975 → <strong>2.228</strong>.<br>
+  Tek kuyruk α=0.05 → sütun .95. Çift kuyruk α=0.05 → sütun .975. Çift kuyruk α=0.01 → sütun .995.</p>
+
+  <div class="alpha-row">
+    <span class="alpha-chip blue">%90 çift kuyruk (α=0.10) → sütun .950</span>
+    <span class="alpha-chip blue">%95 çift kuyruk (α=0.05) → sütun .975</span>
+    <span class="alpha-chip blue">%99 çift kuyruk (α=0.01) → sütun .995</span>
+    <span class="alpha-chip">%90 tek kuyruk (α=0.10) → sütun .900</span>
+    <span class="alpha-chip">%95 tek kuyruk (α=0.05) → sütun .950</span>
+    <span class="alpha-chip">%99 tek kuyruk (α=0.01) → sütun .990</span>
+  </div>
+
+  <div class="tablo-wrap">
+    <table class="stat-table t-table">
+      <thead>
+        <tr>
+          <th class="row-head">df</th>
+          <th>.600</th><th>.750</th><th>.900</th><th>.950</th>
+          <th>.975</th><th>.990</th><th>.995</th><th>.999</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="t-head">1</td><td>0.325</td><td>1.000</td><td>3.078</td><td>6.314</td><td class="hi-val">12.706</td><td>31.821</td><td>63.657</td><td>318.31</td></tr>
+        <tr><td class="t-head">2</td><td>0.289</td><td>0.816</td><td>1.886</td><td>2.920</td><td class="hi-val">4.303</td><td>6.965</td><td>9.925</td><td>22.326</td></tr>
+        <tr><td class="t-head">3</td><td>0.277</td><td>0.765</td><td>1.638</td><td>2.353</td><td class="hi-val">3.182</td><td>4.541</td><td>5.841</td><td>10.213</td></tr>
+        <tr><td class="t-head">4</td><td>0.271</td><td>0.741</td><td>1.533</td><td>2.132</td><td class="hi-val">2.776</td><td>3.747</td><td>4.604</td><td>7.173</td></tr>
+        <tr><td class="t-head">5</td><td>0.267</td><td>0.727</td><td>1.476</td><td>2.015</td><td class="hi-val">2.571</td><td>3.365</td><td>4.032</td><td>5.893</td></tr>
+        <tr><td class="t-head">6</td><td>0.265</td><td>0.718</td><td>1.440</td><td>1.943</td><td class="hi-val">2.447</td><td>3.143</td><td>3.707</td><td>5.208</td></tr>
+        <tr><td class="t-head">7</td><td>0.263</td><td>0.711</td><td>1.415</td><td>1.895</td><td class="hi-val">2.365</td><td>2.998</td><td>3.499</td><td>4.785</td></tr>
+        <tr><td class="t-head">8</td><td>0.262</td><td>0.706</td><td>1.397</td><td>1.860</td><td class="hi-val">2.306</td><td>2.896</td><td>3.355</td><td>4.501</td></tr>
+        <tr><td class="t-head">9</td><td>0.261</td><td>0.703</td><td>1.383</td><td>1.833</td><td class="hi-val">2.262</td><td>2.821</td><td>3.250</td><td>4.297</td></tr>
+        <tr class="hi-row"><td class="t-head">10</td><td>0.260</td><td>0.700</td><td>1.372</td><td>1.812</td><td class="hi-val">2.228</td><td>2.764</td><td>3.169</td><td>4.144</td></tr>
+        <tr><td class="t-head">11</td><td>0.260</td><td>0.697</td><td>1.363</td><td>1.796</td><td class="hi-val">2.201</td><td>2.718</td><td>3.106</td><td>4.025</td></tr>
+        <tr><td class="t-head">12</td><td>0.259</td><td>0.695</td><td>1.356</td><td>1.782</td><td class="hi-val">2.179</td><td>2.681</td><td>3.055</td><td>3.930</td></tr>
+        <tr><td class="t-head">13</td><td>0.259</td><td>0.694</td><td>1.350</td><td>1.771</td><td class="hi-val">2.160</td><td>2.650</td><td>3.012</td><td>3.852</td></tr>
+        <tr><td class="t-head">14</td><td>0.258</td><td>0.692</td><td>1.345</td><td>1.761</td><td class="hi-val">2.145</td><td>2.624</td><td>2.977</td><td>3.787</td></tr>
+        <tr class="hi-row"><td class="t-head">15</td><td>0.258</td><td>0.691</td><td>1.341</td><td>1.753</td><td class="hi-val">2.131</td><td>2.602</td><td>2.947</td><td>3.733</td></tr>
+        <tr><td class="t-head">16</td><td>0.258</td><td>0.690</td><td>1.337</td><td>1.746</td><td class="hi-val">2.120</td><td>2.583</td><td>2.921</td><td>3.686</td></tr>
+        <tr><td class="t-head">17</td><td>0.257</td><td>0.689</td><td>1.333</td><td>1.740</td><td class="hi-val">2.110</td><td>2.567</td><td>2.898</td><td>3.646</td></tr>
+        <tr><td class="t-head">18</td><td>0.257</td><td>0.688</td><td>1.330</td><td>1.734</td><td class="hi-val">2.101</td><td>2.552</td><td>2.878</td><td>3.610</td></tr>
+        <tr><td class="t-head">19</td><td>0.257</td><td>0.688</td><td>1.328</td><td>1.729</td><td class="hi-val">2.093</td><td>2.539</td><td>2.861</td><td>3.579</td></tr>
+        <tr class="hi-row"><td class="t-head">20</td><td>0.257</td><td>0.687</td><td>1.325</td><td>1.725</td><td class="hi-val">2.086</td><td>2.528</td><td>2.845</td><td>3.552</td></tr>
+        <tr><td class="t-head">21</td><td>0.257</td><td>0.686</td><td>1.323</td><td>1.721</td><td class="hi-val">2.080</td><td>2.518</td><td>2.831</td><td>3.527</td></tr>
+        <tr><td class="t-head">22</td><td>0.256</td><td>0.686</td><td>1.321</td><td>1.717</td><td class="hi-val">2.074</td><td>2.508</td><td>2.819</td><td>3.505</td></tr>
+        <tr><td class="t-head">23</td><td>0.256</td><td>0.685</td><td>1.319</td><td>1.714</td><td class="hi-val">2.069</td><td>2.500</td><td>2.807</td><td>3.485</td></tr>
+        <tr><td class="t-head">24</td><td>0.256</td><td>0.685</td><td>1.318</td><td>1.711</td><td class="hi-val">2.064</td><td>2.492</td><td>2.797</td><td>3.467</td></tr>
+        <tr class="hi-row"><td class="t-head">25</td><td>0.256</td><td>0.684</td><td>1.316</td><td>1.708</td><td class="hi-val">2.060</td><td>2.485</td><td>2.787</td><td>3.450</td></tr>
+        <tr><td class="t-head">26</td><td>0.256</td><td>0.684</td><td>1.315</td><td>1.706</td><td class="hi-val">2.056</td><td>2.479</td><td>2.779</td><td>3.435</td></tr>
+        <tr><td class="t-head">27</td><td>0.256</td><td>0.684</td><td>1.314</td><td>1.703</td><td class="hi-val">2.052</td><td>2.473</td><td>2.771</td><td>3.421</td></tr>
+        <tr><td class="t-head">28</td><td>0.256</td><td>0.683</td><td>1.313</td><td>1.701</td><td class="hi-val">2.048</td><td>2.467</td><td>2.763</td><td>3.408</td></tr>
+        <tr><td class="t-head">29</td><td>0.256</td><td>0.683</td><td>1.311</td><td>1.699</td><td class="hi-val">2.045</td><td>2.462</td><td>2.756</td><td>3.396</td></tr>
+        <tr class="hi-row"><td class="t-head">30</td><td>0.256</td><td>0.683</td><td>1.310</td><td>1.697</td><td class="hi-val">2.042</td><td>2.457</td><td>2.750</td><td>3.385</td></tr>
+        <tr><td class="t-head">40</td><td>0.255</td><td>0.681</td><td>1.303</td><td>1.684</td><td class="hi-val">2.021</td><td>2.423</td><td>2.704</td><td>3.307</td></tr>
+        <tr><td class="t-head">60</td><td>0.254</td><td>0.679</td><td>1.296</td><td>1.671</td><td class="hi-val">2.000</td><td>2.390</td><td>2.660</td><td>3.232</td></tr>
+        <tr><td class="t-head">120</td><td>0.254</td><td>0.677</td><td>1.289</td><td>1.658</td><td class="hi-val">1.980</td><td>2.358</td><td>2.617</td><td>3.160</td></tr>
+        <tr class="hi-row"><td class="t-head">∞</td><td>0.253</td><td>0.674</td><td>1.282</td><td>1.645</td><td class="hi-val">1.960</td><td>2.326</td><td>2.576</td><td>3.090</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer>
+  <strong>END 214 &ndash; Olasılık ve İstatistik II</strong> &middot; Gazi Üniversitesi Fen Fakültesi İstatistik Bölümü<br>
+  Prof. Dr. Fikri Gökpınar &middot; Güz 2025&ndash;2026
+</footer>
+
+<script>
+/* Tabloda bir hücreye tıklanınca satır+sütun vurgusu */
+document.querySelectorAll('.stat-table td:not(.z-head):not(.t-head)').forEach(td => {
+  td.style.cursor = 'pointer';
+  td.addEventListener('click', () => {
+    document.querySelectorAll('.clicked-val').forEach(el => el.classList.remove('clicked-val'));
+    td.classList.add('clicked-val');
+  });
+});
+</script>
+<style>
+.clicked-val {
+  background: rgba(109,232,184,.18) !important;
+  color: var(--teal) !important;
+  font-weight: 600;
+  outline: 1px solid var(--teal);
+}
+</style>
+</body>
+</html>

@@ -70,7 +70,7 @@
           <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=36, x̄=820, σ=15, α=0.05 → z<sub>α/2</sub> = <span class="result">1.96</span></div></div>
           <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">GA = x̄ ± z·(σ/√n) = 820 ± 1.96·(15/6) = 820 ± 4.9<br><span class="result">GA: (815.1 , 824.9) lümen</span></div></div>
           <div class="sol-step"><span class="step-n sn-amber">Yorum</span><div class="step-text">Lambalar popülasyonunun ortalama parlaklığı %95 olasılıkla 815.1 ile 824.9 lümen arasındadır.</div></div>
-          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 8 → E ≤ 4<br>n ≥ (z·σ/E)² = (1.96·15/4)² = (7.35)² = 54.02 → <span class="result">n ≥ 55</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 8 → E ≤ 4<br>n ≥ (z·σ/E)² = (1.96·15/4)² = (7.35)² = 54.02 → <span class="result">n ≥ 55</span><br>n = 55 ile GA: 820 ± 1.96·(15/√55) = 820 ± 1.96·2.023 = 820 ± 3.965<br><span class="result">GA: (816.04 , 823.96) lümen &nbsp;→ genişlik = 7.93 ≤ 8 ✓</span></div></div>
         </div>
       </div>
     </div>
@@ -134,7 +134,7 @@
           <div class="sol-title">Adım Adım Çözüm</div>
           <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">p = 80/500 = 0.16 &nbsp;(örneklem oranı), q = 1−p = 0.84, z<sub>0.025</sub>=1.96</div></div>
           <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">E = 1.96·√(p·q/n) = 1.96·√(0.16·0.84/500) = 1.96·0.01640 = 0.0321<br><span class="result">π için GA: (0.1279 , 0.1921) → yaklaşık %12.8 ile %19.2</span></div></div>
-          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 0.04 → E ≤ 0.02<br>n ≥ z²·p·q/E² = 3.8416·0.1344/0.0004 = 0.5163/0.0004 = 1290.7<br><span class="result">n ≥ 1291 paket</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 0.04 → E ≤ 0.02<br>n ≥ z²·p·q/E² = 3.8416·0.1344/0.0004 = 0.5163/0.0004 = 1290.7 → <span class="result">n ≥ 1291</span><br>n = 1291 ile GA: 0.16 ± 1.96·√(0.16·0.84/1291) = 0.16 ± 1.96·0.01020 = 0.16 ± 0.020<br><span class="result">GA: (0.140 , 0.180) &nbsp;→ genişlik = 0.040 ≤ 0.04 ✓</span></div></div>
         </div>
       </div>
     </div>
@@ -218,10 +218,7 @@
       <div class="f-card">
         <div class="f-title">Ortalama için GA · σ bilinir (z)</div>
         <div class="f-body">
-          x̄ ± z<sub>α/2</sub> · (σ/√n)<br>
-          <span class="dim">─────────────────</span><br>
-          Örnek büyüklüğü:<br>
-          n ≥ (z<sub>α/2</sub> · σ / E)²
+          x̄ ± z<sub>α/2</sub> · (σ/√n)
         </div>
       </div>
 
@@ -236,10 +233,7 @@
       <div class="f-card">
         <div class="f-title">Oran için GA &nbsp;(π yığın, p tahmin)</div>
         <div class="f-body">
-          <span class="hi">p ± z<sub>α/2</sub> · √(p·(1−p)/n)</span><br>
-          <span class="dim">─────────────────</span><br>
-          Örnek büyüklüğü:<br>
-          n ≥ z²<sub>α/2</sub> · p·(1−p) / E²
+          <span class="hi">p ± z<sub>α/2</sub> · √(p·(1−p)/n)</span>
         </div>
       </div>
 

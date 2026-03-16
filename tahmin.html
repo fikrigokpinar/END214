@@ -22,11 +22,11 @@
 
 <header class="page-header page-header-tahmin">
   <div class="page-header-inner">
-    <span class="topic-tag tag-tahmin">Konu 1 · 14 Soru</span>
+    <span class="topic-tag tag-tahmin">Konu 1 · 12 Soru</span>
     <h1>Nokta <em style="color:var(--violet)">Tahmini</em></h1>
     <p class="subtitle">EÇO ve Momentler yöntemi. Yansızlık, etkinlik ve tutarlılık. Normal, üstel, Poisson ve düzgün dağılımlar.</p>
     <div class="meta-row">
-      <span class="meta-item"><span class="dot" style="background:var(--violet)"></span>14 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--violet)"></span>12 çözümlü soru</span>
       <span class="meta-item"><span class="dot" style="background:var(--violet)"></span>4 formül kartı</span>
       <span class="meta-item"><span class="dot" style="background:var(--violet)"></span>EÇO · Momentler · Özellikler</span>
     </div>
@@ -35,10 +35,10 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val violet">14</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val violet">12</div><div class="stat-label">Soru</div></div>
     <div class="stat-cell"><div class="stat-val violet">4</div><div class="stat-label">Temel</div></div>
     <div class="stat-cell"><div class="stat-val violet">7</div><div class="stat-label">Orta</div></div>
-    <div class="stat-cell"><div class="stat-val violet">3</div><div class="stat-label">İleri</div></div>
+    <div class="stat-cell"><div class="stat-val violet">2</div><div class="stat-label">İleri</div></div>
   </div>
 
   <div class="section-heading sh-violet">Sorular</div>
@@ -49,7 +49,7 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-violet">NT&#8211;01</span>
         <div class="q-title-wrap">
-          <div class="q-title">Üstel Dağılım — EÇO Tahmini</div>
+          <div class="q-title">Üstel Dağılım — EÇO Tahmini ve Yansızlık</div>
           <div class="q-badges">
             <span class="badge badge-topic-v">EÇO · Üstel</span>
             <span class="badge badge-easy">Temel</span>
@@ -59,20 +59,21 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          X&#8321;, X&#8322;, &hellip;, X&#8345; bağımsız ve özdeş dağılımlı (b.ö.d.) rasgele değişkenler, parametresi &theta; &gt; 0 olan üstel dağılımdan gelmektedir:<br><br>
-          <strong>f(x; &theta;) = &theta; e<sup>&minus;&theta;x</sup>, &nbsp; x &gt; 0</strong>
+          X&#8321;, X&#8322;, &hellip;, X&#8345; b.ö.d. rasgele değişkenler, parametresi &theta; &gt; 0 olan üstel dağılımdan gelmektedir:<br><br>
+          <strong>f(x; &theta;) = (1/&theta;) e<sup>&minus;x/&theta;</sup>, &nbsp; x &gt; 0</strong><br><br>
+          Burada &theta; = E(X) ortalama parametresidir.
         </div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&theta; parametresinin en çok olabilirlik tahmin edicisini (EÇO) türetiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">EÇO tahmin edicisinin yansız olup olmadığını inceleyiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">EÇO tahmin edicisinin yansız olup olmadığını gösteriniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">Log-olas.</span><div class="step-text">L(&theta;) = &#8719;<sub>i</sub> &theta; e<sup>&minus;&theta;x&#7522;</sup> = &theta;<sup>n</sup> e<sup>&minus;&theta;&#8721;x&#7522;</sup><br>&#8467;(&theta;) = n ln&theta; &minus; &theta;&#8721;x&#7522;</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">Türev</span><div class="step-text">d&#8467;/d&theta; = n/&theta; &minus; &#8721;x&#7522; = 0<br>&theta; = n/&#8721;x&#7522; = <span class="result">1/X&#772;</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">EÇO: <strong>&theta;&#770; = 1/X&#772; = n/&#8721;X&#7522;</strong><br>İkinci türev d²&#8467;/d&theta;² = &minus;n/&theta;² &lt; 0 → maksimum ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">E(X&#772;) = 1/&theta; olduğundan E(1/X&#772;) &#8800; &theta; genel olarak (Jensen eşitsizliği, 1/x dışbükey).<br><span class="result">→ &theta;&#770; = 1/X&#772; yansız değildir.</span><br>Öte yandan (n&minus;1)/(&#8721;X&#7522;) yansız tahmin edici olarak gösterilebilir.</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Olabilirlik</span><div class="step-text">L(&theta;) = &#8719;<sup>n</sup><sub>i=1</sub> f(x&#7522;; &theta;) = &#8719;<sup>n</sup><sub>i=1</sub> (1/&theta;) e<sup>&minus;x&#7522;/&theta;</sup><br>= (1/&theta;<sup>n</sup>) · e<sup>&minus;(1/&theta;)&#8721;x&#7522;</sup></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Log-olabilirlik</span><div class="step-text">&#8467;(&theta;) = ln L(&theta;) = &minus;n ln&theta; &minus; (1/&theta;)&#8721;x&#7522;</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Türev &amp; çözüm</span><div class="step-text">d&#8467;/d&theta; = &minus;n/&theta; + &#8721;x&#7522;/&theta;² = 0<br>&theta; · n = &#8721;x&#7522; &nbsp;&#8594;&nbsp; <span class="result">&theta;&#770; = &#8721;X&#7522;/n = X&#772;</span><br>d²&#8467;/d&theta;² = n/&theta;² &minus; 2&#8721;x&#7522;/&theta;³; &theta;&#770;'de &lt; 0 &#8594; maksimum ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Yansızlık</span><div class="step-text">E(&theta;&#770;) = E(X&#772;) = E(X&#8321;) = &theta; &nbsp;[üstel dağılımda E(X) = &theta;]<br><span class="result">&#8594; &theta;&#770; = X&#772; yansızdır.</span></div></div>
         </div>
       </div>
     </div>
@@ -147,7 +148,7 @@
         <div class="q-title-wrap">
           <div class="q-title">Normal Dağılım — EÇO ile &mu; ve &sigma;² Tahmini</div>
           <div class="q-badges">
-            <span class="badge badge-topic-v">EÇO · Normal</span>
+            <span class="badge badge-topic-v">EÇO · Normal · İki Parametre</span>
             <span class="badge badge-easy">Temel</span>
           </div>
         </div>
@@ -155,18 +156,22 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. N(&mu;, &sigma;²) dağılımından gelmektedir.
+          X&#8321;, &hellip;, X&#8345; b.ö.d. N(&mu;, &sigma;²) dağılımından gelmektedir:<br><br>
+          <strong>f(x; &mu;, &sigma;²) = (1/&#8730;(2&pi;&sigma;²)) exp[&minus;(x&minus;&mu;)²/(2&sigma;²)]</strong>
         </div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&mu; ve &sigma;² için EÇO tahmin edicilerini türetiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">&sigma;&#770;² = &#8721;(X&#7522;&minus;X&#772;)²/n tahmin edicisinin yansız olup olmadığını tartışınız. Yansız hale getiriniz.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">&sigma;&#770;² = &#8721;(X&#7522;&minus;X&#772;)²/n tahmin edicisinin yansız olup olmadığını gösteriniz. Yansız hale getiriniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">Log-olas.</span><div class="step-text">&#8467;(&mu;,&sigma;²) = &minus;n/2 · ln(2&pi;&sigma;²) &minus; &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;²)</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">&part;&#8467;/&part;&mu; = &#8721;(x&#7522;&minus;&mu;)/&sigma;² = 0 &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770; = X&#772;</span><br>&part;&#8467;/&part;&sigma;² = &minus;n/(2&sigma;²) + &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;&#8308;) = 0 &nbsp;&#8594;&nbsp; <span class="result">&sigma;&#770;² = &#8721;(X&#7522;&minus;X&#772;)²/n</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">E[&#8721;(X&#7522;&minus;X&#772;)²] = (n&minus;1)&sigma;² olduğundan:<br>E(&sigma;&#770;²) = (n&minus;1)&sigma;²/n &#8800; &sigma;² &nbsp;&#8594;&nbsp; <span class="result">yansız değil.</span><br>Yansız tahmin edici: <strong>S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1)</strong></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Olabilirlik</span><div class="step-text">L(&mu;,&sigma;²) = &#8719;<sup>n</sup><sub>i=1</sub> (2&pi;&sigma;²)<sup>&minus;1/2</sup> exp[&minus;(x&#7522;&minus;&mu;)²/(2&sigma;²)]<br>= (2&pi;&sigma;²)<sup>&minus;n/2</sup> exp[&minus;&#8721;(x&#7522;&minus;&mu;)²/(2&sigma;²)]</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Log-olabilirlik</span><div class="step-text">&#8467;(&mu;,&sigma;²) = &minus;n/2 · ln(2&pi;) &minus; n/2 · ln(&sigma;²) &minus; &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;²)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a — &part;/&part;&mu;</span><div class="step-text">&part;&#8467;/&part;&mu; = &minus;&#8721; 2(x&#7522;&minus;&mu;)·(&minus;1)/(2&sigma;²) = &#8721;(x&#7522;&minus;&mu;)/&sigma;² = 0<br>&#8721;x&#7522; &minus; n&mu; = 0 &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770; = X&#772; = &#8721;X&#7522;/n</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a — &part;/&part;&sigma;²</span><div class="step-text">&part;&#8467;/&part;&sigma;² = &minus;n/(2&sigma;²) + &#8721;(x&#7522;&minus;&mu;)²/(2&sigma;&#8308;) = 0<br>&#8721;(x&#7522;&minus;&mu;&#770;)² = n&sigma;² &nbsp;&#8594;&nbsp; <span class="result">&sigma;&#770;² = &#8721;(X&#7522;&minus;X&#772;)²/n</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — E(&sigma;&#770;²)</span><div class="step-text">&#8721;(X&#7522;&minus;X&#772;)² = &#8721;X&#7522;² &minus; nX&#772;² olduğundan:<br>E[&#8721;(X&#7522;&minus;X&#772;)²] = &#8721;E(X&#7522;²) &minus; nE(X&#772;²)<br>= n(&mu;²+&sigma;²) &minus; n[&mu;²+&sigma;²/n] = n&sigma;² &minus; &sigma;² = <span class="result">(n&minus;1)&sigma;²</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Sonuç</span><div class="step-text">E(&sigma;&#770;²) = E[&#8721;(X&#7522;&minus;X&#772;)²/n] = (n&minus;1)&sigma;²/n &#8800; &sigma;²<br><span class="result">&#8594; &sigma;&#770;² yansız değildir.</span><br>Yansız tahmin edici: <strong>S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1)</strong><br>Çünkü E(S²) = (n&minus;1)&sigma;²/(n&minus;1) = &sigma;² ✓</div></div>
         </div>
       </div>
     </div>
@@ -176,7 +181,7 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-violet">NT&#8211;05</span>
         <div class="q-title-wrap">
-          <div class="q-title">Düzgün Dağılım — EÇO Tahmini ve Yansızlık Düzeltmesi</div>
+          <div class="q-title">Düzgün Dağılım — EÇO ve Yansızlık Düzeltmesi</div>
           <div class="q-badges">
             <span class="badge badge-topic-v">EÇO · Düzgün · Yansızlık</span>
             <span class="badge badge-med">Orta</span>
@@ -186,17 +191,21 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. Düzgün(0, &theta;) dağılımından gelmektedir.
+          X&#8321;, &hellip;, X&#8345; b.ö.d. Düzgün(0, &theta;) dağılımından gelmektedir:<br><br>
+          <strong>f(x; &theta;) = 1/&theta;, &nbsp; 0 &lt; x &lt; &theta;</strong>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&theta; parametresinin EÇO'sunu türetiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&theta; parametresinin EÇO'sunu türetiniz. (İpucu: olabilirlik fonksiyonu türev yöntemiyle değil, tanım bölgesi kısıtını göz önüne alarak maksimize edilir.)</span></div>
           <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">EÇO tahmin edicisinin yansız olmadığını gösteriniz ve yansız versiyonunu bulunuz.</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a — Olabilirlik</span><div class="step-text">L(&theta;) = (1/&theta;)<sup>n</sup>, &nbsp; &theta; &ge; X<sub>(n)</sub> = max(X&#7522;) koşuluyla<br>L(&theta;), &theta; arttıkça azaldığından maksimum &theta; = X<sub>(n)</sub>'de sağlanır.<br><span class="result">EÇO: &theta;&#770; = X<sub>(n)</sub> = max(X&#8321;, &hellip;, X&#8345;)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — Yansızlık</span><div class="step-text">X<sub>(n)</sub>'nin yoğunluk fonksiyonu: f<sub>(n)</sub>(x) = nx<sup>n&minus;1</sup>/&theta;<sup>n</sup>, &nbsp; 0 &lt; x &lt; &theta;<br>E(X<sub>(n)</sub>) = &#8747;<sub>0</sub><sup>&theta;</sup> x · nx<sup>n&minus;1</sup>/&theta;<sup>n</sup> dx = n&theta;/(n+1)<br><span class="result">E(X<sub>(n)</sub>) = n&theta;/(n+1) &#8800; &theta; → yansız değil.</span><br>Yansız tahmin edici: <strong>T = (n+1)/n · X<sub>(n)</sub></strong><br>E(T) = (n+1)/n · n&theta;/(n+1) = &theta; ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Olabilirlik</span><div class="step-text">L(&theta;) = &#8719;<sup>n</sup><sub>i=1</sub> f(x&#7522;;&theta;) = &#8719;<sup>n</sup><sub>i=1</sub> (1/&theta;) = (1/&theta;)<sup>n</sup><br>Ancak bu ifade yalnızca tüm x&#7522; &le; &theta; olduğunda geçerlidir; aksi halde L(&theta;) = 0.<br>Yani: L(&theta;) = (1/&theta;)<sup>n</sup> &nbsp; eğer &nbsp; &theta; &ge; max(x&#7522;) = x<sub>(n)</sub></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a — Maksimum</span><div class="step-text">L(&theta;) = (1/&theta;)<sup>n</sup>, &theta; &ge; x<sub>(n)</sub> koşuluyla.<br>&theta; arttıkça (1/&theta;)<sup>n</sup> monoton azalır. Dolayısıyla L(&theta;), &theta;'nın izin verilen en küçük değeri olan x<sub>(n)</sub>'de maksimum olur.<br><span class="result">EÇO: &theta;&#770; = X<sub>(n)</sub> = max(X&#8321;, &hellip;, X&#8345;)</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — X<sub>(n)</sub>'nin dağılımı</span><div class="step-text">n. sıra istatistiğinin yoğunluk fonksiyonu:<br>f<sub>(n)</sub>(x) = n [F(x)]<sup>n&minus;1</sup> f(x) = n (x/&theta;)<sup>n&minus;1</sup> · (1/&theta;) = nx<sup>n&minus;1</sup>/&theta;<sup>n</sup>, &nbsp; 0 &lt; x &lt; &theta;</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — E(X<sub>(n)</sub>)</span><div class="step-text">E(X<sub>(n)</sub>) = &#8747;<sub>0</sub><sup>&theta;</sup> x · nx<sup>n&minus;1</sup>/&theta;<sup>n</sup> dx = (n/&theta;<sup>n</sup>) &#8747;<sub>0</sub><sup>&theta;</sup> x<sup>n</sup> dx<br>= (n/&theta;<sup>n</sup>) · [x<sup>n+1</sup>/(n+1)]<sub>0</sub><sup>&theta;</sup> = (n/&theta;<sup>n</sup>) · &theta;<sup>n+1</sup>/(n+1)<br><span class="result">E(X<sub>(n)</sub>) = n&theta;/(n+1) &#8800; &theta; &nbsp;&#8594;&nbsp; yansız değil.</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Yansız düzeltme</span><div class="step-text">T = c · X<sub>(n)</sub> yansız olsun: E(T) = c · n&theta;/(n+1) = &theta; &nbsp;&#8594;&nbsp; c = (n+1)/n<br><span class="result">Yansız tahmin edici: T = [(n+1)/n] · X<sub>(n)</sub></span><br>Doğrulama: E(T) = (n+1)/n · n&theta;/(n+1) = &theta; ✓</div></div>
         </div>
       </div>
     </div>
@@ -222,14 +231,14 @@
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">Momentler yöntemiyle &theta; için bir tahmin edici bulunuz.</span></div>
           <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">EÇO yöntemiyle &theta; için bir tahmin edici bulunuz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">c)</span><span class="part-text">İki tahmin edicinin ifadelerini karşılaştırarak yorumlayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a — Momentler</span><div class="step-text">&mu;&#8321; = E(X) = &#8747;<sub>0</sub><sup>1</sup> x(&theta;+1)x<sup>&theta;</sup>dx = (&theta;+1)/(&theta;+2)<br>m&#8321; = X&#772; eşitle:<br>(&theta;+1)/(&theta;+2) = X&#772; &nbsp;&#8594;&nbsp; &theta;+1 = X&#772;(&theta;+2) &nbsp;&#8594;&nbsp; &theta;(1&minus;X&#772;) = 2X&#772;&minus;1<br><span class="result">&theta;&#770;&#7465; = (2X&#772;&minus;1)/(1&minus;X&#772;)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — EÇO</span><div class="step-text">&#8467;(&theta;) = n ln(&theta;+1) + &theta; &#8721; ln(x&#7522;)<br>d&#8467;/d&theta; = n/(&theta;+1) + &#8721; ln(x&#7522;) = 0<br><span class="result">&theta;&#770;&#7461; = &minus;1 &minus; n/&#8721;ln(X&#7522;) = &minus;1 &minus; 1/&#x305;(ln X)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">c</span><div class="step-text">İki yöntem farklı formüller vermektedir. Momentler X&#772;'ya dayalıyken EÇO &#8721;ln(X&#7522;)'e (geometrik ortalamaya) dayalıdır. EÇO genel olarak asimptotik etkindir; bu dağılımda da EÇO tercih edilir.</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a — 1. moment</span><div class="step-text">&mu;&#8321; = E(X) = &#8747;<sub>0</sub><sup>1</sup> x·(&theta;+1)x<sup>&theta;</sup>dx = (&theta;+1)·[x<sup>&theta;+2</sup>/(&theta;+2)]<sub>0</sub><sup>1</sup> = (&theta;+1)/(&theta;+2)<br>m&#8321; = X&#772; eşitle: (&theta;+1)/(&theta;+2) = X&#772;<br>&theta;+1 = X&#772;(&theta;+2) &nbsp;&#8594;&nbsp; &theta;(1&minus;X&#772;) = 2X&#772;&minus;1<br><span class="result">&theta;&#770;&#7465; = (2X&#772;&minus;1)/(1&minus;X&#772;)</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Olabilirlik</span><div class="step-text">L(&theta;) = &#8719;<sup>n</sup><sub>i=1</sub> (&theta;+1)x&#7522;<sup>&theta;</sup> = (&theta;+1)<sup>n</sup> &#8719;x&#7522;<sup>&theta;</sup></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Log-olabilirlik</span><div class="step-text">&#8467;(&theta;) = n ln(&theta;+1) + &theta;&#8721;ln(x&#7522;)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Türev &amp; çözüm</span><div class="step-text">d&#8467;/d&theta; = n/(&theta;+1) + &#8721;ln(x&#7522;) = 0<br><span class="result">&theta;&#770;&#7461; = &minus;1 &minus; n/&#8721;ln(X&#7522;) = &minus;1 &minus; 1/&#x305;(ln X)</span></div></div>
         </div>
       </div>
     </div>
@@ -260,9 +269,11 @@
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">&mu;&#8321; = E(X) = &mu; &nbsp;&#8594;&nbsp; m&#8321; = X&#772; &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770;&#7465; = X&#772;</span><br>E(X&#772;) = &mu; &#8594; yansızdır. ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">&#8467;(&mu;) = &minus;n ln&mu; &minus; &#8721;x&#7522;/&mu;<br>d&#8467;/d&mu; = &minus;n/&mu; + &#8721;x&#7522;/&mu;² = 0 &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770;&#7461; = X&#772;</span><br>İki yöntem aynı sonucu vermektedir.</div></div>
-          <div class="sol-step"><span class="step-n sn-violet">c</span><div class="step-text">Büyük Sayılar Yasası (BSY) gereği X&#772; &#8594;<sup>p</sup> E(X) = &mu;.<br>Ayrıca Var(X&#772;) = &mu;²/n &#8594; 0, n &#8594; &#8734;.<br><span class="result">&#8594; X&#772; tutarlı tahmin edicidir.</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a — Momentler</span><div class="step-text">&mu;&#8321; = E(X) = &mu; &nbsp;&#8594;&nbsp; m&#8321; = X&#772; eşitle: <span class="result">&mu;&#770;&#7465; = X&#772;</span><br>E(X&#772;) = &mu; &#8594; yansızdır ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Olabilirlik</span><div class="step-text">L(&mu;) = &#8719;<sup>n</sup><sub>i=1</sub> (1/&mu;) e<sup>&minus;x&#7522;/&mu;</sup> = (1/&mu;<sup>n</sup>) e<sup>&minus;(1/&mu;)&#8721;x&#7522;</sup></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Log-olabilirlik</span><div class="step-text">&#8467;(&mu;) = &minus;n ln&mu; &minus; (1/&mu;)&#8721;x&#7522;</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Türev &amp; çözüm</span><div class="step-text">d&#8467;/d&mu; = &minus;n/&mu; + &#8721;x&#7522;/&mu;² = 0 &nbsp;&#8594;&nbsp; &mu; = &#8721;x&#7522;/n &nbsp;&#8594;&nbsp; <span class="result">&mu;&#770;&#7461; = X&#772;</span><br>Her iki yöntem aynı sonucu vermektedir.</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">c — Tutarlılık</span><div class="step-text">Büyük Sayılar Yasası gereği X&#772; &#8594;<sup>p</sup> E(X) = &mu; ve Var(X&#772;) = &mu;²/n &#8594; 0.<br><span class="result">&#8594; X&#772; tutarlı tahmin edicidir.</span></div></div>
         </div>
       </div>
     </div>
@@ -287,13 +298,14 @@
         </div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">Momentler yöntemiyle &alpha; ve &beta; için tahmin edicileri türetiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Elde edilen tahmin edicilerin yansızlığını tartışınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-v">
           <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a — Momentler</span><div class="step-text">&mu;&#8321; = (&alpha;+&beta;)/2 &nbsp;|&nbsp; &mu;&#8322; = E(X²) = (&alpha;²+&alpha;&beta;+&beta;²)/3<br>Var(X) = &mu;&#8322;&minus;&mu;&#8321;² = (&beta;&minus;&alpha;)²/12<br>Örneklemden: m&#8321; = X&#772;, &nbsp; m&#8322; = &#8721;X&#7522;²/n<br>Denklem sistemi:<br>(&alpha;+&beta;)/2 = X&#772; &nbsp;&nbsp;&#8594;&nbsp;&nbsp; &alpha;+&beta; = 2X&#772; &nbsp;&nbsp;&hellip;(1)<br>(&beta;&minus;&alpha;)²/12 = S²<sub>n</sub> &nbsp;&#8594;&nbsp; &beta;&minus;&alpha; = 2&#8730;(3S²<sub>n</sub>) &nbsp;&hellip;(2)<br>Burada S²<sub>n</sub> = &#8721;(X&#7522;&minus;X&#772;)²/n.<br><span class="result">&beta;&#770; = X&#772; + &#8730;(3S²<sub>n</sub>) &nbsp;|&nbsp; &alpha;&#770; = X&#772; &minus; &#8730;(3S²<sub>n</sub>)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">E(X&#772;) = (&alpha;+&beta;)/2 ✓. Ancak S²<sub>n</sub> = (n&minus;1)S²/n yansız değildir; dolayısıyla &alpha;&#770; ve &beta;&#770; yansız değildir. S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1) kullanılırsa yanlılık azalır.</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Teorik momentler</span><div class="step-text">&mu;&#8321; = E(X) = (&alpha;+&beta;)/2<br>&mu;&#8322; = E(X²) = (&alpha;²+&alpha;&beta;+&beta;²)/3<br>Var(X) = &mu;&#8322;&minus;&mu;&#8321;² = (&beta;&minus;&alpha;)²/12</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Örneklem momentleri</span><div class="step-text">m&#8321; = X&#772; &nbsp;&nbsp;|&nbsp;&nbsp; Var tahmini: S²<sub>n</sub> = &#8721;(X&#7522;&minus;X&#772;)²/n</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Denklem sistemi</span><div class="step-text">1. moment: (&alpha;+&beta;)/2 = X&#772; &nbsp;&#8594;&nbsp; &alpha;+&beta; = 2X&#772; &nbsp;&hellip;(1)<br>Varyans: (&beta;&minus;&alpha;)²/12 = S²<sub>n</sub> &nbsp;&#8594;&nbsp; &beta;&minus;&alpha; = 2&#8730;(3S²<sub>n</sub>) &nbsp;&hellip;(2)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">Çözüm</span><div class="step-text">(1) + (2): 2&beta; = 2X&#772; + 2&#8730;(3S²<sub>n</sub>) &nbsp;&#8594;&nbsp; <span class="result">&beta;&#770; = X&#772; + &#8730;(3S²<sub>n</sub>)</span><br>(1) &minus; (2): 2&alpha; = 2X&#772; &minus; 2&#8730;(3S²<sub>n</sub>) &nbsp;&#8594;&nbsp; <span class="result">&alpha;&#770; = X&#772; &minus; &#8730;(3S²<sub>n</sub>)</span></div></div>
         </div>
       </div>
     </div>
@@ -336,27 +348,31 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-violet">NT&#8211;10</span>
         <div class="q-title-wrap">
-          <div class="q-title">Tutarlılık — Üstel Dağılımda Formal Kanıt</div>
+          <div class="q-title">&#304;ki Parametreli Kaydirilmi&#351; &#220;stel &#8212; E&#199;O ve Yans&#305;zl&#305;k</div>
           <div class="q-badges">
-            <span class="badge badge-topic-v">Tutarlılık · Üstel</span>
-            <span class="badge badge-med">Orta</span>
+            <span class="badge badge-topic-v">E&#199;O &middot; &#304;ki Parametre &middot; &#304;leri</span>
+            <span class="badge badge-hard">&#304;leri</span>
           </div>
         </div>
         <span class="q-toggle">&#9662;</span>
       </div>
       <div class="q-body">
         <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. Exp(&theta;) dağılımından gelmektedir (ortalama 1/&theta;). &theta;&#770; = 1/X&#772; tahmin edicisi düşünülmektedir.
+          X&#8321;, &hellip;, X&#8345; b.&ouml;.d. a&#351;a&#287;&#305;daki iki parametreli kaydirilmi&#351; &#252;stel da&#287;&#305;l&#305;mdan gelmektedir:<br><br>
+          <strong>f(x; &theta;, &mu;) = (1/&theta;) e<sup>&minus;(x&minus;&mu;)/&theta;</sup>, &nbsp; x &ge; &mu;, &nbsp; &theta; &gt; 0, &nbsp; &minus;&#8734; &lt; &mu; &lt; &#8734;</strong>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">X&#772;'nın tutarlı tahmin edici olduğunu iki koşul üzerinden gösteriniz: (i) yanlılık &#8594; 0, (ii) varyans &#8594; 0.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Sürekli dönüşüm (invariance) özelliğini kullanarak &theta;&#770; = 1/X&#772;'nın da tutarlı olduğunu argümanlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&mu; ve &theta; i&ccedil;in E&#199;O tahmin edicilerini t&uuml;retiniz. (&#304;pucu: &ouml;nce &mu; i&ccedil;in olabilirlik fonksiyonunun &mu;&#8217;ya g&ouml;re nas&#305;l davrand&#305;&#287;&#305;n&#305; inceleyin.)</span></div>
+          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">&mu;&#770;&#8217;n&#305;n yans&#305;z olup olmad&#305;&#287;&#305;n&#305; g&ouml;steriniz. Yans&#305;z d&uuml;zeltmeyi yaz&#305;n&#305;z.</span></div>
         </div>
-        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; &#199;&#246;z&uuml;m&uuml; G&ouml;ster</button>
         <div class="solution solution-v">
-          <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a — X&#772;</span><div class="step-text">E(X&#772;) = 1/&theta; &#8594; yanlılık = 0 ✓<br>Var(X&#772;) = Var(X)/n = (1/&theta;²)/n &#8594; 0 (n&#8594;&#8734;) ✓<br><span class="result">X&#772; tutarlıdır.</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">BSY: X&#772; &#8594;<sup>p</sup> 1/&theta;.<br>g(t) = 1/t sürekli bir fonksiyondur. Sürekli dönüşüm teoremi gereği:<br>g(X&#772;) = 1/X&#772; &#8594;<sup>p</sup> g(1/&theta;) = &theta;.<br><span class="result">&#8594; &theta;&#770; = 1/X&#772; tutarlıdır.</span></div></div>
+          <div class="sol-title sol-title-v">Ad&#305;m Ad&#305;m &#199;&#246;z&uuml;m</div>
+          <div class="sol-step"><span class="step-n sn-violet">Olabilirlik</span><div class="step-text">L(&theta;,&mu;) = &#8719;<sup>n</sup><sub>i=1</sub> (1/&theta;) e<sup>&minus;(x&#7522;&minus;&mu;)/&theta;</sup> = (1/&theta;<sup>n</sup>) exp[&minus;(1/&theta;)&#8721;(x&#7522;&minus;&mu;)]<br>Ko&#351;ul: &mu; &le; x<sub>(1)</sub> = min(x&#7522;)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; &mu; E&#199;O</span><div class="step-text">&#8721;(x&#7522;&minus;&mu;) = &#8721;x&#7522; &minus; n&mu;: &mu; artt&#305;k&ccedil;a &#8721;(x&#7522;&minus;&mu;) azal&#305;r, exp[&minus;&middot;/&theta;] artar ve L artar.<br>&mu;&#8217;nun izin verilen en b&uuml;y&uuml;k de&#287;eri x<sub>(1)</sub> oldu&#287;undan:<br><span class="result">&mu;&#770; = X<sub>(1)</sub> = min(X&#8321;, &hellip;, X&#8345;)</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; Log-olabilirlik (&mu; sabit)</span><div class="step-text">&#8467;(&theta; | &mu;&#770;) = &minus;n ln&theta; &minus; (1/&theta;)&#8721;(x&#7522;&minus;x<sub>(1)</sub>)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; T&uuml;rev &amp; &theta; E&#199;O</span><div class="step-text">d&#8467;/d&theta; = &minus;n/&theta; + (1/&theta;&sup2;)&#8721;(x&#7522;&minus;x<sub>(1)</sub>) = 0<br><span class="result">&theta;&#770; = &#8721;(X&#7522;&minus;X<sub>(1)</sub>)/n = X&#772; &minus; X<sub>(1)</sub></span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b &mdash; E(X<sub>(1)</sub>)</span><div class="step-text">X<sub>(1)</sub>&#8217;in da&#287;&#305;l&#305;m&#305; kaydirilmi&#351; &#252;steldir: E(X<sub>(1)</sub>) = &mu; + &theta;/n<br><span class="result">E(&mu;&#770;) = &mu; + &theta;/n &ne; &mu; &rarr; yans&#305;z de&#287;il.</span><br>Yans&#305;z d&uuml;zeltme: <strong>&mu;&#770;<sub>yans&#305;z</sub> = X<sub>(1)</sub> &minus; &theta;&#770;/n</strong></div></div>
         </div>
       </div>
     </div>
@@ -366,103 +382,39 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-violet">NT&#8211;11</span>
         <div class="q-title-wrap">
-          <div class="q-title">İki Parametreli Üstel — EÇO ve Yansızlık</div>
+          <div class="q-title">Beta Benzeri Da&#287;&#305;l&#305;m &mdash; E&#199;O ve Momentler</div>
           <div class="q-badges">
-            <span class="badge badge-topic-v">EÇO · İki Parametre · İleri</span>
-            <span class="badge badge-hard">İleri</span>
+            <span class="badge badge-topic-v">E&#199;O &middot; Momentler &middot; &#304;leri</span>
+            <span class="badge badge-hard">&#304;leri</span>
           </div>
         </div>
         <span class="q-toggle">&#9662;</span>
       </div>
       <div class="q-body">
         <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. aşağıdaki iki parametreli dağılımdan gelmektedir:<br><br>
-          <strong>f(x; &theta;, &mu;) = &theta; e<sup>&minus;&theta;(x&minus;&mu;)</sup>, &nbsp; x &ge; &mu;, &nbsp; &theta; &gt; 0, &nbsp; &minus;&#8734; &lt; &mu; &lt; &#8734;</strong>
+          X&#8321;, &hellip;, X&#8345; b.&ouml;.d. a&#351;a&#287;&#305;daki da&#287;&#305;l&#305;mdan gelmektedir:<br><br>
+          <strong>f(x; &theta;) = &theta; x<sup>&theta;&minus;1</sup>, &nbsp; 0 &lt; x &lt; 1, &nbsp; &theta; &gt; 0</strong>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">&mu; ve &theta; için EÇO tahmin edicilerini türetiniz. (İpucu: önce &mu; için düşünün, olabilirlik &mu;'ya göre nasıl davranır?)</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">&mu;&#770;'nın yansız olup olmadığını araştırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">E&#199;O y&ouml;ntemiyle &theta; tahmin edicisini t&uuml;retiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Momentler y&ouml;ntemiyle &theta; tahmin edicisini t&uuml;retiniz.</span></div>
         </div>
-        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; &#199;&#246;z&uuml;m&uuml; G&ouml;ster</button>
         <div class="solution solution-v">
-          <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a — &mu; EÇO</span><div class="step-text">L(&theta;,&mu;) = &theta;<sup>n</sup> exp(&minus;&theta;&#8721;(x&#7522;&minus;&mu;)) = &theta;<sup>n</sup> e<sup>&minus;&theta;(&#8721;x&#7522;&minus;n&mu;)</sup>, koşul: &mu; &le; x<sub>(1)</sub><br>&#8721;(x&#7522;&minus;&mu;) = &#8721;x&#7522; &minus; n&mu;: &mu; arttıkça L artar → &mu;'nun en büyük değeri x<sub>(1)</sub>'dir.<br><span class="result">&mu;&#770; = X<sub>(1)</sub> = min(X&#7522;)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">a — &theta; EÇO</span><div class="step-text">&#8467;(&theta; | &mu;&#770;) = n ln&theta; &minus; &theta;&#8721;(x&#7522;&minus;x<sub>(1)</sub>)<br>d&#8467;/d&theta; = n/&theta; &minus; &#8721;(x&#7522;&minus;x<sub>(1)</sub>) = 0<br><span class="result">&theta;&#770; = n / &#8721;(X&#7522;&minus;X<sub>(1)</sub>)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">X<sub>(1)</sub>'in dağılımı: Exp(&theta;) + &mu; kaydırılmış, yani E(X<sub>(1)</sub>) = &mu; + 1/(n&theta;).<br><span class="result">E(&mu;&#770;) = &mu; + 1/(n&theta;) &#8800; &mu; → yansız değil.</span><br>Yansız düzeltme: <strong>&mu;&#770;<sub>yansız</sub> = X<sub>(1)</sub> &minus; 1/(n&theta;&#770;)</strong></div></div>
+          <div class="sol-title sol-title-v">Ad&#305;m Ad&#305;m &#199;&#246;z&uuml;m</div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; Olabilirlik</span><div class="step-text">L(&theta;) = &#8719;<sup>n</sup><sub>i=1</sub> &theta; x&#7522;<sup>&theta;&minus;1</sup> = &theta;<sup>n</sup> &#8719;x&#7522;<sup>&theta;&minus;1</sup></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; Log-olabilirlik</span><div class="step-text">&#8467;(&theta;) = n ln&theta; + (&theta;&minus;1)&#8721;ln(x&#7522;)</div></div>
+          <div class="sol-step"><span class="step-n sn-violet">a &mdash; T&uuml;rev &amp; &ccedil;oz&uuml;m</span><div class="step-text">d&#8467;/d&theta; = n/&theta; + &#8721;ln(x&#7522;) = 0<br><span class="result">&theta;&#770;&#7461; = &minus;n/&#8721;ln(X&#7522;)</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b &mdash; 1. moment</span><div class="step-text">&mu;&#8321; = E(X) = &#8747;<sub>0</sub><sup>1</sup> x &middot; &theta;x<sup>&theta;&minus;1</sup>dx = &theta; &middot; [x<sup>&theta;+1</sup>/(&theta;+1)]<sub>0</sub><sup>1</sup> = &theta;/(&theta;+1)<br>m&#8321; = X&#772; e&#351;itle: X&#772;(&theta;+1) = &theta;<br><span class="result">&theta;&#770;&#7465; = X&#772;/(1&minus;X&#772;)</span></div></div>
         </div>
       </div>
     </div>
 
     <!-- NT-12 -->
+    <!-- NT-12 -->
     <div class="q-card tahmin-card">
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-violet">NT&#8211;12</span>
-        <div class="q-title-wrap">
-          <div class="q-title">Beta Benzeri Dağılım — İki Yöntemle Karşılaştırma ve Etkinlik</div>
-          <div class="q-badges">
-            <span class="badge badge-topic-v">EÇO · Momentler · Etkinlik · İleri</span>
-            <span class="badge badge-hard">İleri</span>
-          </div>
-        </div>
-        <span class="q-toggle">&#9662;</span>
-      </div>
-      <div class="q-body">
-        <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. aşağıdaki dağılımdan gelmektedir:<br><br>
-          <strong>f(x; &theta;) = &theta; x<sup>&theta;&minus;1</sup>, &nbsp; 0 &lt; x &lt; 1, &nbsp; &theta; &gt; 0</strong>
-        </div>
-        <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">EÇO ile &theta; tahmin edicisini bulunuz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Momentler yöntemiyle &theta; tahmin edicisini bulunuz.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">c)</span><span class="part-text">Her iki tahmin edicinin asimptotik varyansını karşılaştırarak hangisinin daha etkin olduğunu gösteriniz.</span></div>
-        </div>
-        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
-        <div class="solution solution-v">
-          <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">&#8467;(&theta;) = n ln&theta; + (&theta;&minus;1)&#8721;ln(x&#7522;)<br>d&#8467;/d&theta; = n/&theta; + &#8721;ln(x&#7522;) = 0<br><span class="result">&theta;&#770;&#7461; = &minus;n/&#8721;ln(X&#7522;) = &minus;1/&#x305;(ln X)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">E(X) = &#8747;<sub>0</sub><sup>1</sup> x·&theta;x<sup>&theta;&minus;1</sup>dx = &theta;/(&theta;+1)<br>X&#772; = &theta;/(&theta;+1) &nbsp;&#8594;&nbsp; X&#772;(&theta;+1) = &theta; &nbsp;&#8594;&nbsp; <span class="result">&theta;&#770;&#7465; = X&#772;/(1&minus;X&#772;)</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">c</span><div class="step-text">Fisher bilgisi: I(&theta;) = n/&theta;² &nbsp;&#8594;&nbsp; Cramér-Rao alt sınırı = &theta;²/n<br>Asimptotik Var(&theta;&#770;&#7461;) = &theta;²/n (EÇO Cramér-Rao'ya ulaşır) ✓<br>Momentler: Var(X&#772;) = Var(X)/n = [&theta;/(&theta;+1)²]/(&theta;+2) · 1/n (delta yöntemiyle)<br><span class="result">EÇO daha etkindir; Cramér-Rao sınırına ulaşır.</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NT-13 -->
-    <div class="q-card tahmin-card">
-      <div class="q-header" onclick="toggleCard(this)">
-        <span class="q-num qn-violet">NT&#8211;13</span>
-        <div class="q-title-wrap">
-          <div class="q-title">Normal Dağılım — Tutarlılık ve MSE Karşılaştırması</div>
-          <div class="q-badges">
-            <span class="badge badge-topic-v">Tutarlılık · MSE · Normal · İleri</span>
-            <span class="badge badge-hard">İleri</span>
-          </div>
-        </div>
-        <span class="q-toggle">&#9662;</span>
-      </div>
-      <div class="q-body">
-        <div class="q-text">
-          X&#8321;, &hellip;, X&#8345; b.ö.d. N(&mu;, &sigma;²) dağılımından gelmektedir. &sigma;² için iki tahmin edici önerilmektedir:<br><br>
-          <strong>T&#8321; = S² = &#8721;(X&#7522;&minus;X&#772;)²/(n&minus;1) &nbsp;&nbsp;|&nbsp;&nbsp; T&#8322; = &#8721;(X&#7522;&minus;X&#772;)²/n</strong>
-        </div>
-        <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-violet">a)</span><span class="part-text">Her ikisinin yanlılığını (bias) hesaplayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-violet">b)</span><span class="part-text">Her ikisinin MSE (Ortalama Karesel Hata) değerini hesaplayınız. (İpucu: Normal için Var(S²) = 2&sigma;&#8308;/(n&minus;1).)</span></div>
-          <div class="q-part"><span class="part-label pl-violet">c)</span><span class="part-text">MSE bakımından hangi tahmin edici daha iyidir? Her ikisinin tutarlı olduğunu gösteriniz.</span></div>
-        </div>
-        <button class="sol-btn sol-btn-v" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
-        <div class="solution solution-v">
-          <div class="sol-title sol-title-v">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">E(T&#8321;) = &sigma;² &nbsp;&#8594;&nbsp; Bias(T&#8321;) = 0 (yansız)<br>E(T&#8322;) = (n&minus;1)&sigma;²/n &nbsp;&#8594;&nbsp; <span class="result">Bias(T&#8322;) = &minus;&sigma;²/n</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b</span><div class="step-text">MSE(T&#8321;) = Var(T&#8321;) + 0² = Var(S²) = 2&sigma;&#8308;/(n&minus;1)<br>T&#8322; = (n&minus;1)/n · S² &nbsp;&#8594;&nbsp; Var(T&#8322;) = [(n&minus;1)/n]² · 2&sigma;&#8308;/(n&minus;1) = 2(n&minus;1)&sigma;&#8308;/n²<br>MSE(T&#8322;) = Var(T&#8322;) + [Bias(T&#8322;)]² = 2(n&minus;1)&sigma;&#8308;/n² + &sigma;&#8308;/n²<br>= <span class="result">(2n&minus;1)&sigma;&#8308;/n²</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">c</span><div class="step-text">MSE(T&#8322;)/MSE(T&#8321;) = [(2n&minus;1)/n²] / [2/(n&minus;1)] = (2n&minus;1)(n&minus;1)/(2n²)<br>n &ge; 2 için bu oran &lt; 1 &nbsp;&#8594;&nbsp; <span class="result">T&#8322; MSE bakımından daha iyidir.</span><br>Tutarlılık: Var(T&#8321;) &#8594; 0 ve Bias(T&#8321;) = 0 &#8594; T&#8321; tutarlı ✓<br>Var(T&#8322;) &#8594; 0 ve Bias(T&#8322;) = &minus;&sigma;²/n &#8594; 0 &#8594; T&#8322; tutarlı ✓</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NT-14 -->
-    <div class="q-card tahmin-card">
-      <div class="q-header" onclick="toggleCard(this)">
-        <span class="q-num qn-violet">NT&#8211;14</span>
         <div class="q-title-wrap">
           <div class="q-title">Poisson — Momentler, EÇO, Yansızlık ve Tutarlılık</div>
           <div class="q-badges">

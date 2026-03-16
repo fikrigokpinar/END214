@@ -20,11 +20,11 @@
 
 <header class="page-header page-header-ga">
   <div class="page-header-inner">
-    <span class="topic-tag tag-ga">Konu 1 · 5 Soru</span>
+    <span class="topic-tag tag-ga">Konu 1 · 18 Soru</span>
     <h1><em class="ga">Güven</em> Aralığı</h1>
     <p class="subtitle">Ortalama ve oran için aralık tahminleri. Örnek büyüklüğü hesaplama. Bağımsız grup karşılaştırmaları.</p>
     <div class="meta-row">
-      <span class="meta-item"><span class="dot"></span>5 çözümlü soru</span>
+      <span class="meta-item"><span class="dot"></span>18 çözümlü soru</span>
       <span class="meta-item"><span class="dot"></span>6 formül kartı</span>
       <span class="meta-item"><span class="dot"></span>z · t dağılımları</span>
     </div>
@@ -33,9 +33,9 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val amber">5</div><div class="stat-label">Soru</div></div>
-    <div class="stat-cell"><div class="stat-val amber">1</div><div class="stat-label">Temel</div></div>
-    <div class="stat-cell"><div class="stat-val amber">4</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val amber">18</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val amber">4</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val amber">14</div><div class="stat-label">Orta</div></div>
     <div class="stat-cell"><div class="stat-val amber">—</div><div class="stat-label">İleri</div></div>
   </div>
 
@@ -204,6 +204,408 @@
           <div class="sol-step"><span class="step-n sn-amber">SE</span><div class="step-text">SE = √(σ₁²/n₁ + σ₂²/n₂) = √(1.44/40 + 2.25/35) = √(0.0360 + 0.0643) = √0.1003 = <span class="result">0.3167</span></div></div>
           <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">(x̄₁ − x̄₂) ± z<sub>α/2</sub> · SE = (42.80 − 41.50) ± 1.96 · 0.3167<br>= 1.30 ± 0.620<br><span class="result">GA: (0.680 , 1.920) TL</span></div></div>
           <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">%95 güvenle, (0.680 , 1.920) TL aralığı iki şehrin ortalama yakıt fiyatı farkı μ₁−μ₂'yi kapsar. Aralık tamamen sıfırın sağında olduğundan A şehrinin ortalama yakıt fiyatı B şehrinden anlamlı biçimde yüksektir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-06 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinen σ ile Ortalama için GA — %99 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · z</span>
+            <span class="badge badge-easy">Temel</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir un fabrikasında üretilen torbaların ağırlıkları (kg) normal dağılıma uymaktadır. Yığın standart sapması <strong>σ = 0.8 kg</strong> bilinmektedir. Rastgele seçilen <strong>n = 25</strong> torbadan elde edilen ortalama ağırlık <strong>x̄ = 50.3 kg</strong> olarak ölçülmüştür.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%99 güven düzeyinde yığın ortalaması μ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">%95 güven düzeyinde oluşturulan aralıkla karşılaştırınız; hangi aralık daha geniştir ve neden?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=25, x̄=50.3, σ=0.8, α=0.01 → z<sub>0.005</sub> = <span class="result">2.576</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">GA = x̄ ± z·(σ/√n) = 50.3 ± 2.576·(0.8/5) = 50.3 ± 0.412<br><span class="result">GA: (49.888 , 50.712) kg</span><br>%99 güvenle, (49.888 , 50.712) kg aralığı torbaların yığın ortalama ağırlığını kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">%95 → z<sub>0.025</sub>=1.96 → GA: 50.3 ± 1.96·0.16 = 50.3 ± 0.314 → (49.986 , 50.614) kg<br>%99 aralığı (0.824 genişlik) > %95 aralığı (0.628 genişlik). Güven düzeyi arttıkça kritik z değeri büyür; daha geniş aralık daha yüksek güvenceyi yansıtır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-07 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–07</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinen σ ile Ortalama için GA — Örnek Büyüklüğünün Etkisi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · z</span>
+            <span class="badge badge-easy">Temel</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir hastanede hastaların bekleme süreleri (dakika) incelenmektedir. Yığın standart sapması <strong>σ = 12 dakika</strong> bilinmektedir. İki ayrı günde ölçüm yapılmış; birinci günde <strong>n₁ = 16</strong> hastadan <strong>x̄₁ = 38 dakika</strong>, ikinci günde <strong>n₂ = 64</strong> hastadan <strong>x̄₂ = 38 dakika</strong> elde edilmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">Her iki gün için %95 güven düzeyinde μ için güven aralıklarını ayrı ayrı oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">İki aralığın genişliklerini karşılaştırınız ve örnek büyüklüğünün etkisini açıklayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">σ=12, x̄=38, α=0.05 → z<sub>0.025</sub>=1.96</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">n₁=16: GA₁ = 38 ± 1.96·(12/4) = 38 ± 5.88 → <span class="result">GA₁: (32.12 , 43.88) dk</span><br>n₂=64: GA₂ = 38 ± 1.96·(12/8) = 38 ± 2.94 → <span class="result">GA₂: (35.06 , 40.94) dk</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">GA₁ genişliği = 11.76 dk, GA₂ genişliği = 5.88 dk.<br>n 4 katına çıktığında genişlik yarıya indi. E = z·σ/√n olduğundan genişlik n'nin kareköküyle ters orantılıdır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-08 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–08</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinen σ ile Ortalama için GA — İstenen Genişlik</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · z</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir süt fabrikasında dolum makinesi şişelere ortalama μ ml süt doldurmaktadır. Yığın standart sapması <strong>σ = 10 ml</strong> bilinmektedir. Pilot çalışmada <strong>n = 20</strong> şişeden <strong>x̄ = 502 ml</strong> elde edilmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%90 güven düzeyinde μ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığının genişliğinin en fazla <strong>6 ml</strong> olması isteniyorsa %90 güven düzeyinde en az kaç şişe ölçülmelidir?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=20, x̄=502, σ=10, α=0.10 → z<sub>0.05</sub> = <span class="result">1.645</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">GA = 502 ± 1.645·(10/√20) = 502 ± 1.645·2.236 = 502 ± 3.678<br><span class="result">GA: (498.32 , 505.68) ml</span><br>%90 güvenle, (498.32 , 505.68) ml aralığı dolum makinesinin yığın ortalama dolum miktarını kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 6 → E ≤ 3<br>n ≥ (1.645·10/3)² = (5.483)² = 30.07 → <span class="result">n ≥ 31</span><br>n=31 ile GA: 502 ± 1.645·(10/√31) = 502 ± 1.645·1.796 = 502 ± 2.955<br><span class="result">GA: (499.05 , 504.95) ml → genişlik = 5.91 ≤ 6 ✓</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-09 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–09</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinmeyen σ ile Ortalama için GA — Küçük Örneklem</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir araştırmacı yeni bir diyet programının günlük kalori alımını incelemektedir. Normal dağılıma uyan verilerden rastgele seçilen <strong>n = 10</strong> kişiden <strong>x̄ = 1840 kal</strong> ve <strong>s = 210 kal</strong> elde edilmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%95 güven düzeyinde yığın ortalaması μ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">n = 10 iken neden z yerine t dağılımı kullanıldığını açıklayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=10, df=9, x̄=1840, s=210, α=0.05 → t<sub>0.025,9</sub> = <span class="result">2.262</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">GA = x̄ ± t·(s/√n) = 1840 ± 2.262·(210/√10) = 1840 ± 2.262·66.41 = 1840 ± 150.2<br><span class="result">GA: (1689.8 , 1990.2) kal</span><br>%95 güvenle, (1689.8 , 1990.2) kal aralığı yığın ortalama günlük kalori alımını kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">σ bilinmediğinde s ile tahmin edilir; (x̄−μ)/(s/√n) istatistiği standart normal değil, df=n−1 serbestlik dereceli t dağılımına uyar. n küçük olduğunda t dağılımının kuyrukları z'den kalındır; bu belirsizliği yansıtır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-10 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–10</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinmeyen σ ile Ortalama için GA — %99 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir otomotiv fabrikasında üretilen motor parçalarının ağırlıkları (gram) normal dağılıma uymaktadır. Rastgele seçilen <strong>n = 20</strong> parçadan <strong>x̄ = 485.6 g</strong> ve <strong>s = 8.4 g</strong> elde edilmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%99 güven düzeyinde yığın ortalaması μ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığının genişliğinin en fazla <strong>7 gram</strong> olması isteniyorsa %99 güven düzeyinde en az kaç parça ölçülmelidir?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=20, df=19, x̄=485.6, s=8.4, α=0.01 → t<sub>0.005,19</sub> = <span class="result">2.861</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">GA = 485.6 ± 2.861·(8.4/√20) = 485.6 ± 2.861·1.879 = 485.6 ± 5.375<br><span class="result">GA: (480.22 , 490.98) g</span><br>%99 güvenle, (480.22 , 490.98) g aralığı motor parçalarının yığın ortalama ağırlığını kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 7 → E ≤ 3.5. σ bilinmediğinden s=8.4 kullanılır; büyük n için z<sub>0.005</sub>=2.576 ile yaklaşım:<br>n ≥ (2.576·8.4/3.5)² = (6.182)² = 38.2 → <span class="result">n ≥ 39</span><br>n=39 ile GA: 485.6 ± 2.576·(8.4/√39) = 485.6 ± 2.576·1.345 = 485.6 ± 3.465<br><span class="result">GA: (482.14 , 489.06) g → genişlik = 6.93 ≤ 7 ✓</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-11 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–11</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Bilinmeyen σ ile Ortalama için GA — Geniş Örneklem</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir e-ticaret şirketinde teslimat süreleri (gün) incelenmektedir. Rastgele seçilen <strong>n = 50</strong> siparişten <strong>x̄ = 3.2 gün</strong> ve <strong>s = 0.9 gün</strong> elde edilmiştir. Teslimat sürelerinin normal dağılıma uyduğu bilinmektedir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%90 güven düzeyinde yığın ortalama teslimat süresi μ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">%95 güven düzeyinde oluşturulan aralıkla karşılaştırınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n=50, df=49, x̄=3.2, s=0.9</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">%90 → t<sub>0.05,49</sub>=1.677<br>GA = 3.2 ± 1.677·(0.9/√50) = 3.2 ± 1.677·0.1273 = 3.2 ± 0.213<br><span class="result">GA: (2.987 , 3.413) gün</span><br>%90 güvenle, (2.987 , 3.413) gün aralığı yığın ortalama teslimat süresini kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">%95 → t<sub>0.025,49</sub>=2.010<br>GA: 3.2 ± 2.010·0.1273 = 3.2 ± 0.256 → <span class="result">GA: (2.944 , 3.456) gün</span><br>%95 aralığı (0.512 genişlik) > %90 aralığı (0.426 genişlik); daha yüksek güven daha geniş aralık gerektirir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-12 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–12</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Oran (π) için Güven Aralığı — %90 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">π için GA</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir müşteri hizmetleri merkezi, müşteri şikâyetlerinin çözümlenme oranını incelemektedir. Rastgele seçilen <strong>n = 300</strong> şikâyetten <strong>252 tanesi</strong> ilk temas anında çözüme kavuşturulmuştur.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%90 güven düzeyinde yığın çözüm oranı π için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığının genişliğinin en fazla <strong>%3</strong> olması isteniyorsa %90 güven düzeyinde en az kaç şikâyet incelenmelidir? (p = 0.84 kullanınız)</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">p = 252/300 = 0.84, q = 0.16, z<sub>0.05</sub> = 1.645</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">E = 1.645·√(0.84·0.16/300) = 1.645·√0.000448 = 1.645·0.02117 = 0.0348<br><span class="result">π için GA: (0.805 , 0.875) → yaklaşık %80.5 ile %87.5</span><br>%90 güvenle, (0.805 , 0.875) aralığı yığın çözüm oranı π'yi kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 0.03 → E ≤ 0.015<br>n ≥ z²·p·q/E² = 2.706·0.1344/0.000225 = 0.3637/0.000225 = 1616.4 → <span class="result">n ≥ 1617</span><br>n=1617 ile GA: 0.84 ± 1.645·√(0.84·0.16/1617) = 0.84 ± 1.645·0.00912 = 0.84 ± 0.015<br><span class="result">GA: (0.825 , 0.855) → genişlik = 0.030 ≤ 0.03 ✓</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-13 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–13</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Oran (π) için Güven Aralığı — %99 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">π için GA</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir ilaç firması, yeni ürettiği ağrı kesici tabletten yararlanan hasta oranını incelemektedir. Klinik çalışmaya katılan <strong>n = 400</strong> hastadan <strong>340 tanesi</strong> ilacın etkili olduğunu bildirmiştir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%99 güven düzeyinde yığın etkinlik oranı π için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığının genişliğinin en fazla <strong>%5</strong> olması isteniyorsa %99 güven düzeyinde en az kaç hasta gereklidir? (p = 0.85 kullanınız)</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">p = 340/400 = 0.85, q = 0.15, z<sub>0.005</sub> = 2.576</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">E = 2.576·√(0.85·0.15/400) = 2.576·√0.000319 = 2.576·0.01786 = 0.04601<br><span class="result">π için GA: (0.804 , 0.896) → yaklaşık %80.4 ile %89.6</span><br>%99 güvenle, (0.804 , 0.896) aralığı yığın etkinlik oranı π'yi kapsar.</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">Genişlik ≤ 0.05 → E ≤ 0.025<br>n ≥ z²·p·q/E² = 6.6298·0.1275/0.000625 = 0.8453/0.000625 = 1352.4 → <span class="result">n ≥ 1353</span><br>n=1353 ile GA: 0.85 ± 2.576·√(0.85·0.15/1353) = 0.85 ± 2.576·0.009699 = 0.85 ± 0.025<br><span class="result">GA: (0.825 , 0.875) → genişlik = 0.050 ≤ 0.05 ✓</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-14 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–14</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA — σ Bilinir, Eşit Büyüklükte Örneklem</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · z</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı tarım ilacının etkisiyle elde edilen ürün verimleri (kg/dönüm) karşılaştırılmaktadır. Her iki gruptan <strong>n₁ = n₂ = 30</strong> tarla incelenmiş; <strong>x̄₁ = 380 kg</strong> ve <strong>x̄₂ = 365 kg</strong> elde edilmiştir. Yığın standart sapmaları <strong>σ₁ = 25 kg</strong> ve <strong>σ₂ = 20 kg</strong> bilinmektedir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%90 güven düzeyinde iki ilacın ortalama verim farkı μ₁ − μ₂ için güven aralığını oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığını yorumlayınız; birinci ilaç ikincisinden daha mı verimlidir?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n₁=n₂=30, x̄₁=380, x̄₂=365, σ₁=25, σ₂=20 → z<sub>0.05</sub>=1.645</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">SE</span><div class="step-text">SE = √(625/30 + 400/30) = √(20.833 + 13.333) = √34.167 = <span class="result">5.846</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">(x̄₁−x̄₂) ± z·SE = (380−365) ± 1.645·5.846 = 15 ± 9.617<br><span class="result">GA: (5.383 , 24.617) kg</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">%90 güvenle, (5.383 , 24.617) kg aralığı iki ilacın ortalama verim farkı μ₁−μ₂'yi kapsar. Aralık tamamen sıfırın sağında olduğundan birinci ilaç ikincisine kıyasla anlamlı biçimde daha yüksek verim sağlamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-15 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–15</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA — σ Bilinir, %99 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · z</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki şehirdeki konutların ortalama kira bedelleri (bin TL/ay) karşılaştırılmaktadır. A şehrinden <strong>n₁ = 50</strong> konutun ortalaması <strong>x̄₁ = 18.4 bin TL</strong>, B şehrinden <strong>n₂ = 45</strong> konutun ortalaması <strong>x̄₂ = 15.9 bin TL</strong> olarak elde edilmiştir. Yığın standart sapmaları <strong>σ₁ = 3.5 bin TL</strong> ve <strong>σ₂ = 2.8 bin TL</strong> bilinmektedir.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">%99 güven düzeyinde iki şehrin ortalama kira farkı μ₁ − μ₂ için güven aralığını oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">Güven aralığını yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">Veri</span><div class="step-text">n₁=50, x̄₁=18.4, σ₁=3.5 &nbsp;|&nbsp; n₂=45, x̄₂=15.9, σ₂=2.8 → z<sub>0.005</sub>=2.576</div></div>
+          <div class="sol-step"><span class="step-n sn-amber">SE</span><div class="step-text">SE = √(12.25/50 + 7.84/45) = √(0.245 + 0.1742) = √0.4192 = <span class="result">0.6475</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">(18.4−15.9) ± 2.576·0.6475 = 2.5 ± 1.668<br><span class="result">GA: (0.832 , 4.168) bin TL</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">%99 güvenle, (0.832 , 4.168) bin TL aralığı iki şehrin ortalama kira farkı μ₁−μ₂'yi kapsar. Aralık tamamen sıfırın sağında olduğundan A şehrinin kirası B şehrinden anlamlı biçimde yüksektir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-16 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–16</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA — Pooled t, %90 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı antrenman programının sporculara etkisi incelenmektedir. Program A'dan <strong>n₁ = 10</strong> sporcunun ortalama VO₂max değeri <strong>x̄₁ = 52.4 ml/kg/dk</strong> ve <strong>s₁ = 4.2</strong>, Program B'den <strong>n₂ = 12</strong> sporcunun <strong>x̄₂ = 49.1 ml/kg/dk</strong> ve <strong>s₂ = 3.8</strong> olarak ölçülmüştür. Yığın varyanslarının eşit olduğu varsayılmaktadır.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">Birleştirilmiş standart sapmayı (s<sub>p</sub>) hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">%90 güven düzeyinde μ₁ − μ₂ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">s<sub>p</sub>² = [(10−1)·17.64 + (12−1)·14.44]/(10+12−2)<br>= [158.76 + 158.84]/20 = 317.6/20 = 15.88<br><span class="result">s<sub>p</sub> = 3.985</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">df=20, t<sub>0.05,20</sub>=1.725<br>E = 1.725·3.985·√(1/10+1/12) = 1.725·3.985·0.4282 = 2.946<br>x̄₁−x̄₂ = 3.3<br><span class="result">GA: (0.354 , 6.246) ml/kg/dk</span><br>%90 güvenle, (0.354 , 6.246) aralığı iki program arasındaki ortalama VO₂max farkını kapsar. Aralık tamamen sıfırın sağında olduğundan Program A anlamlı biçimde daha yüksek VO₂max sağlamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-17 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–17</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA — Pooled t, Fark Anlamsız</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı yazılım eğitiminin çalışanların hata oranlarına etkisi incelenmektedir. Eğitim A'ya katılan <strong>n₁ = 8</strong> çalışanın haftalık ortalama hata sayısı <strong>x̄₁ = 14.5</strong> ve <strong>s₁ = 3.2</strong>, Eğitim B'ye katılan <strong>n₂ = 9</strong> çalışanın <strong>x̄₂ = 13.1</strong> ve <strong>s₂ = 2.8</strong> olarak ölçülmüştür. Yığın varyanslarının eşit olduğu varsayılmaktadır.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">Birleştirilmiş standart sapmayı (s<sub>p</sub>) hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">%95 güven düzeyinde μ₁ − μ₂ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">s<sub>p</sub>² = [(8−1)·10.24 + (9−1)·7.84]/(8+9−2)<br>= [71.68 + 62.72]/15 = 134.4/15 = 8.96<br><span class="result">s<sub>p</sub> = 2.993</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">df=15, t<sub>0.025,15</sub>=2.131<br>E = 2.131·2.993·√(1/8+1/9) = 2.131·2.993·0.4726 = 3.015<br>x̄₁−x̄₂ = 1.4<br><span class="result">GA: (−1.615 , 4.415) hata</span><br>%95 güvenle, (−1.615 , 4.415) aralığı iki eğitimin ortalama hata farkı μ₁−μ₂'yi kapsar. Aralık sıfırı içerdiğinden iki eğitim arasında anlamlı bir fark gösterilemez.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GA-18 -->
+    <div class="q-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-amber">GA–18</span>
+        <div class="q-title-wrap">
+          <div class="q-title">İki Ortalama Farkı için GA — Pooled t, %99 Güven Düzeyi</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-a">μ₁−μ₂ için GA · t</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">▾</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı gübre türünün buğday verimi (kg/dönüm) üzerindeki etkisi karşılaştırılmaktadır. Gübre A uygulanan <strong>n₁ = 15</strong> tarladan <strong>x̄₁ = 620 kg</strong> ve <strong>s₁ = 42 kg</strong>, Gübre B uygulanan <strong>n₂ = 15</strong> tarladan <strong>x̄₂ = 594 kg</strong> ve <strong>s₂ = 38 kg</strong> elde edilmiştir. Yığın varyanslarının eşit olduğu varsayılmaktadır.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-amber">a)</span><span class="part-text">Birleştirilmiş standart sapmayı (s<sub>p</sub>) hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-amber">b)</span><span class="part-text">%99 güven düzeyinde μ₁ − μ₂ için güven aralığını oluşturunuz ve yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">▶ Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-amber">a</span><div class="step-text">s<sub>p</sub>² = [(15−1)·1764 + (15−1)·1444]/(15+15−2)<br>= [24696 + 20216]/28 = 44912/28 = 1604<br><span class="result">s<sub>p</sub> = 40.05</span></div></div>
+          <div class="sol-step"><span class="step-n sn-amber">b</span><div class="step-text">df=28, t<sub>0.005,28</sub>=2.763<br>E = 2.763·40.05·√(1/15+1/15) = 2.763·40.05·0.3651 = 40.43<br>x̄₁−x̄₂ = 26<br><span class="result">GA: (−14.43 , 66.43) kg</span><br>%99 güvenle, (−14.43 , 66.43) kg aralığı iki gübre türünün ortalama verim farkı μ₁−μ₂'yi kapsar. Aralık sıfırı içerdiğinden %99 güven düzeyinde iki gübre arasında anlamlı bir fark gösterilemez.</div></div>
         </div>
       </div>
     </div>

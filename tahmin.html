@@ -440,7 +440,7 @@
           <div class="sol-step"><span class="step-n sn-violet">a</span><div class="step-text">Her iki yöntem de &lambda;&#770; = X&#772; verir.<br>&lambda;&#770; = 48/16 = <span class="result">3.0</span></div></div>
           <div class="sol-step"><span class="step-n sn-violet">b — Yansızlık</span><div class="step-text">E(X&#772;) = &lambda; ✓</div></div>
           <div class="sol-step"><span class="step-n sn-violet">b — Tutarlılık</span><div class="step-text">Var(X&#772;) = &lambda;/n &#8594; 0 &nbsp;&amp;&amp;&nbsp; Bias = 0 &#8594; <span class="result">tutarlı ✓</span></div></div>
-          <div class="sol-step"><span class="step-n sn-violet">b — Etkinlik</span><div class="step-text">Fisher bilgi miktarı için iki eşdeğer form kullanılabilir:<br>Form 1: I(&lambda;) = E&#8304;[(&part;ln f/&part;&lambda;)²] = n/&lambda;<br>Form 2: I(&lambda;) = &minus;E[&part;²ln f/&part;&lambda;²] = n/&lambda;<br>Cramér-Rao alt sınırı: Var(T) &ge; 1/I(&lambda;) = &lambda;/n<br>Var(X&#772;) = &lambda;/n = alt sınır &nbsp;&#8594;&nbsp; <span class="result">X&#772; etkindir (UMVUE) ✓</span></div></div>
+          <div class="sol-step"><span class="step-n sn-violet">b — Etkinlik</span><div class="step-text">ln f(x;&lambda;) = x ln&lambda; &minus; &lambda; &minus; ln(x!)<br><span class="dim">Form 1:</span> &part;ln f/&part;&lambda; = x/&lambda; &minus; 1 &nbsp;&#8594;&nbsp; E[(&part;ln f/&part;&lambda;)²] = Var(X/&lambda;) = Var(X)/&lambda;² = 1/&lambda;<br>I(&lambda;) = n &middot; E[(&part;ln f/&part;&lambda;)²] = <span class="result">n/&lambda;</span><br><span class="dim">Form 2:</span> &part;²ln f/&part;&lambda;² = &minus;x/&lambda;² &nbsp;&#8594;&nbsp; &minus;E[&part;²ln f/&part;&lambda;²] = E(X)/&lambda;² = &lambda;/&lambda;² = 1/&lambda;<br>I(&lambda;) = &minus;nE[&part;²ln f/&part;&lambda;²] = <span class="result">n/&lambda;</span> ✓<br>Cramér-Rao alt sınırı: 1/I(&lambda;) = &lambda;/n<br>Var(X&#772;) = &lambda;/n = alt sınır &nbsp;&#8594;&nbsp; <span class="result">X&#772; etkindir ✓</span></div></div>
         </div>
       </div>
     </div>
@@ -477,8 +477,7 @@
           <span class="hi">Yansızlık:</span> E(T) = &theta;<br>
           <span class="hi">Bias:</span> b(T) = E(T) &minus; &theta;<br>
           <span class="hi2">Etkinlik:</span> Var(T&#8321;) &lt; Var(T&#8322;)<br>
-          <span class="hi2">Tutarlılık:</span> T&#8345; →<sup>p</sup> &theta;<br>
-          <span class="dim">MSE = Var + Bias²</span>
+          <span class="hi2">Tutarlılık:</span> T&#8345; →<sup>p</sup> &theta;
         </div>
       </div>
 
@@ -489,8 +488,7 @@
           <span class="hi">I(&theta;) = E&#8304;[(&part;ln f<sub>&theta;</sub>(x)/&part;&theta;)²]</span><br>
           <span class="hi">I(&theta;) = &minus;nE[&part;²ln f<sub>&theta;</sub>(x)/&part;&theta;²]</span><br>
           <span class="dim">─────────────────</span><br>
-          <span class="hi2">Var(T&#770;) &ge; 1/I(&theta;)</span><br>
-          <span class="dim">T&#770; yansız ise; alt sınıra ulaşan T&#770; etkindir (UMVUE)</span>
+          <span class="hi2">Var(T&#770;) &ge; 1/I(&theta;)</span>
         </div>
       </div>
 

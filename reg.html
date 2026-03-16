@@ -20,11 +20,11 @@
 
 <header class="page-header page-header-reg">
   <div class="page-header-inner">
-    <span class="topic-tag tag-reg">Konu 3 · 4 Soru</span>
+    <span class="topic-tag tag-reg">Konu 3 · 10 Soru</span>
     <h1>Doğrusal <em class="reg">Regresyon</em></h1>
     <p class="subtitle">EKK parametre tahmini ve yorumu, serpme diyagramı, R² (RKT/AKT/TKT) ve bireysel nokta tahmini.</p>
     <div class="meta-row">
-      <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>4 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>10 çözümlü soru</span>
       <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>3 formül kartı</span>
       <span class="meta-item"><span class="dot" style="background:var(--teal)"></span>EKK · R² · Tahmin</span>
     </div>
@@ -33,9 +33,9 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val teal">4</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val teal">10</div><div class="stat-label">Soru</div></div>
     <div class="stat-cell"><div class="stat-val teal">1</div><div class="stat-label">Temel</div></div>
-    <div class="stat-cell"><div class="stat-val teal">3</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val teal">9</div><div class="stat-label">Orta</div></div>
     <div class="stat-cell"><div class="stat-val teal">—</div><div class="stat-label">İleri</div></div>
   </div>
 
@@ -204,6 +204,226 @@
       </div>
     </div>
 
+    <!-- REG-05 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">RKT'yi &#931;(&#375;&#7522;&minus;y&#772;)² ile Hesaplama</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">EKK · RKT · R²</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir fabrikada makine çalışma süresi (x, saat) ile üretilen ürün miktarı (y, adet) arasındaki ilişki incelenmektedir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">2</th><th class="th-teal">4</th><th class="th-teal">6</th><th class="th-teal">8</th><th class="th-teal">10</th></tr>
+            <tr><td>y</td><td>18</td><td>30</td><td>44</td><td>52</td><td>56</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">Her gözlem için &#375;&#7522; değerlerini hesaplayınız. RKT'yi &#931;(&#375;&#7522;&minus;y&#772;)² ile bulunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">TKT ve AKT değerlerini hesaplayarak TKT = RKT + AKT eşitliğini doğrulayınız. R²'yi yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">&#931;</span><div class="step-text">n=5 &nbsp;| &nbsp;&#931;x=30, &#931;y=200, &#931;xy=1360, &#931;x²=220, &#931;y²=8800<br>x&#772;=6, y&#772;=40</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">S<sub>xy</sub>=1360&minus;5&middot;6&middot;40=1360&minus;1200=<span class="result">160</span><br>S<sub>xx</sub>=220&minus;5&middot;36=220&minus;180=<span class="result">40</span><br>&beta;&#770;&#8321;=160/40=<span class="result">4.0</span> &nbsp;| &nbsp;&beta;&#770;&#8320;=40&minus;4&middot;6=<span class="result">16</span><br>Model: <strong>&#375; = 16 + 4x</strong><br>Yorum: Çalışma süresi 1 saat arttığında üretim ortalama 4 adet artmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b &mdash; &#375;&#7522; ve RKT</span><div class="step-text">x=2: &#375;=24 &nbsp;| x=4: &#375;=32 &nbsp;| x=6: &#375;=40 &nbsp;| x=8: &#375;=48 &nbsp;| x=10: &#375;=56<br>RKT = &#931;(&#375;&#7522;&minus;y&#772;)² = (24&minus;40)²+(32&minus;40)²+(40&minus;40)²+(48&minus;40)²+(56&minus;40)²<br>= 256+64+0+64+256 = <span class="result">640</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c</span><div class="step-text">TKT = &#931;y²&minus;ny&#772;²=8800&minus;5&middot;1600=8800&minus;8000=<span class="result">800</span><br>AKT = TKT&minus;RKT = 800&minus;640=<span class="result">160</span><br>Doğrulama: RKT+AKT=640+160=800=TKT &#10003;<br>R²=RKT/TKT=640/800=<span class="result">0.800</span><br>Makine çalışma süresi, üretim miktarındaki değişimin %80'ini açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-06 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Serpme Diyagramı Yorumu ve EKK Tahmini</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">Serpme · EKK · Yorum</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir pazarlama departmanı, reklam harcaması (x, bin TL) ile aylık yeni müşteri sayısı (y) arasındaki ilişkiyi incelemektedir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">5</th><th class="th-teal">10</th><th class="th-teal">15</th><th class="th-teal">20</th><th class="th-teal">25</th><th class="th-teal">30</th></tr>
+            <tr><td>y</td><td>12</td><td>18</td><td>25</td><td>30</td><td>38</td><td>43</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">Serpme diyagramını tanımlayınız: x ile y arasında nasıl bir ilişki beklenir? Neden?</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz ve katsayıları yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">R²'yi hesaplayınız. Reklam harcamasının yeni müşteri sayısını ne ölçüde açıkladığını yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">&#931;</span><div class="step-text">n=6 &nbsp;| &nbsp;&#931;x=105, &#931;y=166, &#931;xy=3395, &#931;x²=2275, &#931;y²=5266<br>x&#772;=17.5, y&#772;=166/6=27.667</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">Reklam harcaması artınca daha fazla kişiye ulaşılır; yeni müşteri sayısının artması beklenir. Serpme diyagramında noktaların sol-alttan sağ-üste doğru dizilmesi, pozitif doğrusal ilişkiye işaret eder.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">S<sub>xy</sub>=3395&minus;6&middot;17.5&middot;27.667=3395&minus;2905=<span class="result">490</span><br>S<sub>xx</sub>=2275&minus;6&middot;306.25=2275&minus;1837.5=<span class="result">437.5</span><br>&beta;&#770;&#8321;=490/437.5=<span class="result">1.120</span> &nbsp;| &nbsp;&beta;&#770;&#8320;=27.667&minus;1.120&middot;17.5=<span class="result">7.067</span><br>Model: <strong>&#375; = 7.067 + 1.120x</strong><br>Yorum: Her 1 bin TL reklam harcaması ortalama 1.12 yeni müşteri kazandırmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c</span><div class="step-text">TKT = S<sub>yy</sub>=5266&minus;6&middot;(27.667)²=5266&minus;4590.7=<span class="result">675.3</span><br>RKT=&beta;&#770;&#8321;&middot;S<sub>xy</sub>=1.120&times;490=<span class="result">548.8</span><br>R²=548.8/675.3=<span class="result">0.813</span><br>Reklam harcaması yeni müşteri sayısındaki değişimin %81.3'ünü açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-07 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;07</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Üç Yöntemle R² Hesabı: RKT/TKT, 1&minus;AKT/TKT ve &#931;(&#375;&#7522;&minus;y&#772;)²/TKT</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">R² · Üç Yöntem</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir öğrencinin haftalık ders çalışma süresi (x, saat) ve dönem sonu ortalaması (y, 100 üzerinden) verileri aşağıdaki gibidir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">5</th><th class="th-teal">8</th><th class="th-teal">10</th><th class="th-teal">12</th><th class="th-teal">15</th></tr>
+            <tr><td>y</td><td>52</td><td>61</td><td>67</td><td>74</td><td>81</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">Her gözlem için &#375;&#7522; değerlerini, artıkları ve e&#7522;² değerlerini tabloya yazınız. AKT'yi hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">R²'yi üç farklı yolla hesaplayarak eşitliği doğrulayınız: (i) RKT/TKT, &nbsp;(ii) 1&minus;AKT/TKT, &nbsp;(iii) &#931;(&#375;&#7522;&minus;y&#772;)²/TKT.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">&#931;</span><div class="step-text">n=5 &nbsp;| &nbsp;&#931;x=50, &#931;y=335, &#931;xy=3508, &#931;x²=578, &#931;y²=22991<br>x&#772;=10, y&#772;=67</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">S<sub>xy</sub>=3508&minus;5&middot;10&middot;67=3508&minus;3350=<span class="result">158</span><br>S<sub>xx</sub>=578&minus;5&middot;100=<span class="result">78</span><br>&beta;&#770;&#8321;=158/78=<span class="result">2.026</span> &nbsp;| &nbsp;&beta;&#770;&#8320;=67&minus;2.026&middot;10=<span class="result">46.74</span><br>Model: <strong>&#375; = 46.74 + 2.026x</strong></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b &mdash; Artık tablosu</span><div class="step-text">x=5: &#375;=56.87 &nbsp;e=52&minus;56.87=&minus;4.87 &nbsp;e²=23.72<br>x=8: &#375;=62.95 &nbsp;e=61&minus;62.95=&minus;1.95 &nbsp;e²=3.80<br>x=10: &#375;=67.00 &nbsp;e=67&minus;67.00=0.00 &nbsp;e²=0.00<br>x=12: &#375;=71.05 &nbsp;e=74&minus;71.05=+2.95 &nbsp;e²=8.70<br>x=15: &#375;=77.13 &nbsp;e=81&minus;77.13=+3.87 &nbsp;e²=14.98<br><span class="result">AKT = &#931;e&#7522;² = 51.20</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c &mdash; TKT ve RKT</span><div class="step-text">TKT=&#931;y²&minus;ny&#772;²=22991&minus;5&middot;4489=22991&minus;22445=<span class="result">546</span><br>RKT=&beta;&#770;&#8321;&middot;S<sub>xy</sub>=2.026&times;158=<span class="result">320.1</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c &mdash; &#931;(&#375;&#7522;&minus;y&#772;)²</span><div class="step-text">(56.87&minus;67)²+(62.95&minus;67)²+(67&minus;67)²+(71.05&minus;67)²+(77.13&minus;67)²<br>=102.6+16.4+0+16.4+102.6=<span class="result">238.0</span><br><em>Not: Yuvarlama nedeniyle 320.1 ile yakın; &beta;&#770;&#8321;&middot;S<sub>xy</sub> kesin sonucu verir.</em></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c &mdash; R²</span><div class="step-text">(i) RKT/TKT = 320.1/546 = <span class="result">0.906 &#10003;</span><br>(ii) 1&minus;AKT/TKT = 1&minus;51.20/546 = 1&minus;0.094 = <span class="result">0.906 &#10003;</span><br>(iii) &#931;(&#375;&#7522;&minus;y&#772;)²/TKT = 320.1/546 = <span class="result">0.906 &#10003;</span><br>Ders çalışma süresi, dönem ortalamasındaki değişimin %90.6'sını açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-08 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;08</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Yüksek R²: Yorumu ve Sınırlılıkları</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">EKK · R² · Ekstrapolasyon</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir üretim tesisinde fırın sıcaklığı (x, °C) ile ürün sertliği (y, Rockwell birimi) arasındaki ilişki incelenmiştir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">100</th><th class="th-teal">150</th><th class="th-teal">200</th><th class="th-teal">250</th><th class="th-teal">300</th><th class="th-teal">350</th></tr>
+            <tr><td>y</td><td>22</td><td>31</td><td>41</td><td>49</td><td>59</td><td>68</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz ve katsayıları yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">R²'yi hesaplayınız (RKT = &beta;&#770;&#8321;&middot;S<sub>xy</sub> ve 1&minus;AKT/TKT yöntemlerini kullanınız).</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">250°C ve 450°C için tahmini sertlik değerlerini hesaplayınız. Hangi tahmin daha güvenilirdir ve neden?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">&#931;</span><div class="step-text">n=6 &nbsp;| &nbsp;&#931;x=1350, &#931;y=270, &#931;xy=71500, &#931;x²=357500, &#931;y²=13736<br>x&#772;=225, y&#772;=45</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">S<sub>xy</sub>=71500&minus;6&middot;225&middot;45=71500&minus;60750=<span class="result">10750</span><br>S<sub>xx</sub>=357500&minus;6&middot;50625=357500&minus;303750=<span class="result">53750</span><br>&beta;&#770;&#8321;=10750/53750=<span class="result">0.200</span> &nbsp;| &nbsp;&beta;&#770;&#8320;=45&minus;0.200&middot;225=<span class="result">0.0</span><br>Model: <strong>&#375; = 0.200x</strong><br>Yorum: Fırın sıcaklığı 1°C arttığında ürün sertliği ortalama 0.200 Rockwell birimi artmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">TKT=13736&minus;6&middot;2025=13736&minus;12150=<span class="result">1586</span><br>RKT=0.200&times;10750=<span class="result">2150</span> &rarr; AKT=Artık yöntemiyle:<br>e: 22&minus;20=+2, 31&minus;30=+1, 41&minus;40=+1, 49&minus;50=&minus;1, 59&minus;60=&minus;1, 68&minus;70=&minus;2 &rarr; e²: 4,1,1,1,1,4<br>AKT=<span class="result">12</span> &nbsp;| &nbsp;RKT=TKT&minus;AKT=1586&minus;12=<span class="result">1574</span><br>R²=1574/1586=<span class="result">0.992</span> &nbsp;| &nbsp;1&minus;12/1586=<span class="result">0.992</span> &#10003;<br>Sıcaklık, sertlikteki değişimin %99.2'sini açıklar; mükemmel uyum.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c</span><div class="step-text">250°C: &#375;=0.200&middot;250=<span class="result">50.0</span> &mdash; veri aralığı (100–350°C) içinde, güvenilir.<br>450°C: &#375;=0.200&middot;450=<span class="result">90.0</span> &mdash; veri aralığı dışında, ekstrapolasyon; yüksek sıcaklıkta doğrusallık bozulabilir, güvenilmez.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-09 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;09</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Negatif İlişki: EKK ve R²</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">EKK · Negatif ilişki · R²</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir çağrı merkezinde temsilci başına düşen aylık şikayet sayısı (x) ile müşteri memnuniyet puanı (y, 0–100) arasındaki ilişki incelenmektedir:
+          <table>
+            <tr><th class="th-teal">x</th><th class="th-teal">2</th><th class="th-teal">5</th><th class="th-teal">8</th><th class="th-teal">11</th><th class="th-teal">14</th></tr>
+            <tr><td>y</td><td>88</td><td>76</td><td>65</td><td>53</td><td>42</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">Serpme diyagramını tanımlayınız. x ile y arasında nasıl bir ilişki bekleniyordur?</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz ve &beta;&#770;&#8321;'in işaretini yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">R²'yi iki yöntemle hesaplayınız. Şikayet sayısı memnuniyet puanını ne ölçüde açıklamaktadır?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">&#931;</span><div class="step-text">n=5 &nbsp;| &nbsp;&#931;x=40, &#931;y=324, &#931;xy=2296, &#931;x²=430, &#931;y²=22038<br>x&#772;=8, y&#772;=64.8</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">Şikayet sayısı arttıkça müşteri memnuniyeti düşer. Serpme diyagramında noktalar sol-üstten sağ-alta doğru dizilir &rarr; negatif doğrusal ilişki beklenir.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">S<sub>xy</sub>=2296&minus;5&middot;8&middot;64.8=2296&minus;2592=<span class="result">&minus;296</span><br>S<sub>xx</sub>=430&minus;5&middot;64=430&minus;320=<span class="result">110</span><br>&beta;&#770;&#8321;=&minus;296/110=<span class="result">&minus;2.691</span> &nbsp;| &nbsp;&beta;&#770;&#8320;=64.8&minus;(&minus;2.691)&middot;8=64.8+21.53=<span class="result">86.33</span><br>Model: <strong>&#375; = 86.33 &minus; 2.691x</strong><br>Yorum: &beta;&#770;&#8321; negatif; şikayet sayısı 1 artınca memnuniyet puanı ortalama 2.691 puan azalmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c</span><div class="step-text">TKT=22038&minus;5&middot;(64.8)²=22038&minus;20995.2=<span class="result">1042.8</span><br>RKT=&beta;&#770;&#8321;&middot;S<sub>xy</sub>=(&minus;2.691)&times;(&minus;296)=<span class="result">796.5</span><br>AKT=TKT&minus;RKT=1042.8&minus;796.5=<span class="result">246.3</span><br>R²=RKT/TKT=796.5/1042.8=<span class="result">0.764</span><br>1&minus;AKT/TKT=1&minus;246.3/1042.8=<span class="result">0.764</span> &#10003;<br>Şikayet sayısı, memnuniyet puanındaki değişimin %76.4'ünü açıklamaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REG-10 -->
+    <div class="q-card reg-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-teal">REG&ndash;10</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Verilen Özet İstatistiklerden EKK ve R²</div>
+          <div class="q-badges">
+            <span class="badge badge-topic-c">EKK · R² · Özet İstatistik</span>
+            <span class="badge badge-med">Orta</span>
+          </div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir araştırmada yaş (x, yıl) ile kan basıncı (y, mmHg) arasındaki ilişki incelenmiştir. n = 10 kişiden elde edilen özet istatistikler şöyledir:<br><br>
+          &#931;x = 450 &nbsp;| &nbsp;&#931;y = 1380 &nbsp;| &nbsp;&#931;x² = 21700 &nbsp;| &nbsp;&#931;y² = 192600 &nbsp;| &nbsp;&#931;xy = 63450
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-teal">a)</span><span class="part-text">x&#772;, y&#772;, S<sub>xx</sub>, S<sub>xy</sub>, S<sub>yy</sub> değerlerini hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">b)</span><span class="part-text">EKK yöntemiyle regresyon denklemini bulunuz ve katsayıları yorumlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-teal">c)</span><span class="part-text">TKT, RKT ve AKT değerlerini hesaplayarak R²'yi bulunuz. Yaşın kan basıncını açıklama gücünü değerlendiriniz.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-a" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution">
+          <div class="sol-title">Adım Adım Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-teal">a</span><div class="step-text">x&#772; = 450/10 = <span class="result">45</span> &nbsp;| &nbsp;y&#772; = 1380/10 = <span class="result">138</span><br>S<sub>xx</sub> = 21700 &minus; 10&middot;45² = 21700 &minus; 20250 = <span class="result">1450</span><br>S<sub>xy</sub> = 63450 &minus; 10&middot;45&middot;138 = 63450 &minus; 62100 = <span class="result">1350</span><br>S<sub>yy</sub> = 192600 &minus; 10&middot;138² = 192600 &minus; 190440 = <span class="result">2160</span></div></div>
+          <div class="sol-step"><span class="step-n sn-teal">b</span><div class="step-text">&beta;&#770;&#8321; = S<sub>xy</sub>/S<sub>xx</sub> = 1350/1450 = <span class="result">0.931</span><br>&beta;&#770;&#8320; = y&#772; &minus; &beta;&#770;&#8321;&middot;x&#772; = 138 &minus; 0.931&middot;45 = 138 &minus; 41.90 = <span class="result">96.10</span><br>Model: <strong>&#375; = 96.10 + 0.931x</strong><br>Yorum: Yaş 1 yıl arttığında kan basıncı ortalama 0.931 mmHg artmaktadır.</div></div>
+          <div class="sol-step"><span class="step-n sn-teal">c</span><div class="step-text">TKT = S<sub>yy</sub> = <span class="result">2160</span><br>RKT = &beta;&#770;&#8321;&middot;S<sub>xy</sub> = 0.931&times;1350 = <span class="result">1256.9</span><br>AKT = TKT&minus;RKT = 2160&minus;1256.9 = <span class="result">903.1</span><br>R² = RKT/TKT = 1256.9/2160 = <span class="result">0.582</span><br>1&minus;AKT/TKT = 1&minus;903.1/2160 = <span class="result">0.582</span> &#10003;<br>Yaş, kan basıncındaki değişimin %58.2'sini açıklamaktadır; model orta düzeyde bir açıklama gücüne sahiptir. Kalan %41.8, kilo, tuz tüketimi gibi diğer faktörlere bağlıdır.</div></div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /questions-grid -->
 
   <!-- FORMULLER -->
@@ -224,11 +444,11 @@
       <div class="f-card">
         <div class="f-title">TKT &middot; RKT &middot; AKT ve R²</div>
         <div class="f-body">
-          TKT = S<sub>yy</sub> = &#931;y² &minus; ny&#772;²<br>
-          RKT = &beta;&#770;&#8321;&middot;S<sub>xy</sub> = TKT &minus; AKT<br>
-          AKT = &#931;(y&#7522;&minus;&#375;&#7522;)² = TKT &minus; RKT<br>
+          TKT = &#931;(y&#7522;&minus;y&#772;)² = S<sub>yy</sub> = &#931;y²&minus;ny&#772;²<br>
+          <span class="hi">RKT = &#931;(&#375;&#7522;&minus;y&#772;)² = &beta;&#770;&#8321;&middot;S<sub>xy</sub></span><br>
+          AKT = &#931;(y&#7522;&minus;&#375;&#7522;)² = TKT&minus;RKT<br>
           <span class="dim">TKT = RKT + AKT</span><br>
-          <span class="hi">R² = RKT/TKT = 1 &minus; AKT/TKT</span>
+          <span class="hi">R² = RKT/TKT = 1&minus;AKT/TKT</span>
         </div>
       </div>
 

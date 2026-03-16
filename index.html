@@ -37,9 +37,9 @@
 
   <!-- STATS -->
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val amber">17</div><div class="stat-label">Toplam Soru</div></div>
+    <div class="stat-cell"><div class="stat-val amber">46</div><div class="stat-label">Toplam Soru</div></div>
     <div class="stat-cell"><div class="stat-val blue">3</div><div class="stat-label">Konu Başlığı</div></div>
-    <div class="stat-cell"><div class="stat-val teal">17</div><div class="stat-label">Formül Kartı</div></div>
+    <div class="stat-cell"><div class="stat-val teal">15</div><div class="stat-label">Formül Kartı</div></div>
     <div class="stat-cell"><div class="stat-val amber">✓</div><div class="stat-label">Tümü Çözümlü</div></div>
   </div>
 
@@ -51,8 +51,8 @@
       <div class="hc-glow"></div>
       <div class="hc-icon">📐</div>
       <div class="hc-title">Güven Aralığı</div>
-      <div class="hc-desc">Ortalama ve oran için güven aralıkları. Örnek büyüklüğü belirleme. Bağımsız grup karşılaştırmaları.</div>
-      <div class="hc-count">5 SORU · 6 FORMÜL KARTI</div>
+      <div class="hc-desc">Ortalama (z ve t) ve oran (π) için güven aralıkları. Örnek büyüklüğü belirleme. Tek ve iki grup karşılaştırmaları (σ bilinir / pooled t).</div>
+      <div class="hc-count">18 SORU · 6 FORMÜL KARTI</div>
       <span class="hc-arrow">→</span>
     </a>
 
@@ -60,8 +60,8 @@
       <div class="hc-glow"></div>
       <div class="hc-icon">🔬</div>
       <div class="hc-title">Hipotez Testi</div>
-      <div class="hc-desc">z-testi, t-testi, χ²-testi ve oran testleri. Tek ve çift kuyruklu hipotezler. p-değeri ve karar kuralı.</div>
-      <div class="hc-count">6 SORU · 6 FORMÜL KARTI</div>
+      <div class="hc-desc">Tek örneklem z ve t testleri. Oran testi (π). Eşleştirilmiş t. İki bağımsız grup: z ve pooled t. Tek ve çift kuyruklu hipotezler.</div>
+      <div class="hc-count">18 SORU · 6 FORMÜL KARTI</div>
       <span class="hc-arrow">→</span>
     </a>
 
@@ -69,8 +69,8 @@
       <div class="hc-glow"></div>
       <div class="hc-icon">📈</div>
       <div class="hc-title">Doğrusal Regresyon</div>
-      <div class="hc-desc">Parametre tahmini, R², ANOVA tablosu. Güven ve tahmin aralıkları. Artık analizi ve varsayımlar.</div>
-      <div class="hc-count">6 SORU · 5 FORMÜL KARTI</div>
+      <div class="hc-desc">EKK parametre tahmini ve yorumu. Serpme diyagramı. TKT · RKT · AKT ve R² (üç yöntemle). Bireysel nokta tahmini ve artık.</div>
+      <div class="hc-count">10 SORU · 3 FORMÜL KARTI</div>
       <span class="hc-arrow">→</span>
     </a>
 
@@ -96,19 +96,35 @@
       </div>
     </div>
     <div class="f-card">
+      <div class="f-title">Oran Notasyonu</div>
+      <div class="f-body">
+        <span class="hi">π</span> → yığın oranı (bilinmeyen parametre)<br>
+        <span class="hi2">p</span> → örneklem oranı (tahmin)<br>
+        <span class="dim">Test: z = (p−π₀)/√(π₀(1−π₀)/n)</span>
+      </div>
+    </div>
+    <div class="f-card">
       <div class="f-title">Karar Kuralı</div>
       <div class="f-body">
-        <span class="hi">|T| &gt; t_krit</span> → H₀ reddet<br>
+        <span class="hi">|T| > t_krit</span> → H₀ reddet<br>
         <span class="hi2">GA sıfırı içermiyorsa</span> → fark anlamlı<br>
         <span class="dim">Her iki yol da aynı karara ulaşır</span>
       </div>
     </div>
     <div class="f-card">
-      <div class="f-title">R² Yorumu</div>
+      <div class="f-title">R² Üç Yöntem</div>
       <div class="f-body">
-        <span class="hi">R² ≈ 0.90+</span> → Çok güçlü model<br>
-        <span class="hi2">R² ≈ 0.70–0.89</span> → Güçlü model<br>
-        <span class="dim">R² tek başına model kalitesini garantilemez</span>
+        RKT/TKT &nbsp;= &nbsp;1 − AKT/TKT<br>
+        <span class="hi">= Σ(ŷᵢ−ȳ)² / TKT</span><br>
+        <span class="dim">TKT = RKT + AKT her zaman</span>
+      </div>
+    </div>
+    <div class="f-card">
+      <div class="f-title">Yorum Kalıpları</div>
+      <div class="f-body">
+        <span class="hi">GA:</span> "%X güvenle, (a,b) aralığı μ'yi kapsar"<br>
+        <span class="hi2">HT:</span> "%α düzeyinde … istatistiksel olarak anlamlı"<br>
+        <span class="dim">HT'de yön de belirtilmeli: hangi grup büyük?</span>
       </div>
     </div>
   </div>

@@ -46,9 +46,12 @@ body::before {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: .55rem 1.5rem;
-  display: flex; align-items: center; gap: 1.5rem;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 1rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
 }
+.topnav::-webkit-scrollbar { display: none; }
 .topnav .brand {
   font-family: var(--mono);
   font-size: .78rem;
@@ -58,16 +61,17 @@ body::before {
   white-space: nowrap;
 }
 .topnav .brand span { color: var(--muted); }
-.nav-links { display: flex; gap: .15rem; flex-wrap: wrap; }
+.nav-links { display: flex; gap: .1rem; flex-wrap: nowrap; overflow-x: auto; }
 .nav-links a {
-  font-size: .75rem;
+  font-size: .72rem;
   font-weight: 500;
   color: var(--muted);
   text-decoration: none;
-  padding: .3rem .6rem;
+  padding: .28rem .5rem;
   border-radius: 4px;
   transition: color .18s, background .18s;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.05); }
 .nav-links a.active {

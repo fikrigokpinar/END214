@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Merkezsel Dağılım Ölçüleri</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Kutu grafiği SVG kutusu */
+.boxplot-wrap { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:1rem; margin:.8rem 0; }
+.boxplot-wrap svg { width:100%; max-width:520px; display:block; margin:0 auto; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="temel.html">Temel Tanımlar</a>
+    <a href="me.html">Merkezi Eğilim</a>
+    <a href="dag.html" class="active">Dağılım Ölçüleri</a>
+    <a href="grafik.html">Grafikler</a>
+    <a href="tahmin.html">Nokta Tahmini</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+    <a href="tablolar.html">Tablolar</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-dag">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-dag">Konu 3 · 11 Soru</span>
+    <h1>Merkezsel <em class="dag">Dağılım</em> Ölçüleri</h1>
+    <p class="subtitle">Açıklık ve çeyrek ayrılış. Ortalama ayrılış. Varyans ve standart sapma (basit dizi ve çokluk dağılımı). Değişim katsayısı. Kutu grafiği.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot" style="background:var(--emerald)"></span>11 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--emerald)"></span>4 formül kartı</span>
+      <span class="meta-item"><span class="dot" style="background:var(--emerald)"></span>Açıklık · Q · OA · σ² · DK · Kutu</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val emerald">11</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val emerald">3</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val emerald">5</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val emerald">3</div><div class="stat-label">İleri</div></div>
+  </div>
+
+  <div class="section-heading sh-emerald">Sorular</div>
+  <div class="questions-grid">
+
+    <!-- DAG-01 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;01</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Açıklık ve Çeyrek Ayrılış — Basit Dizi</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Açıklık · Çeyrek Ayrılış</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir elektronik üretim hattında 11 günün günlük hata sayıları şu şekilde kaydedilmiştir:<br><br>
+          <strong>34, 60, 40, 30, 35, 20, 70, 68, 90, 120, 110</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Açıklığı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Q₁, Q₂ (medyan) ve Q₃ değerlerini bulunuz. Çeyrek ayrılışı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">c)</span><span class="part-text">Açıklığın yetersiz bir dağılım ölçüsü olduğunu açıklayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">Sıralı: 20, 30, 34, 35, 40, 60, 68, 70, 90, 110, 120<br>Açıklık = 120 &minus; 20 = <span class="result">100</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">N=11 (tek) → Medyan = a&#8326; = <span class="result">60</span><br>Medyandan küçükler: 20, 30, 34, 35, 40 → Q₁ = a&#8323; = <span class="result">34</span><br>Medyandan büyükler: 68, 70, 90, 110, 120 → Q₃ = a&#8323; = <span class="result">90</span><br>Çeyrek ayrılış Q = (Q₃&minus;Q₁)/2 = (90&minus;34)/2 = <span class="result">28</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">c</span><div class="step-text">Açıklık yalnızca iki uç değeri (min, maks) kullanır; aradaki tüm değerleri görmezden gelir. Bir aykırı değer açıklığı dramatik biçimde değiştirebilir. Bu nedenle veri setini temsil eden bir dağılım ölçüsü değildir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-02 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;02</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Ortalama Ayrılış</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Ortalama Ayrılış</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir depo yöneticisi, 8 günlük sipariş sayılarını kaydetmiştir:<br><br>
+          <strong>5, 7, 25, 12, 41, 18, 36, 16</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Aritmetik ortalamayı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Ortalama ayrılışı (OA) hesaplayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">&mu; = (5+7+25+12+41+18+36+16)/8 = 160/8 = <span class="result">20</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">|x&#7522;&minus;&mu;|: |5&minus;20|=15, |7&minus;20|=13, |25&minus;20|=5, |12&minus;20|=8, |41&minus;20|=21, |18&minus;20|=2, |36&minus;20|=16, |16&minus;20|=4<br>&sum;|x&#7522;&minus;&mu;| = 15+13+5+8+21+2+16+4 = 84<br>OA = 84/8 = <span class="result">10.5</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-03 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;03</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Varyans ve Standart Sapma — İki Formülle</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Varyans · Standart Sapma</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir CNC tezgâhında üretilen 8 parçanın uzunluk ölçümleri (mm):<br><br>
+          <strong>80, 56, 68, 72, 66, 78, 62, 86</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Tanımlama formülü ile varyansı hesaplayınız: &sigma;² = (1/N)&sum;(x&#7522;&minus;&mu;)²</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Hesaplama formülü ile varyansı doğrulayınız: &sigma;² = (1/N)&sum;x&#7522;² &minus; &mu;²</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">c)</span><span class="part-text">Standart sapmayı bulunuz ve yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a — &mu;</span><div class="step-text">&mu; = (80+56+68+72+66+78+62+86)/8 = 568/8 = <span class="result">71</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">a — Tanımlama</span><div class="step-text">(x&#7522;&minus;&mu;)²: (80&minus;71)²=81, (56&minus;71)²=225, (68&minus;71)²=9, (72&minus;71)²=1, (66&minus;71)²=25, (78&minus;71)²=49, (62&minus;71)²=81, (86&minus;71)²=225<br>&sum;=696 &nbsp;| &nbsp;&sigma;²=696/8=<span class="result">87</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b — Hesaplama</span><div class="step-text">&sum;x&#7522;²=6400+3136+4624+5184+4356+6084+3844+7396=41024<br>&sigma;²=41024/8&minus;71²=5128&minus;5041=<span class="result">87</span> ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">c</span><div class="step-text">&sigma; = √87 = <span class="result">9.33 mm</span><br>Parça uzunlukları ortalamadan ortalama 9.33 mm saptıyor; tolerans aralığı bu değerle karşılaştırılarak üretim kalitesi değerlendirilebilir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-04 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;04</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Çokluk Dağılımında Varyans — İki Formülle</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Varyans · Frekans Tablosu</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir lojistik şirketinin araçlarının günlük mesafelerine (km) ilişkin dağılım:
+          <table>
+            <tr><th class="th-emerald">Mesafe (km)</th><th class="th-emerald">f</th></tr>
+            <tr><td>150 ≤ x &lt; 160</td><td>10</td></tr>
+            <tr><td>160 ≤ x &lt; 170</td><td>23</td></tr>
+            <tr><td>170 ≤ x &lt; 180</td><td>52</td></tr>
+            <tr><td>180 ≤ x &lt; 190</td><td>27</td></tr>
+            <tr><td>190 ≤ x &lt; 200</td><td>8</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>120</strong></td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Aritmetik ortalamayı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Tanımlama formülü ile varyansı hesaplayınız: &sigma;² = (1/N)&sum;f&#11338;(x&#772;&#11338;&minus;&mu;)²</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">c)</span><span class="part-text">Hesaplama formülü ile doğrulayınız: &sigma;² = (1/N)&sum;f&#11338;x&#772;&#11338;² &minus; &mu;²</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">x&#772;&#11338;: 155, 165, 175, 185, 195<br>&sum;x&#772;&#11338;f = 155&middot;10+165&middot;23+175&middot;52+185&middot;27+195&middot;8 = 1550+3795+9100+4995+1560 = 21000<br>&mu; = 21000/120 = <span class="result">175 km</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b — Tanımlama</span><div class="step-text">(x&#772;&#11338;&minus;&mu;)²: (155&minus;175)²=400, (165&minus;175)²=100, (175&minus;175)²=0, (185&minus;175)²=100, (195&minus;175)²=400<br>f(x&#772;&#11338;&minus;&mu;)²: 4000, 2300, 0, 2700, 3200<br>&sum;=12200 &nbsp;| &nbsp;&sigma;²=12200/120=<span class="result">101.67</span> &nbsp;| &nbsp;&sigma;=√101.67=<span class="result">10.08 km</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">c — Hesaplama</span><div class="step-text">x&#772;&#11338;²: 24025, 27225, 30625, 34225, 38025<br>&sum;f&#11338;x&#772;&#11338;²=240250+626175+1592500+924075+304200=3687200<br>&sigma;²=3687200/120&minus;175²=30726.67&minus;30625=<span class="result">101.67</span> ✓</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-05 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Değişim Katsayısı — Tek Grup</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Değişim Katsayısı</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir atölyede çalışan işçilerin günlük ücretleri (TL):<br><br>
+          <strong>35, 50, 75, 65, 100</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Aritmetik ortalamayı, varyansı ve standart sapmayı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Değişim katsayısını (DK) hesaplayınız ve yorumlayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">&mu; = (35+50+75+65+100)/5 = 325/5 = <span class="result">65 TL</span><br>(x&#7522;&minus;&mu;)²: 900, 225, 100, 0, 1225 → &sum;=2450 + &hellip; (100&minus;65=35 → 35²=1225)<br>Düzeltme: (35&minus;65)²=900, (50&minus;65)²=225, (75&minus;65)²=100, (65&minus;65)²=0, (100&minus;65)²=1225 → &sum;=2450<br>&sigma;²=2450/5=<span class="result">490</span> &nbsp;| &nbsp;&sigma;=√490=<span class="result">22.14 TL</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">DK = &sigma;/&mu; = 22.14/65 = <span class="result">0.34 (% 34)</span><br>Ücretler ortalamadan ortalama %34 oranında sapıyor; bu orta düzey bir değişkenlik ifade eder.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-06 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Değişim Katsayısı — İki Grubu Karşılaştırma</div>
+          <div class="q-badges"><span class="badge badge-topic-e">DK · Homojenlik · Karşılaştırma</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı üretim hattının günlük üretim miktarları (adet):
+          <table>
+            <tr><th class="th-emerald"></th><th class="th-emerald">Hat A</th><th class="th-emerald">Hat B</th></tr>
+            <tr><td>Ortalama (&mu;)</td><td>200</td><td>500</td></tr>
+            <tr><td>Standart sapma (&sigma;)</td><td>30</td><td>60</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Yalnızca standart sapmalara bakarak hangi hattın daha homojen olduğunu söyleyebilir misiniz?</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Değişim katsayısını hesaplayınız ve hangi hattın daha homojen olduğuna karar veriniz.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">Hayır. Hat A'nın &sigma;=30, Hat B'nin &sigma;=60 olmasına karşın ortalamaları farklıdır. Standart sapma mutlak bir ölçüdür; ortalamaları farklı grupları doğrudan karşılaştırmak yanıltıcı olur.</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">DK&#8336; = 30/200 = 0.15 &nbsp;|&nbsp; DK&#8347; = 60/500 = 0.12<br>DK&#8347; &lt; DK&#8336; &rarr; <span class="result">Hat B daha homojendir.</span><br>Ortalama değerlere göre Hat B daha az göreli değişkenlik göstermektedir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-07 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;07</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Çokluk Dağılımında Varyans — Açık Uçlu Sınıf</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Varyans · Açık Uçlu Sınıf</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir lojistik firmasında teslimatların tamamlanma süresine (gün) ilişkin dağılım:
+          <table>
+            <tr><th class="th-emerald">Süre (gün)</th><th class="th-emerald">f</th></tr>
+            <tr><td>5 ≤ x &lt; 15</td><td>30</td></tr>
+            <tr><td>15 ≤ x &lt; 25</td><td>60</td></tr>
+            <tr><td>25 ≤ x &lt; 35</td><td>100</td></tr>
+            <tr><td>35 ≤ x &lt; 45</td><td>80</td></tr>
+            <tr><td>45 ≤ x &lt; 55</td><td>20</td></tr>
+            <tr><td>55 ≤ x</td><td>10</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>300</strong></td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Açık uçlu son sınıfın varyans hesabına etkisini tartışınız. Ne yapılmalıdır?</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Son sınıfı işlem dışı tutarak &mu; ve &sigma;²'yi hesaplayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">Son sınıfın (55≤x) üst sınırı bilinmediğinden orta değeri hesaplanamaz. Bu nedenle hem AO hem varyans hesabı yapılamaz. Çözüm: açık uçlu sınıf işlem dışı tutulur; N 300'den 290'a düşer.</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">x&#772;&#11338;: 10, 20, 30, 40, 50 &nbsp;|&nbsp; N=290<br>&sum;x&#772;&#11338;f = 10&middot;30+20&middot;60+30&middot;100+40&middot;80+50&middot;20 = 300+1200+3000+3200+1000 = 8700<br>&mu; = 8700/290 = <span class="result">30</span><br>(x&#772;&#11338;&minus;&mu;)²: 400,100,0,100,400 &nbsp;|&nbsp; f(x&#772;&#11338;&minus;&mu;)²: 12000,6000,0,8000,8000<br>&sigma;² = 34000/290 = <span class="result">117.24</span> &nbsp;|&nbsp; &sigma; = <span class="result">10.83 gün</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-08 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;08</span>
+        <div class="q-title-wrap">
+          <div class="q-title">DK ile Homojenlik — Çokluk Dağılımı</div>
+          <div class="q-badges"><span class="badge badge-topic-e">DK · Çokluk · İleri</span><span class="badge badge-hard">İleri</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki farklı fabrika bölümünün saatlik üretim miktarlarına ilişkin dağılımlar (her ikisi de eşit aralıklı, açık uçlu sınıf yok):
+          <table>
+            <tr><th class="th-emerald">Bölüm A: &mu;=60.9, &sigma;²=1447.19, &sigma;=38.04</th></tr>
+            <tr><td>Bölüm B: &mu;=59.3, &sigma;²=516.8, &sigma;=22.7</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Her bölümün değişim katsayısını hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Hangi bölüm daha homojendir? DK'ya neden ihtiyaç duyulur?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">DK&#8336; = 38.04/60.9 = <span class="result">0.62</span><br>DK&#8347; = 22.7/59.3 = <span class="result">0.38</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">DK&#8347; &lt; DK&#8336; → <span class="result">Bölüm B daha homojendir.</span><br>Ortalamaları neredeyse eşit olduğundan standart sapmaları doğrudan karşılaştırmak da mümkün olabilirdi; ancak DK ortalamalara bağıl (göreli) bir ölçü olduğundan farklı ölçek birimlerinde ya da farklı ortalamaya sahip gruplarda zorunludur.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-09 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;09</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Kutu Grafiği — Beş Sayı Özeti</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Kutu Grafiği · Q1 Q2 Q3</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir servis hattının 20 araçlık günlük saha verisi (ton-km, küçükten büyüğe):<br><br>
+          0, 70, 125, 125, 140, 150, 170, 170, 180, 195, 205, 210, 210, 215, 220, 230, 250, 260, 290, 290
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Min, Q₁, Q₂ (medyan), Q₃ ve maks değerlerini (beş sayı özetini) hesaplayınız. IQR'yi bulunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Aykırı değer sınırlarını Q₁ &minus; 1.5·IQR ve Q₃ + 1.5·IQR ile bulunuz. Aykırı değer var mı?</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">c)</span><span class="part-text">Kutu grafiğini tanımlayınız. Dağılımın şekli hakkında ne söyleyebilirsiniz?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">N=20 (çift): Medyan = (a&#8321;&#8320;+a&#8321;&#8321;)/2 = (195+205)/2 = <span class="result">Q₂ = 200</span><br>Alt yarı (a&#8321;–a&#8321;&#8320;): Q₁ = (a&#8325;+a&#8326;)/2 = (140+150)/2 = <span class="result">Q₁ = 145</span><br>Üst yarı (a&#8321;&#8321;–a&#8322;&#8320;): Q₃ = (a&#8321;&#8325;+a&#8321;&#8326;)/2 = (220+230)/2 = <span class="result">Q₃ = 225</span><br>Min=0, Maks=290 &nbsp;|&nbsp; IQR = 225&minus;145 = <span class="result">80</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">Alt sınır: Q₁ &minus; 1.5&middot;IQR = 145 &minus; 120 = <span class="result">25</span><br>Üst sınır: Q₃ + 1.5&middot;IQR = 225 + 120 = <span class="result">345</span><br>0 &lt; 25 olduğundan <span class="result">0 bir aykırı değerdir</span>. Diğer tüm değerler [25, 345] aralığında → aykırı değil.</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">c &mdash; Kutu grafiği yapısı</span><div class="step-text">
+            <div class="boxplot-wrap">
+              <svg viewBox="0 0 500 80" xmlns="http://www.w3.org/2000/svg">
+                <!-- scale: 0..300 → x: 30..480, width=450 -->
+                <text x="30" y="72" font-size="9" fill="#7a8099" font-family="monospace">0</text>
+                <text x="195" y="72" font-size="9" fill="#7a8099" font-family="monospace">145</text>
+                <text x="271" y="72" font-size="9" fill="#7a8099" font-family="monospace">200</text>
+                <text x="349" y="72" font-size="9" fill="#7a8099" font-family="monospace">225</text>
+                <text x="455" y="72" font-size="9" fill="#7a8099" font-family="monospace">290</text>
+                <!-- whisker left (25→145) -->
+                <line x1="68" y1="35" x2="198" y2="35" stroke="#34d399" stroke-width="1.5"/>
+                <line x1="68" y1="28" x2="68" y2="42" stroke="#34d399" stroke-width="1.5"/>
+                <!-- box Q1→Q3 -->
+                <rect x="198" y="20" width="154" height="30" fill="rgba(52,211,153,.15)" stroke="#34d399" stroke-width="1.5"/>
+                <!-- median line -->
+                <line x1="273" y1="20" x2="273" y2="50" stroke="#34d399" stroke-width="2.5"/>
+                <!-- whisker right -->
+                <line x1="352" y1="35" x2="462" y2="35" stroke="#34d399" stroke-width="1.5"/>
+                <line x1="462" y1="28" x2="462" y2="42" stroke="#34d399" stroke-width="1.5"/>
+                <!-- outlier -->
+                <circle cx="30" cy="35" r="4" fill="none" stroke="#f97316" stroke-width="1.5"/>
+                <text x="22" y="18" font-size="8" fill="#f97316" font-family="monospace">aykırı</text>
+              </svg>
+            </div>
+            Q₂ (200), kutunun içinde <strong>sola yakın</strong>; sağ bıyık sol bıyıktan uzun → <span class="result">hafif sağa çarpık dağılım</span>. 0 değeri aykırı olarak işaretlendi (boş daire).
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-10 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;10</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Kutu Grafiği — İki Grubu Karşılaştırma</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Kutu Grafiği · Karşılaştırma</span><span class="badge badge-hard">İleri</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          İki montaj hattının günlük üretim hızı (adet/saat) ölçümleri:<br><br>
+          <strong>Yeni hat:</strong> 9, 8.6, 8.7, 9.8, 5.5, 8.9, 8.2, 9.3, 10.2 (sıralı: 5.5, 8.2, 8.6, 8.7, 9, 9.3, 9.8, 10.2 + bir değer)<br>
+          <strong>Eski hat:</strong> 5.8, 5.4, 5.9, 6.1, 5.7, 5.6, 6.3, 6.2, 6.0, 5.5
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Yeni hat için: M=9, Q₁=8.2, Q₃=9.8, IQR=1.6 verilmiştir. Aykırı değer sınırlarını hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">Eski hat için: M=5.85, Q₁=5.6, Q₃=6.1, IQR=0.5 verilmiştir. Her iki hattın kutu grafiğini karşılaştırınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a &mdash; Yeni hat</span><div class="step-text">Alt: Q₁ &minus; 1.5&middot;IQR = 8.2 &minus; 2.4 = <span class="result">5.8</span><br>Üst: Q₃ + 1.5&middot;IQR = 9.8 + 2.4 = <span class="result">12.2</span><br>5.5 &lt; 5.8 → <span class="result">5.5 aykırı değer</span>. Diğer tüm değerler [5.8, 12.2] aralığında.</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b &mdash; Karşılaştırma</span><div class="step-text">Alt: Q₁ &minus; 1.5&middot;0.5 = 5.6&minus;0.75 = 4.85 &nbsp;|&nbsp; Üst: 6.1+0.75 = 6.85 → aykırı değer yok.<br><br>Yeni hat: merkez 9, IQR=1.6 — geniş kutu, yüksek üretim, daha değişken.<br>Eski hat: merkez 5.85, IQR=0.5 — dar kutu, düşük üretim, çok homojen.<br><span class="result">Yeni hat daha yüksek ama daha değişken; eski hat kararlı ama düşük verimli.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAG-11 -->
+    <div class="q-card dag-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-emerald">DAG&ndash;11</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Tüm Ölçüler — Kapsamlı Soru</div>
+          <div class="q-badges"><span class="badge badge-topic-e">Açıklık · Q · OA · σ · DK · Kutu</span><span class="badge badge-hard">İleri</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir yazılım projesinde 10 sprint'in tamamlanma süreleri (gün):<br><br>
+          <strong>20, 24, 30, 35, 35, 36, 34, 28, 28, 30</strong>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-emerald">a)</span><span class="part-text">Açıklığı, Q₁, Q₂, Q₃ ve çeyrek ayrılışı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">b)</span><span class="part-text">AO, varyans ve standart sapmayı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-emerald">c)</span><span class="part-text">Değişim katsayısını bulunuz. IQR yöntemiyle aykırı değer sınırlarını belirleyiniz.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-e" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-e">
+          <div class="sol-title sol-title-e">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-emerald">a</span><div class="step-text">Sıralı: 20, 24, 28, 28, 30, 30, 34, 35, 35, 36<br>Açıklık = 36&minus;20 = <span class="result">16</span><br>N=10 (çift): Medyan = (a&#8325;+a&#8326;)/2 = (30+30)/2 = <span class="result">30</span><br>Alt yarı: 20,24,28,28,30 → Q₁ = 28 &nbsp;|&nbsp; Üst yarı: 30,34,35,35,36 → Q₃ = 35<br>Çeyrek ayrılış Q = (35&minus;28)/2 = <span class="result">3.5</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b</span><div class="step-text">&mu; = (20+24+30+35+35+36+34+28+28+30)/10 = 300/10 = <span class="result">30</span><br>OA = (1/10)(10+6+0+5+5+6+4+2+2+0) = 40/10 = <span class="result">4</span><br>(x&#7522;&minus;&mu;)²: 100,36,0,25,25,36,16,4,4,0 → &sum;=246<br>&sigma;²=246/10=<span class="result">24.6</span> &nbsp;|&nbsp; &sigma;=<span class="result">4.96 gün</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">c</span><div class="step-text">DK = 4.96/30 = <span class="result">0.165 (%16.5)</span> — görece düşük değişkenlik; sprint süreleri tutarlı.<br>IQR=7. Alt: 28&minus;10.5=17.5 &nbsp;|&nbsp; Üst: 35+10.5=45.5<br>Tüm değerler [17.5, 45.5] aralığında → <span class="result">aykırı değer yok.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions-grid -->
+
+  <div class="formula-section">
+    <div class="section-heading sh-emerald">📋 Formül Başvuru Kartları — Merkezsel Dağılım</div>
+    <div class="formula-grid">
+      <div class="f-card">
+        <div class="f-title">Açıklık ve Çeyrek Ayrılış</div>
+        <div class="f-body">
+          <span class="hi">Açıklık = maks &minus; min</span><br>
+          <span class="hi">Q = (Q₃ &minus; Q₁) / 2</span><br>
+          <span class="dim">Q₁: alt yarının medyanı<br>Q₃: üst yarının medyanı</span>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-title">Ortalama Ayrılış ve Varyans</div>
+        <div class="f-body">
+          <span class="hi">OA = (1/N)&sum;|x&#7522;&minus;&mu;|</span><br>
+          <span class="hi">&sigma;² = (1/N)&sum;(x&#7522;&minus;&mu;)²</span><br>
+          <span class="hi2">&sigma;² = (1/N)&sum;x&#7522;² &minus; &mu;²</span><br>
+          <span class="dim">Çokluk: &sigma;²=(1/N)&sum;f&#11338;(x&#772;&#11338;&minus;&mu;)²<br>veya (1/N)&sum;f&#11338;x&#772;&#11338;²&minus;&mu;²</span>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-title">Standart Sapma ve DK</div>
+        <div class="f-body">
+          <span class="hi">&sigma; = &radic;&sigma;²</span><br>
+          <span class="hi">DK = &sigma;/&mu;</span><br>
+          <span class="dim">DK küçük → homojen<br>Farklı ortalamalı grupları karşılaştırmak için DK zorunlu</span>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-title">Kutu Grafiği</div>
+        <div class="f-body">
+          IQR = Q₃ &minus; Q₁<br>
+          <span class="hi">Alt sınır: Q₁ &minus; 1.5·IQR</span><br>
+          <span class="hi">Üst sınır: Q₃ + 1.5·IQR</span><br>
+          <span class="dim">Bu sınır dışı: aykırı değer (○)<br>Bıyık ucu: en yakın normal değer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>END 214 &ndash; Olasılık ve İstatistik II</strong> &middot; TOBB ETÜ Mühendislik Fakültesi Endüstri Mühendisliği Bölümü<br>
+  Prof. Dr. Fikri Gökpınar &middot; Bahar 2025&ndash;2026
+</footer>
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s=btn.nextElementSibling; s.classList.toggle('visible');
+  btn.textContent=s.classList.contains('visible')?'▼ Çözümü Gizle':'▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

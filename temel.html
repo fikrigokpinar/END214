@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Temel Tanımlar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="temel.html" class="active">Temel Tanımlar</a>
+    <a href="me.html">Merkezi Eğilim</a>
+    <a href="dag.html">Dağılım Ölçüleri</a>
+    <a href="grafik.html">Grafikler</a>
+    <a href="tahmin.html">Nokta Tahmini</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+    <a href="tablolar.html">Tablolar</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-temel">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-temel">Konu −1 · 10 Soru</span>
+    <h1>Temel <em class="temel">Tanımlar</em></h1>
+    <p class="subtitle">Yığın, örnek, parametre, istatistik. Değişken türleri ve ölçme düzeyleri. Çokluk dağılımı oluşturma ve sınıf aralığı belirleme.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot" style="background:var(--rose)"></span>10 çözümlü soru</span>
+      <span class="meta-item"><span class="dot" style="background:var(--rose)"></span>3 formül kartı</span>
+      <span class="meta-item"><span class="dot" style="background:var(--rose)"></span>Yığın · Değişken · Çokluk Dağılımı</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val rose">10</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val rose">4</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val rose">4</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val rose">2</div><div class="stat-label">İleri</div></div>
+  </div>
+
+  <div class="section-heading sh-rose">Sorular</div>
+  <div class="questions-grid">
+
+    <!-- TT-01 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;01</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Yığın, Örnek, Parametre ve İstatistik Kavramları</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Temel Kavramlar</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir otomotiv fabrikasında 5000 adet üretilen motorun ortalama ömrünü incelemek istenmektedir. Bu amaçla 80 motor rasgele seçilerek test edilmiş ve ortalama ömür 12 000 km olarak bulunmuştur.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Bu çalışmadaki yığını ve örneği tanımlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">12 000 km değeri bir parametre mi, istatistik mi? Açıklayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">c)</span><span class="part-text">Bu çalışma betimsel mi tümevarımsal istatistik mi? Neden?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Yığın:</strong> Fabrikada üretilen 5000 motorun tümü.<br><strong>Örnek:</strong> Test için rasgele seçilen 80 motor.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">12 000 km değeri <strong>örnekten</strong> elde edildiğinden bir <strong>istatistiktir</strong> (x&#772; notasyonu).<br>Eğer 5000 motorun tamamı test edilseydi bu değer <strong>parametre</strong> (&mu;) olurdu.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">c</span><div class="step-text"><strong>Tümevarımsal istatistik:</strong> Örnekten elde edilen 12 000 km değeri yığının tamamına genellenmektedir; yani 5000 motorun ortalama ömrü hakkında çıkarsama yapılmaktadır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-02 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;02</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Değişken Türleri — Nitel ve Nicel Sınıflandırma</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Değişken Türleri</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir endüstri mühendisliği araştırmasında üretim hattındaki işçilerden şu bilgiler toplanmaktadır:<br><br>
+          (1) İşçinin cinsiyeti &nbsp; (2) Günlük ürettiği parça sayısı &nbsp; (3) Çalıştığı vardiya (sabah/akşam/gece) &nbsp; (4) Kıdemi (yıl) &nbsp; (5) Makine tipi (A, B, C) &nbsp; (6) Aylık hatalı ürün oranı (%) &nbsp; (7) Eğitim düzeyi (ilkokul/lise/üniversite) &nbsp; (8) Sahip olduğu sertifika sayısı
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her değişkeni nitel ya da nicel olarak sınıflandırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Nicel değişkenleri sürekli ve süreksiz olarak ayırınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Nitel:</strong> (1) Cinsiyet, (3) Vardiya, (5) Makine tipi, (7) Eğitim düzeyi<br><strong>Nicel:</strong> (2) Parça sayısı, (4) Kıdem, (6) Hatalı ürün oranı, (8) Sertifika sayısı</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text"><strong>Sürekli:</strong> (4) Kıdem (yıl, kesirli değer alabilir), (6) Hatalı ürün oranı (0–100 arası her değer)<br><strong>Süreksiz (Kesikli):</strong> (2) Parça sayısı (tam sayı), (8) Sertifika sayısı (tam sayı)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-03 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;03</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Ölçme Düzeyleri — Dört Düzey Sınıflandırma</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Ölçme Düzeyleri</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Aşağıdaki değişkenleri ölçme düzeyine göre sınıflandırınız:<br><br>
+          (1) Malzeme türü (çelik/alüminyum/plastik) &nbsp; (2) Kalite derecelendirmesi (1.kalite &gt; 2.kalite &gt; 3.kalite) &nbsp; (3) Parça uzunluğu (mm) &nbsp; (4) Sıcaklık (°C) &nbsp; (5) Üretim hattı numarası (1, 2, 3) &nbsp; (6) Baskı kuvveti (Newton, mutlak sıfır var) &nbsp; (7) Hata kodu kategorisi (A/B/C/D)
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her birini sınıflama, sıralama, eşit aralıklı veya oranlama düzeyine göre sınıflandırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Üretim hattı numarasının (1, 2, 3) sayısal görünmesine karşın neden sınıflama ölçme düzeyinde olduğunu açıklayınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Sınıflama:</strong> (1) Malzeme türü, (5) Hat numarası, (7) Hata kodu<br><strong>Sıralama:</strong> (2) Kalite derecesi<br><strong>Eşit aralıklı:</strong> (4) Sıcaklık (°C) — 0°C mutlak sıfır değil, keyfi bir referans<br><strong>Oranlama:</strong> (3) Uzunluk (mm), (6) Baskı kuvveti (Newton) — mutlak sıfır anlamlı</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">Hat numaraları yalnızca kimlik/etiket işlevi görür; 1+2=3 işlemi anlamsızdır, hatlar arasında büyüklük ilişkisi yoktur. Bu nedenle sayısal görünümüne karşın <strong>sınıflama düzeyindedir</strong>.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-04 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;04</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Çokluk Dağılımı Oluşturma — Eşit Sınıf Aralığı</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Çokluk Dağılımı · Sınıf Aralığı</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir mühendislik fakültesinde 20 öğrencinin istatistik dersi puanları aşağıda verilmiştir:<br><br>
+          40, 37, 55, 48, 60, 41, 50, 47, 35, 53, 52, 64, 40, 52, 36, 61, 39, 45, 47, 55
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">m ≥ √n kuralıyla sınıf sayısını belirleyiniz. Sınıf aralığını c ≥ L/m formülüyle hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Çokluk dağılımını oluşturunuz. Sınıf sınırlarını 35 ≤ x &lt; 40 biçiminde (≤ alt, &lt; üst) yazınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">n=20 &rarr; m ≥ √20 &asymp; 4.47 &rarr; m = 5 sınıf<br>L = maks &minus; min = 64 &minus; 35 = 29<br>c ≥ 29/5 = 5.8 &rarr; c = <span class="result">6</span></div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b &mdash; Çokluk dağılımı</span><div class="step-text">
+            35 ≤ x &lt; 41: 40,37,35,40,36,39 &rarr; f = <span class="result">6</span><br>
+            41 ≤ x &lt; 47: 41,45 &rarr; f = <span class="result">2</span><br>
+            47 ≤ x &lt; 53: 48,50,47,52,52,47 &rarr; f = <span class="result">6</span><br>
+            53 ≤ x &lt; 59: 55,53,55 &rarr; f = <span class="result">3</span><br>
+            59 ≤ x &lt; 65: 60,64,61 &rarr; f = <span class="result">3</span><br>
+            Toplam: 6+2+6+3+3 = 20 ✓
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-05 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;05</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Sınıf Orta Değeri ve Sınıf Aralığı Kavramları</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Çokluk Dağılımı · Sınıf Orta Değeri</span><span class="badge badge-easy">Temel</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir fabrikada 50 makinenin yıllık arıza sürelerine (saat) ilişkin çokluk dağılımı aşağıdaki gibidir:
+          <table>
+            <tr><th class="th-rose">Arıza süresi (saat)</th><th class="th-rose">f</th></tr>
+            <tr><td>0 ≤ x &lt; 20</td><td>8</td></tr>
+            <tr><td>20 ≤ x &lt; 40</td><td>15</td></tr>
+            <tr><td>40 ≤ x &lt; 60</td><td>18</td></tr>
+            <tr><td>60 ≤ x &lt; 80</td><td>7</td></tr>
+            <tr><td>80 ≤ x &lt; 100</td><td>2</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>50</strong></td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her sınıfın orta değerini bulunuz ve açıklayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Nispi (oransal) çokluk dağılımını oluşturunuz.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">x&#772;&#11338; = (alt + üst)/2:<br>10, 30, 50, 70, 90<br>Sınıf orta değeri, o sınıfa düşen tüm birimleri tek bir sayıyla temsil eder; hesaplamalarda (AO, varyans vb.) kullanılır.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">8/50=0.16 &nbsp;| 15/50=0.30 &nbsp;| 18/50=0.36 &nbsp;| 7/50=0.14 &nbsp;| 2/50=0.04<br>Toplam: 1.00 ✓<br>Nispi dağılım, farklı büyüklükteki yığınları karşılaştırmayı kolaylaştırır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-06 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;06</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Açık Uçlu Sınıflar ve Birikimli Çokluk Dağılımı</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Açık Uçlu · Birikimli</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir yazılım şirketinin çalışanlarının yıllık deneyimine (yıl) ilişkin çokluk dağılımı:
+          <table>
+            <tr><th class="th-rose">Deneyim (yıl)</th><th class="th-rose">f</th></tr>
+            <tr><td>x &lt; 2</td><td>12</td></tr>
+            <tr><td>2 ≤ x &lt; 5</td><td>28</td></tr>
+            <tr><td>5 ≤ x &lt; 10</td><td>35</td></tr>
+            <tr><td>10 ≤ x &lt; 15</td><td>18</td></tr>
+            <tr><td>15 ≤ x</td><td>7</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>100</strong></td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Birikimli ("… den az") çokluk dağılımını oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Açık uçlu sınıfların hangi hesaplamaları etkilediğini ve etkilemediğini tartışınız.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">2'den az: 12 &nbsp;| 5'ten az: 40 &nbsp;| 10'dan az: 75 &nbsp;| 15'ten az: 93 &nbsp;| tümü: 100</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text"><strong>Etkilemez:</strong> Medyan ve mod — bu ölçüler açık uçlu sınıflar medyan/mod sınıfı değilse hesaplanabilir. Birikimli dağılım da oluşturulabilir.<br><strong>Etkiler / Engelleyen:</strong> Aritmetik ortalama ve varyans — açık uçlu sınıfın orta değeri bilinemez, dolayısıyla AO ve varyans hesaplanamaz. Histogram da çizilemez (sınıf genişliği tanımsız).</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-07 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;07</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Veri Kaynakları ve Tamsayım / Örnekleme Farkı</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Tamsayım · Örnekleme</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Aşağıdaki araştırma senaryolarını inceleyin:<br><br>
+          <strong>A.</strong> Bir ülkedeki tüm araçların egzoz emisyonları ölçülmektedir.<br>
+          <strong>B.</strong> Bir üretim lotundan 50 ürün seçilerek dayanıklılık testi yapılmaktadır.<br>
+          <strong>C.</strong> Bir belediyenin tüm çalışanlarından memnuniyet anketi toplanmaktadır.<br>
+          <strong>D.</strong> Bir inşaat firmasının son 5 yılda tamamladığı 12 projeden 4'ü seçilerek maliyet analizi yapılmaktadır.
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her senaryonun tamsayım mı yoksa örnekleme mi olduğunu belirleyiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">B senaryosunda elde edilen ortalama değer hangi notasyonla gösterilir? Neden?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Tamsayım:</strong> A (tüm araçlar), C (tüm çalışanlar)<br><strong>Örnekleme:</strong> B (50 ürün, lotun tamamı değil), D (12 projeden 4'ü)</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">B'de 50 ürün bir örneklemdir. Elde edilen ortalama <strong>x&#772;</strong> (örneklem istatistiği) ile gösterilir. Tüm lot test edilseydi &mu; (yığın parametresi) kullanılırdı.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-08 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;08</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Ortak Çokluk Dağılımı (Çapraz Tablo)</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Çapraz Tablo · Ortak Dağılım</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          30 öğrencinin olasılık (ist) ve istatistik (ol) notlarından oluşturulan ortak çokluk dağılımı:
+          <table>
+            <tr><th class="th-rose">İst \ Ol</th><th class="th-rose">18≤x&lt;44</th><th class="th-rose">44≤x&lt;70</th><th class="th-rose">70≤x&lt;96</th><th class="th-rose">Toplam</th></tr>
+            <tr><td>14≤x&lt;41</td><td>9</td><td>2</td><td>0</td><td>11</td></tr>
+            <tr><td>41≤x&lt;68</td><td>3</td><td>5</td><td>1</td><td>9</td></tr>
+            <tr><td>68≤x&lt;95</td><td>0</td><td>2</td><td>8</td><td>10</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>12</strong></td><td><strong>9</strong></td><td><strong>9</strong></td><td><strong>30</strong></td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">İstatistik notunun 68–95 arasında olan öğrencilerin yüzde kaçı olasılıktan 70–96 almıştır?</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Bu tablodan iki ders notu arasındaki ilişki hakkında ne söylenebilir?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">İstatistik 68–95 alan 10 öğrenciden 8'i olasılıktan 70–96 almıştır.<br>8/10 = <span class="result">%80</span></div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">Köşegen hücreler (9, 5, 8) büyük, köşegen dışı hücreler küçüktür. Her iki derste de yüksek ve düşük notlar birlikte gitme eğilimindedir → iki ders notu arasında <strong>pozitif ilişki</strong> gözlemlenmektedir.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-09 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;09</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Dengesiz Sınıf Aralıklarında Çokluk Dağılımı Oluşturma</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Çokluk Dağılımı · Dengesiz Sınıf</span><span class="badge badge-med">Orta</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir imalat sanayindeki 4560 firmanın çalıştırdığı işçi sayısına göre dağılımı aşağıdaki gibidir:
+          <table>
+            <tr><th class="th-rose">İşçi sayısı</th><th class="th-rose">Firma sayısı</th></tr>
+            <tr><td>0 ≤ x &lt; 200</td><td>200</td></tr>
+            <tr><td>200 ≤ x &lt; 400</td><td>400</td></tr>
+            <tr><td>400 ≤ x &lt; 600</td><td>800</td></tr>
+            <tr><td>600 ≤ x &lt; 1000</td><td>1900</td></tr>
+            <tr><td>1000 ≤ x &lt; 1200</td><td>500</td></tr>
+            <tr><td>1200 ≤ x &lt; 1400</td><td>400</td></tr>
+            <tr><td>1400 ≤ x &lt; 1800</td><td>200</td></tr>
+            <tr><td>1800 ≤ x &lt; 2000</td><td>100</td></tr>
+            <tr><td>2000 ≤ x</td><td>50</td></tr>
+            <tr><td>Belirsiz</td><td>10</td></tr>
+          </table>
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">En çok tekrarlanan sınıf aralığını belirleyiniz. Histogrami bu sınıf aralığına göre düzenleyiniz (genişliği farklı sınıfları bölünüz).</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Açık uçlu ve belirsiz sınıfları neden işlem dışı tutmanız gerekir?</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">En çok tekrarlanan aralık: <strong>200</strong> (ilk 3, 5., 6., 8. sınıflar). 600–1000 (genişlik 400) ve 1400–1800 (genişlik 400) sınıfları ikiye bölünür:<br>600–800: 950, 800–1000: 950, 1400–1600: 100, 1600–1800: 100<br>Düzenlenmiş tabloda tüm sınıflar 200 genişliğindedir (belirsiz ve 2000+ hariç).</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text"><strong>Açık uçlu (2000+):</strong> Üst sınır bilinmediğinden dikdörtgenin genişliği tanımsız; histogram çizilemez.<br><strong>Belirsiz:</strong> Hangi sınıfa ait olduğu belli değildir; dahil edilirse hata yaratır.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TT-10 -->
+    <div class="q-card temel-card">
+      <div class="q-header" onclick="toggleCard(this)">
+        <span class="q-num qn-rose">TT&ndash;10</span>
+        <div class="q-title-wrap">
+          <div class="q-title">Betimsel ve Tümevarımsal İstatistik — Kapsamlı Kıyaslama</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Betimsel · Tümevarımsal</span><span class="badge badge-hard">İleri</span></div>
+        </div>
+        <span class="q-toggle">&#9662;</span>
+      </div>
+      <div class="q-body">
+        <div class="q-text">
+          Aşağıdaki beş araştırma ifadesini inceleyin:<br><br>
+          (A) "Bu fabrikada geçen ay üretilen 10 000 vidanın %3.2'si hatalıdır."<br>
+          (B) "Örnekleme sonuçlarına göre Türkiye'deki mühendislerin %65'i yurt dışında çalışmayı düşünmektedir."<br>
+          (C) "Seçilen 30 çalışanın ortalama mesaisi 46 saattir."<br>
+          (D) "Bu araştırma sonucuna göre X makinesi Y makinesinden %15 daha az enerji tüketmektedir."<br>
+          (E) "Anket katılımcılarının yaş dağılımı aşağıdaki tabloda gösterilmiştir."
+        </div>
+        <div class="q-parts">
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her ifadeyi betimsel ya da tümevarımsal istatistik kapsamında sınıflandırınız.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">(A) ve (B)'yi karşılaştırın: her iki ifade de yüzde içermektedir. Farkı açıklayın.</span></div>
+        </div>
+        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
+        <div class="solution solution-r">
+          <div class="sol-title sol-title-r">Çözüm</div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Betimsel:</strong> (A) tüm 10 000 vida incelenmiş, yığının tamamı; (C) sadece 30 çalışan özetleniyor, genelleme yapılmıyor; (E) tablo sunuyor, çıkarsama yok.<br><strong>Tümevarımsal:</strong> (B) örnekten tüm Türkiye mühendislerine genelleme; (D) test sonuçlarından genel bir sonuca varılıyor.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">(A): Tüm yığın (10 000 vida) incelenmiş, bu bir <strong>parametre</strong> (%3.2 = N içindeki gerçek oran). Genelleme yok, yalnızca betimleme var.<br>(B): Örnekten elde edilen oran tüm Türkiye'ye <strong>genelleniyor</strong> → tümevarımsal istatistik.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions-grid -->
+
+  <div class="formula-section">
+    <div class="section-heading sh-rose">📋 Formül Başvuru Kartları — Temel Tanımlar</div>
+    <div class="formula-grid">
+      <div class="f-card">
+        <div class="f-title">Yığın, Örnek, Parametre</div>
+        <div class="f-body">
+          <span class="hi">Yığın (N):</span> Tüm birimlerin kümesi<br>
+          <span class="hi">Örnek (n):</span> Yığından seçilen alt küme<br>
+          <span class="hi">Parametre:</span> Yığından hesaplanan (&mu;, &sigma;²)<br>
+          <span class="hi2">İstatistik:</span> Örnekten hesaplanan (x&#772;, s²)<br>
+          <span class="dim">Betimsel: özetleme &nbsp;|&nbsp; Tümevarımsal: genelleme</span>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-title">Ölçme Düzeyleri</div>
+        <div class="f-body">
+          <span class="hi">Sınıflama:</span> Etiket (cinsiyet, renk)<br>
+          <span class="hi">Sıralama:</span> Büyüklük sırası (1.kalite...)<br>
+          <span class="hi2">Eşit aralıklı:</span> Fark anlamlı (°C, IQ)<br>
+          <span class="hi2">Oranlama:</span> Mutlak sıfır var (kg, m, Pa)<br>
+          <span class="dim">Nicel → kesikli / sürekli</span>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-title">Çokluk Dağılımı</div>
+        <div class="f-body">
+          m ≥ √n &nbsp;(sınıf sayısı)<br>
+          <span class="hi">c ≥ L/m &nbsp;(sınıf aralığı)</span><br>
+          L = maks &minus; min<br>
+          <span class="dim">Nispi çokluk: f&#7522;/N<br>Birikimli çokluk: Σf (x &lt; üst sınır)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>END 214 &ndash; Olasılık ve İstatistik II</strong> &middot; TOBB ETÜ Mühendislik Fakültesi Endüstri Mühendisliği Bölümü<br>
+  Prof. Dr. Fikri Gökpınar &middot; Bahar 2025&ndash;2026
+</footer>
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s = btn.nextElementSibling;
+  s.classList.toggle('visible');
+  btn.textContent = s.classList.contains('visible') ? '▼ Çözümü Gizle' : '▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

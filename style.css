@@ -549,3 +549,80 @@ footer strong { color: var(--amber); }
 .hc-me .hc-glow { background: radial-gradient(circle, rgba(249,115,22,.15) 0%, transparent 70%); }
 .hc-me .hc-count { color: var(--orange); }
 .page-header h1 em.me { color: var(--orange); }
+
+/* ── TEMEL TANIMLAR — kırmızı/rose tema ── */
+:root { --rose: #f43f5e; }
+.page-header-temel::after { background: radial-gradient(circle, rgba(244,63,94,.14) 0%, transparent 70%); }
+.tag-temel  { color: var(--rose); border: 1px solid rgba(244,63,94,.3); background: rgba(244,63,94,.06); }
+.sh-rose::before { background: var(--rose); }
+.stat-val.rose   { color: var(--rose); }
+.qn-rose  { color: var(--rose); background: rgba(244,63,94,.1); border: 1px solid rgba(244,63,94,.22); }
+.q-card.temel-card:hover { border-color: rgba(244,63,94,.25); }
+.badge-topic-r { background: rgba(244,63,94,.1); color: var(--rose); border: 1px solid rgba(244,63,94,.2); }
+.pl-rose  { color: var(--rose); }
+.sol-btn-r { color: var(--rose); background: rgba(244,63,94,.08); border: 1px solid rgba(244,63,94,.2); }
+.sol-btn-r:hover { background: rgba(244,63,94,.16); }
+.solution-r { border-left-color: var(--rose); }
+.sol-title-r { color: var(--rose); }
+.sn-rose  { background: rgba(244,63,94,.14); color: var(--rose); }
+.th-rose  { background: rgba(244,63,94,.08); color: var(--rose); }
+.hc-temel:hover { border-color: rgba(244,63,94,.4); }
+.hc-temel .hc-glow { background: radial-gradient(circle, rgba(244,63,94,.15) 0%, transparent 70%); }
+.hc-temel .hc-count { color: var(--rose); }
+.page-header h1 em.temel { color: var(--rose); }
+
+/* ── GRAFİKLER — indigo/sky tema ── */
+:root { --indigo: #818cf8; }
+.page-header-grafik::after { background: radial-gradient(circle, rgba(129,140,248,.14) 0%, transparent 70%); }
+.tag-grafik { color: var(--indigo); border: 1px solid rgba(129,140,248,.3); background: rgba(129,140,248,.06); }
+.sh-indigo::before { background: var(--indigo); }
+.stat-val.indigo  { color: var(--indigo); }
+.qn-indigo { color: var(--indigo); background: rgba(129,140,248,.1); border: 1px solid rgba(129,140,248,.22); }
+.q-card.grafik-card:hover { border-color: rgba(129,140,248,.25); }
+.badge-topic-i { background: rgba(129,140,248,.1); color: var(--indigo); border: 1px solid rgba(129,140,248,.2); }
+.pl-indigo { color: var(--indigo); }
+.sol-btn-i { color: var(--indigo); background: rgba(129,140,248,.08); border: 1px solid rgba(129,140,248,.2); }
+.sol-btn-i:hover { background: rgba(129,140,248,.16); }
+.solution-i { border-left-color: var(--indigo); }
+.sol-title-i { color: var(--indigo); }
+.sn-indigo { background: rgba(129,140,248,.14); color: var(--indigo); }
+.th-indigo { background: rgba(129,140,248,.08); color: var(--indigo); }
+.hc-grafik:hover { border-color: rgba(129,140,248,.4); }
+.hc-grafik .hc-glow { background: radial-gradient(circle, rgba(129,140,248,.15) 0%, transparent 70%); }
+.hc-grafik .hc-count { color: var(--indigo); }
+.page-header h1 em.grafik { color: var(--indigo); }
+
+/* ── MERKEZSEL DAĞILIM — emerald/yeşil tema ── */
+:root { --emerald: #34d399; }
+.page-header-dag::after { background: radial-gradient(circle, rgba(52,211,153,.14) 0%, transparent 70%); }
+.tag-dag  { color: var(--emerald); border: 1px solid rgba(52,211,153,.3); background: rgba(52,211,153,.06); }
+.sh-emerald::before { background: var(--emerald); }
+.stat-val.emerald  { color: var(--emerald); }
+.qn-emerald { color: var(--emerald); background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.22); }
+.q-card.dag-card:hover { border-color: rgba(52,211,153,.25); }
+.badge-topic-e { background: rgba(52,211,153,.1); color: var(--emerald); border: 1px solid rgba(52,211,153,.2); }
+.pl-emerald { color: var(--emerald); }
+.sol-btn-e { color: var(--emerald); background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.2); }
+.sol-btn-e:hover { background: rgba(52,211,153,.16); }
+.solution-e { border-left-color: var(--emerald); }
+.sol-title-e { color: var(--emerald); }
+.sn-emerald { background: rgba(52,211,153,.14); color: var(--emerald); }
+.th-emerald { background: rgba(52,211,153,.08); color: var(--emerald); }
+.hc-dag:hover { border-color: rgba(52,211,153,.4); }
+.hc-dag .hc-glow { background: radial-gradient(circle, rgba(52,211,153,.15) 0%, transparent 70%); }
+.hc-dag .hc-count { color: var(--emerald); }
+.page-header h1 em.dag { color: var(--emerald); }
+
+/* index home cards - dag & grafik */
+.hc-dag   { border-color: rgba(52,211,153,.15); }
+.hc-dag:hover { border-color: rgba(52,211,153,.4); }
+.hc-dag .hc-glow { background: radial-gradient(circle, rgba(52,211,153,.15) 0%, transparent 70%); }
+.hc-dag .hc-count { color: var(--emerald); }
+.hc-grafik  { border-color: rgba(129,140,248,.15); }
+.hc-grafik:hover { border-color: rgba(129,140,248,.4); }
+.hc-grafik .hc-glow { background: radial-gradient(circle, rgba(129,140,248,.15) 0%, transparent 70%); }
+.hc-grafik .hc-count { color: var(--indigo); }
+.hc-temel  { border-color: rgba(244,63,94,.15); }
+.hc-temel:hover { border-color: rgba(244,63,94,.4); }
+.hc-temel .hc-glow { background: radial-gradient(circle, rgba(244,63,94,.15) 0%, transparent 70%); }
+.hc-temel .hc-count { color: var(--rose); }

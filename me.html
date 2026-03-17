@@ -12,7 +12,10 @@
   <a href="index.html" class="brand">END<span>214</span></a>
   <div class="nav-links">
     <a href="index.html">Ana Sayfa</a>
+    <a href="temel.html">Temel Tanımlar</a>
     <a href="me.html" class="active">Merkezi Eğilim</a>
+    <a href="dag.html">Dağılım Ölçüleri</a>
+    <a href="grafik.html">Grafikler</a>
     <a href="tahmin.html">Nokta Tahmini</a>
     <a href="ga.html">Güven Aralığı</a>
     <a href="ht.html">Hipotez Testi</a>
@@ -200,26 +203,25 @@
           Çalışan nüfusun yaşa göre dağılımı:
           <table>
             <tr><th class="th-orange">Yaş</th><th class="th-orange">Çalışan Nüfus (1000)</th></tr>
-            <tr><td>15&ndash;19</td><td>106</td></tr>
-            <tr><td>20&ndash;24</td><td>90</td></tr>
-            <tr><td>25&ndash;34</td><td>236</td></tr>
-            <tr><td>35&ndash;44</td><td>204</td></tr>
-            <tr><td>45&ndash;54</td><td>96</td></tr>
-            <tr><td>55+</td><td>72</td></tr>
+            <tr><td>15 &le; x &lt; 20</td><td>106</td></tr>
+            <tr><td>20 &le; x &lt; 25</td><td>90</td></tr>
+            <tr><td>25 &le; x &lt; 35</td><td>236</td></tr>
+            <tr><td>35 &le; x &lt; 45</td><td>204</td></tr>
+            <tr><td>45 &le; x &lt; 55</td><td>96</td></tr>
+            <tr><td>55 &le; x</td><td>72</td></tr>
             <tr><td><strong>Toplam</strong></td><td><strong>804</strong></td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Sınıf aralıklarının farklı olduğuna dikkat ediniz. Medyan hesabı için sınıfları nasıl eşitleriz? Açıklayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Sınıfları eşitledikten sonra medyanı hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Sınıf aralıklarının farklı olduğuna dikkat ediniz. İlk iki sınıfı (c=5) birleştirerek tüm sınıfları c=10'a eşitleyiniz. Açık uçlu son sınıfı işlem dışı bırakınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Düzenlenmiş tabloya göre medyanı hesaplayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Problem</span><div class="step-text">İlk iki sınıf (15&ndash;19, 20&ndash;24) aralığı 5; diğerleri (25&ndash;34, 35&ndash;44, 45&ndash;54) aralığı 10. Medyan formülü L+(c/f)(N/2&minus;d) sınıf aralığını (c) parametre olarak kullanır; farklı genişlikteki sınıflar uygulamayı zorlaştırır. Bu nedenle genişliği küçük olan ilk iki sınıfı birleştirerek 15&ndash;24 şeklinde tek bir 10'luk sınıf elde ederiz. Böylece tüm sınıflar eşit (10'ar) aralıklı olur ve formül güvenle uygulanabilir.<br><span class="dim">Not: Bu birleştirme işlemi zorunlu değil, uygulamayı kolaylaştırıcı bir adımdır. Medyan sınıfı zaten farklı genişlikteyse c o sınıfın kendi aralığı olarak kullanılır.</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Birleştirilmiş tablo</span><div class="step-text">15&ndash;24: 196 &nbsp;| 25&ndash;34: 236 &nbsp;| 35&ndash;44: 204 &nbsp;| 45&ndash;54: 96 &nbsp;| 55+: 72 (açık sınıf, işlem dışı)<br>N = 196+236+204+96 = 732 (55+ açık sınıf hariç)</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Birikimli frekans</span><div class="step-text">15&ndash;24: 1&ndash;196 &nbsp;| 25&ndash;34: 197&ndash;432 ← Medyan sınıfı &nbsp;| 35&ndash;44: 433&ndash;636 &nbsp;| 45&ndash;54: 637&ndash;732<br>N/2 = 732/2 = 366. 366. sıra 197&ndash;432 aralığında → medyan sınıfı: 25&ndash;34.</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül</span><div class="step-text">L=25, c=10, f=236, d=196<br>Medyan = L + (c/f)(N/2 &minus; d) = 25 + (10/236)(366 &minus; 196) = 25 + (10/236)(170)<br>= 25 + 7.20 = <span class="result">32.20 yaş</span></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">a &mdash; Eşitleme</span><div class="step-text">15&le;x&lt;20 (c=5) ve 20&le;x&lt;25 (c=5) birleştirilerek → <strong>15&le;x&lt;25: 196</strong><br>25&le;x&lt;35, 35&le;x&lt;45, 45&le;x&lt;55 zaten c=10 &nbsp;|&nbsp; 55&le;x açık uçlu → işlem dışı<br>Düzenlenmiş N = 196+236+204+96 = <strong>732</strong></div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Birikimli frekans</span><div class="step-text">15&le;x&lt;25: 1–196 &nbsp;|&nbsp; 25&le;x&lt;35: 197–432 ← Medyan sınıfı &nbsp;|&nbsp; 35&le;x&lt;45: 433–636 &nbsp;|&nbsp; 45&le;x&lt;55: 637–732<br>N/2 = 366. 366. sıra 197–432 aralığında → medyan sınıfı: 25&le;x&lt;35</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül</span><div class="step-text">L=25, c=10, f=236, d=196<br>Medyan = 25 + (10/236)(366&minus;196) = 25 + (10/236)(170) = 25 + 7.20 = <span class="result">32.20 yaş</span></div></div>
         </div>
       </div>
     </div>
@@ -229,9 +231,9 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-orange">ME&ndash;06</span>
         <div class="q-title-wrap">
-          <div class="q-title">Çokluk Dağılımında Mod — İki Formülle</div>
+          <div class="q-title">Çokluk Dağılımında Mod — Frekans Tablosu</div>
           <div class="q-badges">
-            <span class="badge badge-topic-o">Mod · İki Formül · Frekans Tablosu</span>
+            <span class="badge badge-topic-o">Mod · Frekans Tablosu · Açık Uçlu</span>
             <span class="badge badge-med">Orta</span>
           </div>
         </div>
@@ -255,14 +257,12 @@
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Mod sınıfını belirleyiniz. Açık uçlu son sınıfın durumunu tartışınız.</span></div>
           <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Modu Formül 1 ile hesaplayınız: Mod = L + f&#8347;/(f&#8347;+f&#8320;) &middot; c</span></div>
-          <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">Modu Formül 2 ile hesaplayınız: Mod = L + &Delta;&#8321;/(&Delta;&#8321;+&Delta;&#8322;) &middot; c. İki sonucu karşılaştırınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-o">
           <div class="sol-title sol-title-o">Adım Adım Çözüm</div>
           <div class="sol-step"><span class="step-n sn-orange">a</span><div class="step-text">En büyük çokluk f=160 ile 35&le;x&lt;45 sınıfındadır → <span class="result">Mod sınıfı: 35&le;x&lt;45</span><br>Son sınıf (65&le;x) açık uçludur; mod sınıfı olmadığından hesabı etkilemez.</div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül 1</span><div class="step-text">L=35, f&#8347;=30 (bir sonraki: 45&le;x&lt;55), f&#8320;=90 (bir önceki: 25&le;x&lt;35), c=10<br>Mod = 35 + 30/(30+90) &middot; 10 = 35 + 300/120 = 35 + 2.5 = <span class="result">37.5</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">c &mdash; Formül 2</span><div class="step-text">&Delta;&#8321; = 160&minus;90 = 70 &nbsp;|&nbsp; &Delta;&#8322; = 160&minus;30 = 130, c=10<br>Mod = 35 + 70/(70+130) &middot; 10 = 35 + 700/200 = 35 + 3.5 = <span class="result">38.5</span><br>İki formül yaklaşık sonuç verir; dağılımın şekline göre birbirinden hafif farklılaşır. Formül 1 daha sık kullanılır.</div></div>
+          <div class="sol-step"><span class="step-n sn-orange">b</span><div class="step-text">L=35, f&#8347;=30 (bir sonraki: 45&le;x&lt;55), f&#8320;=90 (bir önceki: 25&le;x&lt;35), c=10<br>Mod = 35 + 30/(30+90) &middot; 10 = 35 + 300/120 = 35 + 2.5 = <span class="result">37.5 dak</span></div></div>
         </div>
       </div>
     </div>
@@ -419,7 +419,7 @@
         </div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-orange">a)</span><span class="part-text">Medyanı hesaplayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Modu Formül 1 ve Formül 2 ile hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-orange">b)</span><span class="part-text">Modu Formül 1 ile hesaplayınız.</span></div>
           <div class="q-part"><span class="part-label pl-orange">c)</span><span class="part-text">AO'yu hesaplayınız. AO, Medyan ve Mod'u karşılaştırarak dağılımın şekli hakkında yorum yapınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-o" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
@@ -428,7 +428,6 @@
           <div class="sol-step"><span class="step-n sn-orange">a &mdash; Medyan</span><div class="step-text">N/2 = 75. Birikimli: 1&ndash;12, 13&ndash;45, 46&ndash;100 ← medyan sınıfı, 101&ndash;130, 131&ndash;150<br>L=12, c=4, f=55, d=45<br>Medyan = 12 + (4/55)(75&minus;45) = 12 + 120/55 = 12 + 2.18 = <span class="result">14.18 ay</span></div></div>
           <div class="sol-step"><span class="step-n sn-orange">b &mdash; Mod sınıfı</span><div class="step-text">En büyük çokluk f=55 ile 12&le;x&lt;16 sınıfı → Mod sınıfı: 12&le;x&lt;16</div></div>
           <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül 1</span><div class="step-text">L=12, f&#8347;=30 (bir sonraki), f&#8320;=33 (bir önceki), c=4<br>Mod = 12 + 30/(30+33) &middot; 4 = 12 + 120/63 = 12 + 1.90 = <span class="result">13.90 ay</span></div></div>
-          <div class="sol-step"><span class="step-n sn-orange">b &mdash; Formül 2</span><div class="step-text">&Delta;&#8321; = 55&minus;33 = 22 &nbsp;| &Delta;&#8322; = 55&minus;30 = 25, c=4<br>Mod = 12 + 22/(22+25) &middot; 4 = 12 + 88/47 = 12 + 1.87 = <span class="result">13.87 ay</span></div></div>
           <div class="sol-step"><span class="step-n sn-orange">c &mdash; AO</span><div class="step-text">x&#772;&#11338;: 6, 10, 14, 18, 22<br>&sum;x&#772;&#11338;f = 6&middot;12+10&middot;33+14&middot;55+18&middot;30+22&middot;20 = 72+330+770+540+440 = 2152<br>&mu; = 2152/150 = <span class="result">14.35 ay</span><br>Mod(&asymp;13.9) &lt; Medyan(14.18) &lt; AO(14.35): Hafif sağa çarpık dağılım; bir kısım projenin gecikmesi ortalamayı yukarı çekmektedir.</div></div>
         </div>
       </div>
@@ -537,7 +536,7 @@
       <div class="f-card">
         <div class="f-title">Mod</div>
         <div class="f-body">
-          <span class="hi">Formül :</span> L + f&#8347;/(f&#8347;+f&#8320;) &middot; c<br>
+          <span class="hi">Formül 1:</span> L + f&#8347;/(f&#8347;+f&#8320;) &middot; c<br>
           <span class="dim">f&#8320;: önceki sınıf çokluğu<br>f&#8347;: sonraki sınıf çokluğu</span>
         </div>
       </div>

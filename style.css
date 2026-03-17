@@ -52,6 +52,7 @@ body::before {
   scrollbar-width: none;
 }
 .topnav::-webkit-scrollbar { display: none; }
+.topnav::-webkit-scrollbar { display: none; }
 .topnav .brand {
   font-family: var(--mono);
   font-size: .78rem;

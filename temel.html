@@ -25,7 +25,7 @@
 
 <header class="page-header page-header-temel">
   <div class="page-header-inner">
-    <span class="topic-tag tag-temel">Konu −1 · 10 Soru</span>
+    <span class="topic-tag tag-temel">Konu −1 · 8 Soru</span>
     <h1>Temel <em class="temel">Tanımlar</em></h1>
     <p class="subtitle">Yığın, örnek, parametre, istatistik. Değişken türleri ve ölçme düzeyleri. Çokluk dağılımı oluşturma ve sınıf aralığı belirleme.</p>
     <div class="meta-row">
@@ -38,9 +38,9 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-cell"><div class="stat-val rose">10</div><div class="stat-label">Soru</div></div>
-    <div class="stat-cell"><div class="stat-val rose">4</div><div class="stat-label">Temel</div></div>
-    <div class="stat-cell"><div class="stat-val rose">4</div><div class="stat-label">Orta</div></div>
+    <div class="stat-cell"><div class="stat-val rose">8</div><div class="stat-label">Soru</div></div>
+    <div class="stat-cell"><div class="stat-val rose">3</div><div class="stat-label">Temel</div></div>
+    <div class="stat-cell"><div class="stat-val rose">3</div><div class="stat-label">Orta</div></div>
     <div class="stat-cell"><div class="stat-val rose">2</div><div class="stat-label">İleri</div></div>
   </div>
 
@@ -244,28 +244,34 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-rose">TT&ndash;07</span>
         <div class="q-title-wrap">
-          <div class="q-title">Veri Kaynakları ve Tamsayım / Örnekleme Farkı</div>
-          <div class="q-badges"><span class="badge badge-topic-r">Tamsayım · Örnekleme</span><span class="badge badge-med">Orta</span></div>
+          <div class="q-title">Dengesiz Sınıf Aralıklarında Çokluk Dağılımı</div>
+          <div class="q-badges"><span class="badge badge-topic-r">Çokluk Dağılımı · Dengesiz Sınıf</span><span class="badge badge-med">Orta</span></div>
         </div>
         <span class="q-toggle">&#9662;</span>
       </div>
       <div class="q-body">
         <div class="q-text">
-          Aşağıdaki araştırma senaryolarını inceleyin:<br><br>
-          <strong>A.</strong> Bir ülkedeki tüm araçların egzoz emisyonları ölçülmektedir.<br>
-          <strong>B.</strong> Bir üretim lotundan 50 ürün seçilerek dayanıklılık testi yapılmaktadır.<br>
-          <strong>C.</strong> Bir belediyenin tüm çalışanlarından memnuniyet anketi toplanmaktadır.<br>
-          <strong>D.</strong> Bir inşaat firmasının son 5 yılda tamamladığı 12 projeden 4'ü seçilerek maliyet analizi yapılmaktadır.
+          Bir bölgedeki konutların aylık kira bedellerine (bin TL) ilişkin çokluk dağılımı aşağıdaki gibi oluşturulmuştur:
+          <table>
+            <tr><th class="th-rose">Kira (bin TL)</th><th class="th-rose">Konut sayısı</th></tr>
+            <tr><td>5 ≤ x &lt; 10</td><td>120</td></tr>
+            <tr><td>10 ≤ x &lt; 15</td><td>280</td></tr>
+            <tr><td>15 ≤ x &lt; 25</td><td>360</td></tr>
+            <tr><td>25 ≤ x &lt; 35</td><td>160</td></tr>
+            <tr><td>35 ≤ x &lt; 55</td><td>60</td></tr>
+            <tr><td>55 ≤ x</td><td>20</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>1000</strong></td></tr>
+          </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Her senaryonun tamsayım mı yoksa örnekleme mi olduğunu belirleyiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">B senaryosunda elde edilen ortalama değer hangi notasyonla gösterilir? Neden?</span></div>
+          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">Sınıf aralıklarının eşit olmadığını gösteriniz. En çok tekrarlanan aralığı belirleyiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Histogram çizebilmek için dağılımı yeniden düzenleyiniz: genişliği farklı olan sınıfları eşit aralığa (c=5) bölünüz. Açık uçlu son sınıfın durumunu tartışınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-r">
           <div class="sol-title sol-title-r">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text"><strong>Tamsayım:</strong> A (tüm araçlar), C (tüm çalışanlar)<br><strong>Örnekleme:</strong> B (50 ürün, lotun tamamı değil), D (12 projeden 4'ü)</div></div>
-          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">B'de 50 ürün bir örneklemdir. Elde edilen ortalama <strong>x&#772;</strong> (örneklem istatistiği) ile gösterilir. Tüm lot test edilseydi &mu; (yığın parametresi) kullanılırdı.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">Sınıf genişlikleri: 5, 5, <strong>10</strong>, <strong>10</strong>, <strong>20</strong>, açık uçlu<br>En çok tekrarlanan: <strong>c = 5</strong> (ilk iki sınıf). Histogram için tüm sınıflar 5'e eşitlenmelidir.</div></div>
+          <div class="sol-step"><span class="step-n sn-rose">b &mdash; Bölme</span><div class="step-text">15–25 (genişlik 10) → 15–20: 180, 20–25: 180<br>25–35 (genişlik 10) → 25–30: 80, 30–35: 80<br>35–55 (genişlik 20) → 35–40: 15, 40–45: 15, 45–50: 15, 50–55: 15<br><span class="dim">Her parçaya frekansı genişlik oranında eşit dağıtılır (homojen dağılım varsayımı).</span><br><br><strong>Açık uçlu (55≤x):</strong> Üst sınır bilinmiyor → genişlik tanımsız → histogram dışı tutulur. N 1000'den 980'e düşer.</div></div>
         </div>
       </div>
     </div>
@@ -274,80 +280,6 @@
     <div class="q-card temel-card">
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-rose">TT&ndash;08</span>
-        <div class="q-title-wrap">
-          <div class="q-title">Ortak Çokluk Dağılımı (Çapraz Tablo)</div>
-          <div class="q-badges"><span class="badge badge-topic-r">Çapraz Tablo · Ortak Dağılım</span><span class="badge badge-med">Orta</span></div>
-        </div>
-        <span class="q-toggle">&#9662;</span>
-      </div>
-      <div class="q-body">
-        <div class="q-text">
-          30 öğrencinin olasılık (ist) ve istatistik (ol) notlarından oluşturulan ortak çokluk dağılımı:
-          <table>
-            <tr><th class="th-rose">İst \ Ol</th><th class="th-rose">18≤x&lt;44</th><th class="th-rose">44≤x&lt;70</th><th class="th-rose">70≤x&lt;96</th><th class="th-rose">Toplam</th></tr>
-            <tr><td>14≤x&lt;41</td><td>9</td><td>2</td><td>0</td><td>11</td></tr>
-            <tr><td>41≤x&lt;68</td><td>3</td><td>5</td><td>1</td><td>9</td></tr>
-            <tr><td>68≤x&lt;95</td><td>0</td><td>2</td><td>8</td><td>10</td></tr>
-            <tr><td><strong>Toplam</strong></td><td><strong>12</strong></td><td><strong>9</strong></td><td><strong>9</strong></td><td><strong>30</strong></td></tr>
-          </table>
-        </div>
-        <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">İstatistik notunun 68–95 arasında olan öğrencilerin yüzde kaçı olasılıktan 70–96 almıştır?</span></div>
-          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Bu tablodan iki ders notu arasındaki ilişki hakkında ne söylenebilir?</span></div>
-        </div>
-        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
-        <div class="solution solution-r">
-          <div class="sol-title sol-title-r">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">İstatistik 68–95 alan 10 öğrenciden 8'i olasılıktan 70–96 almıştır.<br>8/10 = <span class="result">%80</span></div></div>
-          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text">Köşegen hücreler (9, 5, 8) büyük, köşegen dışı hücreler küçüktür. Her iki derste de yüksek ve düşük notlar birlikte gitme eğilimindedir → iki ders notu arasında <strong>pozitif ilişki</strong> gözlemlenmektedir.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TT-09 -->
-    <div class="q-card temel-card">
-      <div class="q-header" onclick="toggleCard(this)">
-        <span class="q-num qn-rose">TT&ndash;09</span>
-        <div class="q-title-wrap">
-          <div class="q-title">Dengesiz Sınıf Aralıklarında Çokluk Dağılımı Oluşturma</div>
-          <div class="q-badges"><span class="badge badge-topic-r">Çokluk Dağılımı · Dengesiz Sınıf</span><span class="badge badge-med">Orta</span></div>
-        </div>
-        <span class="q-toggle">&#9662;</span>
-      </div>
-      <div class="q-body">
-        <div class="q-text">
-          Bir imalat sanayindeki 4560 firmanın çalıştırdığı işçi sayısına göre dağılımı aşağıdaki gibidir:
-          <table>
-            <tr><th class="th-rose">İşçi sayısı</th><th class="th-rose">Firma sayısı</th></tr>
-            <tr><td>0 ≤ x &lt; 200</td><td>200</td></tr>
-            <tr><td>200 ≤ x &lt; 400</td><td>400</td></tr>
-            <tr><td>400 ≤ x &lt; 600</td><td>800</td></tr>
-            <tr><td>600 ≤ x &lt; 1000</td><td>1900</td></tr>
-            <tr><td>1000 ≤ x &lt; 1200</td><td>500</td></tr>
-            <tr><td>1200 ≤ x &lt; 1400</td><td>400</td></tr>
-            <tr><td>1400 ≤ x &lt; 1800</td><td>200</td></tr>
-            <tr><td>1800 ≤ x &lt; 2000</td><td>100</td></tr>
-            <tr><td>2000 ≤ x</td><td>50</td></tr>
-            <tr><td>Belirsiz</td><td>10</td></tr>
-          </table>
-        </div>
-        <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-rose">a)</span><span class="part-text">En çok tekrarlanan sınıf aralığını belirleyiniz. Histogrami bu sınıf aralığına göre düzenleyiniz (genişliği farklı sınıfları bölünüz).</span></div>
-          <div class="q-part"><span class="part-label pl-rose">b)</span><span class="part-text">Açık uçlu ve belirsiz sınıfları neden işlem dışı tutmanız gerekir?</span></div>
-        </div>
-        <button class="sol-btn sol-btn-r" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
-        <div class="solution solution-r">
-          <div class="sol-title sol-title-r">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-rose">a</span><div class="step-text">En çok tekrarlanan aralık: <strong>200</strong> (ilk 3, 5., 6., 8. sınıflar). 600–1000 (genişlik 400) ve 1400–1800 (genişlik 400) sınıfları ikiye bölünür:<br>600–800: 950, 800–1000: 950, 1400–1600: 100, 1600–1800: 100<br>Düzenlenmiş tabloda tüm sınıflar 200 genişliğindedir (belirsiz ve 2000+ hariç).</div></div>
-          <div class="sol-step"><span class="step-n sn-rose">b</span><div class="step-text"><strong>Açık uçlu (2000+):</strong> Üst sınır bilinmediğinden dikdörtgenin genişliği tanımsız; histogram çizilemez.<br><strong>Belirsiz:</strong> Hangi sınıfa ait olduğu belli değildir; dahil edilirse hata yaratır.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TT-10 -->
-    <div class="q-card temel-card">
-      <div class="q-header" onclick="toggleCard(this)">
-        <span class="q-num qn-rose">TT&ndash;10</span>
         <div class="q-title-wrap">
           <div class="q-title">Betimsel ve Tümevarımsal İstatistik — Kapsamlı Kıyaslama</div>
           <div class="q-badges"><span class="badge badge-topic-r">Betimsel · Tümevarımsal</span><span class="badge badge-hard">İleri</span></div>

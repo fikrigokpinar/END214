@@ -6,10 +6,8 @@
 <title>END214 – Grafikler</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.bar-wrap { display:flex; align-items:flex-end; gap:4px; height:140px; padding:8px 0 0; border-left:2px solid var(--border); border-bottom:2px solid var(--border); margin:1rem 0 0.5rem; }
-.bar { background:rgba(129,140,248,.45); border:1px solid rgba(129,140,248,.6); border-radius:2px 2px 0 0; min-width:28px; display:flex; align-items:flex-start; justify-content:center; font-family:var(--mono); font-size:.65rem; color:var(--indigo); padding-top:3px; }
-.bar-labels { display:flex; gap:4px; font-family:var(--mono); font-size:.65rem; color:var(--muted); padding-left:2px; }
-.bar-label { min-width:28px; text-align:center; }
+.svg-wrap { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:.75rem; margin:.8rem 0; overflow-x:auto; }
+.svg-wrap svg { display:block; margin:0 auto; }
 </style>
 </head>
 <body>
@@ -68,32 +66,66 @@
           Bir mühendislik fakültesinde 20 öğrencinin istatistik puanlarından oluşan çokluk dağılımı:
           <table>
             <tr><th class="th-indigo">Puan</th><th class="th-indigo">f</th></tr>
-            <tr><td>35 ≤ x &lt; 41</td><td>6</td></tr>
-            <tr><td>41 ≤ x &lt; 47</td><td>2</td></tr>
-            <tr><td>47 ≤ x &lt; 53</td><td>6</td></tr>
-            <tr><td>53 ≤ x &lt; 59</td><td>3</td></tr>
-            <tr><td>59 ≤ x &lt; 65</td><td>3</td></tr>
+            <tr><td>35 &le; x &lt; 41</td><td>6</td></tr>
+            <tr><td>41 &le; x &lt; 47</td><td>2</td></tr>
+            <tr><td>47 &le; x &lt; 53</td><td>6</td></tr>
+            <tr><td>53 &le; x &lt; 59</td><td>3</td></tr>
+            <tr><td>59 &le; x &lt; 65</td><td>3</td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bu dağılımın histogramını tanımlayınız. x ve y eksenlerinde ne yer alır?</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bu dağılımın histogramını çiziniz. x ve y eksenlerinde ne yer alır?</span></div>
           <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Histogram ile çubuk grafiği arasındaki temel farkı açıklayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
           <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Histogram</span><div class="step-text">
-            <div class="bar-wrap">
-              <div class="bar" style="height:100%">6</div>
-              <div class="bar" style="height:33%">2</div>
-              <div class="bar" style="height:100%">6</div>
-              <div class="bar" style="height:50%">3</div>
-              <div class="bar" style="height:50%">3</div>
+            <!-- f: 6,2,6,3,3  maks=6  yükseklik: f/6*100px -->
+            <!-- sınır: 35,41,47,53,59,65  aralık=6  x eksen: 30..420  px/birim=(420-30)/30=13  -->
+            <!-- bar genişliği: 6*13=78px  başlangıçlar: 30,108,186,264,342 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="10">
+                <!-- axes -->
+                <line x1="40" y1="10" x2="40" y2="125" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="40" y1="125" x2="440" y2="125" stroke="var(--border)" stroke-width="1.5"/>
+                <!-- y labels -->
+                <text x="35" y="128" text-anchor="end" fill="#7a8099">0</text>
+                <text x="35" y="95"  text-anchor="end" fill="#7a8099">2</text>
+                <text x="35" y="62"  text-anchor="end" fill="#7a8099">4</text>
+                <text x="35" y="29"  text-anchor="end" fill="#7a8099">6</text>
+                <!-- y grid -->
+                <line x1="40" y1="95"  x2="440" y2="95"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="40" y1="62"  x2="440" y2="62"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="40" y1="29"  x2="440" y2="29"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <!-- bars: her birim=16.5px yükseklik, maks f=6→99px  bar genişliği=80px, başlangıçlar x=40,120,200,280,360 -->
+                <rect x="40"  y="26"  width="80" height="99" fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="120" y="92"  width="80" height="33" fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="200" y="26"  width="80" height="99" fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="280" y="76"  width="80" height="49" fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="360" y="76"  width="80" height="49" fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <!-- f değerleri -->
+                <text x="80"  y="20" text-anchor="middle" fill="#818cf8">6</text>
+                <text x="160" y="86" text-anchor="middle" fill="#818cf8">2</text>
+                <text x="240" y="20" text-anchor="middle" fill="#818cf8">6</text>
+                <text x="320" y="70" text-anchor="middle" fill="#818cf8">3</text>
+                <text x="400" y="70" text-anchor="middle" fill="#818cf8">3</text>
+                <!-- x labels -->
+                <text x="40"  y="140" text-anchor="middle" fill="#7a8099">35</text>
+                <text x="120" y="140" text-anchor="middle" fill="#7a8099">41</text>
+                <text x="200" y="140" text-anchor="middle" fill="#7a8099">47</text>
+                <text x="280" y="140" text-anchor="middle" fill="#7a8099">53</text>
+                <text x="360" y="140" text-anchor="middle" fill="#7a8099">59</text>
+                <text x="440" y="140" text-anchor="middle" fill="#7a8099">65</text>
+                <!-- axis labels -->
+                <text x="240" y="155" text-anchor="middle" fill="#7a8099" font-size="9">Puan</text>
+                <text x="12" y="68" text-anchor="middle" fill="#7a8099" font-size="9" transform="rotate(-90,12,68)">Öğrenci sayısı</text>
+              </svg>
             </div>
-            <div class="bar-labels"><span class="bar-label">35–41</span><span class="bar-label">41–47</span><span class="bar-label">47–53</span><span class="bar-label">53–59</span><span class="bar-label">59–65</span></div>
-            <span class="dim">x ekseni: puan değeri &nbsp;|&nbsp; y ekseni: birim (öğrenci) sayısı<br>Dikdörtgenler birbirine bitişik, her birinin tabanı sınıf aralığına eşit (6 birim).</span>
+            x ekseni: puan değeri &nbsp;|&nbsp; y ekseni: öğrenci sayısı<br>
+            Çubuklar birbirine <strong>bitişik</strong>, her birinin tabanı 6 birim (sınıf aralığı).
           </div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><strong>Histogram:</strong> Sürekli/sayısal değişkenler için; çubuklar bitişik (aralarında boşluk yok); taban genişliği sınıf aralığına eşit.<br><strong>Çubuk grafiği:</strong> Kategorik değişkenler için; çubuklar ayrık (aralarında boşluk var); x ekseninde sayısal değer yok.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><strong>Histogram:</strong> Sayısal/sürekli değişken; çubuklar bitişik; taban = sınıf aralığı.<br><strong>Çubuk grafiği:</strong> Kategorik değişken; çubuklar ayrık (boşluk var); x ekseninde sayısal ölçek yok.</div></div>
         </div>
       </div>
     </div>
@@ -110,28 +142,87 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir imalat sanayindeki firmaların çalıştırdığı işçi sayısına göre düzenlenmiş çokluk dağılımı (belirsiz ve açık uçlu sınıflar hariç):
+          Bir şehirdeki inşaat projelerinin toplam maliyetine (Milyon TL) göre proje sayısı dağılımı:
           <table>
-            <tr><th class="th-indigo">İşçi sayısı</th><th class="th-indigo">f</th></tr>
-            <tr><td>0 ≤ x &lt; 200</td><td>200</td></tr>
-            <tr><td>200 ≤ x &lt; 400</td><td>400</td></tr>
-            <tr><td>400 ≤ x &lt; 600</td><td>800</td></tr>
-            <tr><td>600 ≤ x &lt; 1000</td><td>1900</td></tr>
-            <tr><td>1000 ≤ x &lt; 1200</td><td>500</td></tr>
-            <tr><td>1200 ≤ x &lt; 1400</td><td>400</td></tr>
-            <tr><td>1400 ≤ x &lt; 1800</td><td>200</td></tr>
-            <tr><td>1800 ≤ x &lt; 2000</td><td>100</td></tr>
+            <tr><th class="th-indigo">Maliyet (M TL)</th><th class="th-indigo">Proje sayısı (f)</th></tr>
+            <tr><td>0 &le; x &lt; 10</td><td>40</td></tr>
+            <tr><td>10 &le; x &lt; 20</td><td>80</td></tr>
+            <tr><td>20 &le; x &lt; 40</td><td>120</td></tr>
+            <tr><td>40 &le; x &lt; 60</td><td>100</td></tr>
+            <tr><td>60 &le; x &lt; 80</td><td>60</td></tr>
+            <tr><td>80 &le; x &lt; 120</td><td>40</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>440</strong></td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Histogramı çizebilmek için tabloyu nasıl düzenlemeniz gerekir? En çok tekrarlanan sınıf aralığını bulunuz ve diğerlerini bu aralığa göre bölünüz.</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Düzenlenmiş tabloyu yazınız. 600–1000 ve 1400–1800 sınıflarını nasıl bölersiniz?</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">En çok tekrarlanan sınıf aralığını bulunuz. Dengesiz sınıfları bu aralığa göre bölerek düzenlenmiş tabloyu oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Düzenlenmiş tablonun histogramını çiziniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Sınıf aralıkları: 200, 200, 200, <strong>400</strong>, 200, 200, <strong>400</strong>, 200<br>En çok tekrarlanan: <strong>200</strong>. Histogramda tüm sınıflar 200'e eşitlenmeli.<br>600–1000 (genişlik 400) → 2 eşit parçaya bölünür, her birine 1900/2=<strong>950</strong><br>1400–1800 (genişlik 400) → 2 eşit parçaya bölünür, her birine 200/2=<strong>100</strong></div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b &mdash; Düzenlenmiş tablo</span><div class="step-text">0–200: 200 &nbsp;| 200–400: 400 &nbsp;| 400–600: 800 &nbsp;| 600–800: 950 &nbsp;| 800–1000: 950<br>1000–1200: 500 &nbsp;| 1200–1400: 400 &nbsp;| 1400–1600: 100 &nbsp;| 1600–1800: 100 &nbsp;| 1800–2000: 100</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Eşitleme</span><div class="step-text">
+            Sınıf genişlikleri: 10, 10, <strong>20</strong>, <strong>20</strong>, 20, <strong>40</strong><br>
+            En çok tekrarlanan: <strong>c = 10</strong> (ilk iki sınıf). Tüm sınıflar 10'a eşitlenir.<br>
+            20&le;x&lt;40 (genişlik 20) → 20&le;x&lt;30: 60, 30&le;x&lt;40: 60<br>
+            40&le;x&lt;60 (genişlik 20) → 40&le;x&lt;50: 50, 50&le;x&lt;60: 50<br>
+            60&le;x&lt;80 (genişlik 20) → 60&le;x&lt;70: 30, 70&le;x&lt;80: 30<br>
+            80&le;x&lt;120 (genişlik 40) → 80&le;x&lt;90: 10, 90&le;x&lt;100: 10, 100&le;x&lt;110: 10, 110&le;x&lt;120: 10
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b &mdash; Histogram</span><div class="step-text">
+            <!-- Düzenlenmiş f: 40,80,60,60,50,50,30,30,10,10,10,10  maks=80 -->
+            <!-- 12 sınıf, c=10, x: 0..120  -->
+            <!-- viewBox: 50..460  genişlik=410  her c=10→34px  barW=34 -->
+            <!-- px(v)=50+v*3.41  -->
+            <!-- y: f=0→120, f=80→10  her birim=(120-10)/80=1.375px  y=120-f*1.375 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 500 170" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <!-- axes -->
+                <line x1="50" y1="10" x2="50"  y2="130" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="50" y1="130" x2="470" y2="130" stroke="var(--border)" stroke-width="1.5"/>
+                <!-- y grid & labels -->
+                <line x1="50" y1="130" x2="470" y2="130" stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="50" y1="92"  x2="470" y2="92"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="50" y1="55"  x2="470" y2="55"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="50" y1="17"  x2="470" y2="17"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <text x="45" y="133" text-anchor="end" fill="#7a8099">0</text>
+                <text x="45" y="95"  text-anchor="end" fill="#7a8099">30</text>
+                <text x="45" y="58"  text-anchor="end" fill="#7a8099">60</text>
+                <text x="45" y="20"  text-anchor="end" fill="#7a8099">80</text>
+                <!-- bars: barW=35, başlangıç x=50, her bar 35px -->
+                <!-- f: 40,80,60,60,50,50,30,30,10,10,10,10 -->
+                <!-- y = 130 - f*(120/80) = 130 - f*1.5 -->
+                <rect x="50"  y="70"  width="35" height="60"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/><!-- f=40 y=70 -->
+                <rect x="85"  y="10"  width="35" height="120" fill="rgba(129,140,248,.55)" stroke="#818cf8" stroke-width="1.2"/><!-- f=80 y=10 -->
+                <rect x="120" y="40"  width="35" height="90"  fill="rgba(129,140,248,.45)" stroke="#818cf8" stroke-width="1.2"/><!-- f=60 -->
+                <rect x="155" y="40"  width="35" height="90"  fill="rgba(129,140,248,.45)" stroke="#818cf8" stroke-width="1.2"/><!-- f=60 -->
+                <rect x="190" y="55"  width="35" height="75"  fill="rgba(129,140,248,.4)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=50 -->
+                <rect x="225" y="55"  width="35" height="75"  fill="rgba(129,140,248,.4)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=50 -->
+                <rect x="260" y="85"  width="35" height="45"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/><!-- f=30 -->
+                <rect x="295" y="85"  width="35" height="45"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/><!-- f=30 -->
+                <rect x="330" y="115" width="35" height="15"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=10 -->
+                <rect x="365" y="115" width="35" height="15"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=10 -->
+                <rect x="400" y="115" width="35" height="15"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=10 -->
+                <rect x="435" y="115" width="35" height="15"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=10 -->
+                <!-- x labels -->
+                <text x="50"  y="145" text-anchor="middle" fill="#7a8099">0</text>
+                <text x="85"  y="145" text-anchor="middle" fill="#7a8099">10</text>
+                <text x="120" y="145" text-anchor="middle" fill="#7a8099">20</text>
+                <text x="155" y="145" text-anchor="middle" fill="#7a8099">30</text>
+                <text x="190" y="145" text-anchor="middle" fill="#7a8099">40</text>
+                <text x="225" y="145" text-anchor="middle" fill="#7a8099">50</text>
+                <text x="260" y="145" text-anchor="middle" fill="#7a8099">60</text>
+                <text x="295" y="145" text-anchor="middle" fill="#7a8099">70</text>
+                <text x="330" y="145" text-anchor="middle" fill="#7a8099">80</text>
+                <text x="400" y="145" text-anchor="middle" fill="#7a8099">100</text>
+                <text x="470" y="145" text-anchor="middle" fill="#7a8099">120</text>
+                <!-- axis labels -->
+                <text x="260" y="160" text-anchor="middle" fill="#7a8099" font-size="8">Maliyet (M TL)</text>
+                <text x="14" y="70" text-anchor="middle" fill="#7a8099" font-size="8" transform="rotate(-90,14,70)">Proje sayısı</text>
+              </svg>
+            </div>
+            Düzenlenmiş histogram: tüm çubuklar c=10 genişliğinde ve bitişik. Dağılım 10–20 M TL sınıfında doruk yapıyor, sağa çarpık görünüm sergiliyor.
+          </div></div>
         </div>
       </div>
     </div>
@@ -148,19 +239,72 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir üretim hattında 200 parçanın boyut ölçümlerine ilişkin iki farklı histogram tanımlanmıştır:<br><br>
-          <strong>Histogram A:</strong> Sınıf frekansları: 10, 20, 80, 60, 20, 10 (simetrik çan şekli)<br>
-          <strong>Histogram B:</strong> Sınıf frekansları: 5, 8, 15, 30, 60, 82 (sağa giderek artan)
+          Bir üretim hattında iki farklı makineyle üretilen parçaların boyut ölçümlerine ilişkin histogramlar:<br><br>
+          <strong>Makine A:</strong> f = 10, 20, 80, 60, 20, 10 (6 eşit sınıf)<br>
+          <strong>Makine B:</strong> f = 5, 8, 15, 30, 60, 82 (6 eşit sınıf)
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Her histogram için dağılımın şeklini (simetrik, sağa çarpık, sola çarpık) belirleyiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Histogram A için AO ≈ Medyan ≈ Mod ilişkisi neden geçerlidir?</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Her iki histogramı çiziniz ve dağılım şekillerini (simetrik, sağa çarpık, sola çarpık) belirleyiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Makine A için AO ≈ Medyan ≈ Mod ilişkisi neden geçerlidir?</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text"><strong>Histogram A:</strong> Frekanslar önce artar sonra simetrik olarak azalır → <span class="result">Simetrik (normal) dağılım</span><br><strong>Histogram B:</strong> Frekanslar sola doğru azalır, sağa doğru yığılır → <span class="result">Sola çarpık dağılım</span> (kuyruk solda)</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">Simetrik dağılımda sol ve sağ taraflar birbirinin aynasıdır. Bu nedenle en yüksek noktadaki değer (mod) hem ortada (medyan) hem de tüm değerlerin dengesi (AO) aynı noktaya denk gelir: <strong>AO = Medyan = Mod</strong>.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Makine A (Simetrik)</span><div class="step-text">
+            <!-- f: 10,20,80,60,20,10  maks=80  barH=f/80*100  barW=60  -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 440 150" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <text x="220" y="12" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="bold">Makine A — Simetrik</text>
+                <line x1="30" y1="20" x2="30"  y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="30" y1="120" x2="420" y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <!-- bars  barW=65  başlangıç=30 -->
+                <!-- f: 10,20,80,60,20,10  y=120-f*1.25 -->
+                <rect x="30"  y="107" width="65" height="12"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="95"  y="95"  width="65" height="25"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="160" y="20"  width="65" height="100" fill="rgba(129,140,248,.55)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="225" y="45"  width="65" height="75"  fill="rgba(129,140,248,.45)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="290" y="95"  width="65" height="25"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="355" y="107" width="65" height="12"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/>
+                <!-- f labels -->
+                <text x="62"  y="103" text-anchor="middle" fill="#818cf8">10</text>
+                <text x="127" y="91"  text-anchor="middle" fill="#818cf8">20</text>
+                <text x="192" y="16"  text-anchor="middle" fill="#818cf8">80</text>
+                <text x="257" y="41"  text-anchor="middle" fill="#818cf8">60</text>
+                <text x="322" y="91"  text-anchor="middle" fill="#818cf8">20</text>
+                <text x="387" y="103" text-anchor="middle" fill="#818cf8">10</text>
+                <!-- symmetry arrow -->
+                <line x1="223" y1="15" x2="223" y2="120" stroke="#f97316" stroke-width="1" stroke-dasharray="4,3"/>
+                <text x="223" y="135" text-anchor="middle" fill="#f97316" font-size="8">simetri ekseni</text>
+              </svg>
+            </div>
+            <span class="result">Simetrik (normal) dağılım</span> — sol ve sağ taraf birbirinin aynası.
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Makine B (Sola çarpık)</span><div class="step-text">
+            <!-- f: 5,8,15,30,60,82  maks=82  y=120-f*1.22 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 440 150" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <text x="220" y="12" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="bold">Makine B — Sola Çarpık</text>
+                <line x1="30" y1="20" x2="30"  y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="30" y1="120" x2="420" y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <rect x="30"  y="114" width="65" height="6"   fill="rgba(129,140,248,.25)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="95"  y="110" width="65" height="10"  fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="160" y="101" width="65" height="19"  fill="rgba(129,140,248,.35)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="225" y="83"  width="65" height="37"  fill="rgba(129,140,248,.4)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="290" y="47"  width="65" height="73"  fill="rgba(129,140,248,.5)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="355" y="20"  width="65" height="100" fill="rgba(129,140,248,.6)"  stroke="#818cf8" stroke-width="1.2"/>
+                <text x="62"  y="110" text-anchor="middle" fill="#818cf8">5</text>
+                <text x="127" y="106" text-anchor="middle" fill="#818cf8">8</text>
+                <text x="192" y="97"  text-anchor="middle" fill="#818cf8">15</text>
+                <text x="257" y="79"  text-anchor="middle" fill="#818cf8">30</text>
+                <text x="322" y="43"  text-anchor="middle" fill="#818cf8">60</text>
+                <text x="387" y="16"  text-anchor="middle" fill="#818cf8">82</text>
+                <!-- sol kuyruk oku -->
+                <text x="60" y="135" text-anchor="middle" fill="#f43f5e" font-size="8">← sol kuyruk</text>
+              </svg>
+            </div>
+            <span class="result">Sola çarpık dağılım</span> — değerler sağda yığılır, sol tarafa doğru uzun kuyruk oluşur.
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">Simetrik dağılımda sol ve sağ taraflar aynalıdır; mod (en yüksek çubuk) merkezdedir, medyan da orta değeri verir, AO da aynı noktada dengelenir → <strong>AO = Medyan = Mod</strong>.</div></div>
         </div>
       </div>
     </div>
@@ -184,14 +328,51 @@
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bu veri için neden histogram değil çubuk grafiği kullanılır? Açıklayınız.</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Çubuk grafiğinin temel özelliklerini (eksenler, çubuklar arası boşluk, süreklilik) açıklayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bu veri için çubuk grafiğini çiziniz. Neden histogram değil çubuk grafiği kullanılır?</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Çubuk grafiği ile histogram arasındaki görsel farkı belirtiniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Yıllar birbirini takip eden sürekli bir değişken olmakla birlikte bu tabloda <strong>ayrık kategoriler</strong> (1980, 1985, 1990…) olarak verilmiştir; yıllar arasında sürekli bir sınıf aralığı oluşturulmamıştır. Bu nedenle <strong>çubuk grafiği</strong> uygundur.</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">x ekseninde kategoriler (yıllar) yer alır; y ekseninde ölçüm değeri.<br>Çubuklar <strong>birbirine bitişik değildir</strong> (aralarında boşluk var) — bu histogram'dan temel farkıdır.<br>Her çubuğun yüksekliği ilgili kategorideki değere orantılıdır.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Çubuk grafiği</span><div class="step-text">
+            <!-- f: 55,90,100,150,200  maks=200  barW=50, gap=20  5 bar -->
+            <!-- y: 200→10, 0→130  oran: 120/200=0.6  y=130-f*0.6 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 440 160" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <line x1="50" y1="10" x2="50"  y2="135" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="50" y1="135" x2="430" y2="135" stroke="var(--border)" stroke-width="1.5"/>
+                <!-- y grid -->
+                <line x1="50" y1="75" x2="430" y2="75" stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="50" y1="15" x2="430" y2="15" stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <text x="45" y="138" text-anchor="end" fill="#7a8099">0</text>
+                <text x="45" y="78"  text-anchor="end" fill="#7a8099">100</text>
+                <text x="45" y="18"  text-anchor="end" fill="#7a8099">200</text>
+                <!-- bars: gap=20 between bars, barW=50, start at x=70 -->
+                <!-- 55→y=102  90→y=81  100→y=75  150→y=45  200→y=15 -->
+                <rect x="70"  y="102" width="50" height="33" fill="rgba(129,140,248,.4)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="150" y="81"  width="50" height="54" fill="rgba(129,140,248,.4)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="230" y="75"  width="50" height="60" fill="rgba(129,140,248,.4)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="310" y="45"  width="50" height="90" fill="rgba(129,140,248,.5)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="390" y="15"  width="50" height="120" fill="rgba(129,140,248,.6)" stroke="#818cf8" stroke-width="1.2"/>
+                <!-- değer etiketleri -->
+                <text x="95"  y="97"  text-anchor="middle" fill="#818cf8">55</text>
+                <text x="175" y="76"  text-anchor="middle" fill="#818cf8">90</text>
+                <text x="255" y="70"  text-anchor="middle" fill="#818cf8">100</text>
+                <text x="335" y="40"  text-anchor="middle" fill="#818cf8">150</text>
+                <text x="415" y="10"  text-anchor="middle" fill="#818cf8">200</text>
+                <!-- x labels -->
+                <text x="95"  y="149" text-anchor="middle" fill="#7a8099">1980</text>
+                <text x="175" y="149" text-anchor="middle" fill="#7a8099">1985</text>
+                <text x="255" y="149" text-anchor="middle" fill="#7a8099">1990</text>
+                <text x="335" y="149" text-anchor="middle" fill="#7a8099">1995</text>
+                <text x="415" y="149" text-anchor="middle" fill="#7a8099">2000</text>
+                <text x="240" y="160" text-anchor="middle" fill="#7a8099" font-size="8">Yıl</text>
+                <text x="14" y="72" text-anchor="middle" fill="#7a8099" font-size="8" transform="rotate(-90,14,72)">Miktar (ton)</text>
+              </svg>
+            </div>
+            Yıllar ayrık kategoriler olarak verilmiştir; aralarında süreklilik yok → <strong>çubuk grafiği</strong>. Çubuklar arasındaki <strong>boşluk</strong> dikkat çekici özelliğidir.
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><strong>Histogram:</strong> Çubuklar bitişik, x ekseni sayısal sürekli.<br><strong>Çubuk grafiği:</strong> Çubuklar arasında boşluk var, x ekseninde kategoriler (etiketler) yer alır.</div></div>
         </div>
       </div>
     </div>
@@ -210,23 +391,66 @@
         <div class="q-text">
           Bir lojistik firmasının 2024 yılı taşıma modlarına göre gelir dağılımı:
           <table>
-            <tr><th class="th-indigo">Taşıma Modu</th><th class="th-indigo">Gelir (Milyon TL)</th></tr>
-            <tr><td>Karayolu</td><td>480</td></tr>
-            <tr><td>Demiryolu</td><td>180</td></tr>
-            <tr><td>Havayolu</td><td>240</td></tr>
-            <tr><td>Denizyolu</td><td>300</td></tr>
-            <tr><td><strong>Toplam</strong></td><td><strong>1200</strong></td></tr>
+            <tr><th class="th-indigo">Taşıma Modu</th><th class="th-indigo">Gelir (M TL)</th><th class="th-indigo">Açı</th><th class="th-indigo">Pay</th></tr>
+            <tr><td>Karayolu</td><td>480</td><td>144°</td><td>%40</td></tr>
+            <tr><td>Denizyolu</td><td>300</td><td>90°</td><td>%25</td></tr>
+            <tr><td>Havayolu</td><td>240</td><td>72°</td><td>%20</td></tr>
+            <tr><td>Demiryolu</td><td>180</td><td>54°</td><td>%15</td></tr>
+            <tr><td><strong>Toplam</strong></td><td><strong>1200</strong></td><td>360°</td><td>%100</td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Her taşıma modunun daire grafiğindeki açısını ve yüzdesini hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Açı = (gelir/toplam) × 360° formülünü kullanarak değerleri doğrulayınız ve daire grafiğini çiziniz.</span></div>
           <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Daire grafiğinin ne zaman, çubuk grafiğinin ne zaman tercih edilmesi gerektiğini açıklayınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Açı = (değer/toplam) &times; 360°<br>Karayolu: 480/1200&times;360 = <span class="result">144°</span> (%40)<br>Demiryolu: 180/1200&times;360 = <span class="result">54°</span> (%15)<br>Havayolu: 240/1200&times;360 = <span class="result">72°</span> (%20)<br>Denizyolu: 300/1200&times;360 = <span class="result">90°</span> (%25)<br>Toplam: 360° ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><strong>Daire grafiği:</strong> Parçaların bütün içindeki oranını göstermek için idealdir; toplama "100%" mantığı varsa (pay dağılımı, bütçe payı).<br><strong>Çubuk grafiği:</strong> Mutlak değerleri karşılaştırmak veya zaman içindeki değişimi göstermek için daha uygundur.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a &mdash; Doğrulama ve grafik</span><div class="step-text">
+            Karayolu: 480/1200×360 = <span class="result">144°</span> (%40)<br>
+            Denizyolu: 300/1200×360 = <span class="result">90°</span> (%25)<br>
+            Havayolu: 240/1200×360 = <span class="result">72°</span> (%20)<br>
+            Demiryolu: 180/1200×360 = <span class="result">54°</span> (%15) &nbsp;|&nbsp; Toplam: 360° ✓
+            <!-- Daire grafiği SVG  cx=150 cy=90 r=75 -->
+            <!-- Dilimler saat yönü, başlangıç: -90° (üst) -->
+            <!-- Karayolu: 0→144°  Denizyolu: 144→234°  Havayolu: 234→306°  Demiryolu: 306→360° -->
+            <!-- arc helper: x=cx+r*cos(rad), y=cy+r*sin(rad)  başlangıç -90deg=-π/2 -->
+            <!-- Karayolu: start=-90 end=54  cos(-90)=0,sin(-90)=-1 → 150,15  cos(54)=0.588,sin(54)=0.809 → 194,151 -->
+            <!-- deg→rad: *π/180 -->
+            <!-- Karayolu: -90→54  startX=150+75*0=150, startY=90+75*(-1)=15  endX=150+75*cos(54°)=150+75*0.5878=194.1, endY=90+75*sin(54°)=90+75*0.809=150.7 large-arc=1 -->
+            <!-- Denizyolu: 54→144  startX=194,150  endX=150+75*cos(144°)=150+75*(-0.809)=89.3, endY=90+75*sin(144°)=90+75*0.5878=134.1 large-arc=0 -->
+            <!-- Havayolu: 144→216  endX=150+75*cos(216)=150+75*(-0.809)=89.3, endY=90+75*sin(216)=90+75*(-0.5878)=45.9 large-arc=0 -->
+            <!-- Demiryolu: 216→270  endX=150+75*cos(270)=150+0=150, endY=90+75*(-1)=15 large-arc=0 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <!-- Karayolu: -90→54 (144°) large-arc=1 -->
+                <path d="M150,90 L150,15 A75,75 0 1,1 194,151 Z" fill="rgba(129,140,248,.6)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Denizyolu: 54→144 (90°) large-arc=0 -->
+                <path d="M150,90 L194,151 A75,75 0 0,1 89,134 Z" fill="rgba(129,140,248,.4)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Havayolu: 144→216 (72°) large-arc=0 -->
+                <path d="M150,90 L89,134 A75,75 0 0,1 89,46 Z" fill="rgba(129,140,248,.25)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Demiryolu: 216→270 (54°) large-arc=0 -->
+                <path d="M150,90 L89,46 A75,75 0 0,1 150,15 Z" fill="rgba(129,140,248,.15)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Daire çevresi -->
+                <circle cx="150" cy="90" r="75" fill="none" stroke="#818cf8" stroke-width="1"/>
+                <!-- Etiketler dilim içinde -->
+                <text x="168" y="82"  text-anchor="middle" fill="#fff" font-weight="bold">%40</text>
+                <text x="145" y="150" text-anchor="middle" fill="#818cf8" font-weight="bold">%25</text>
+                <text x="94"  y="96"  text-anchor="middle" fill="#818cf8" font-weight="bold">%20</text>
+                <text x="115" y="42"  text-anchor="middle" fill="#818cf8" font-weight="bold">%15</text>
+                <!-- Lejant -->
+                <rect x="250" y="30"  width="12" height="12" fill="rgba(129,140,248,.6)"/>
+                <text x="268" y="41" fill="#ccc">Karayolu (%40)</text>
+                <rect x="250" y="52"  width="12" height="12" fill="rgba(129,140,248,.4)"/>
+                <text x="268" y="63" fill="#ccc">Denizyolu (%25)</text>
+                <rect x="250" y="74"  width="12" height="12" fill="rgba(129,140,248,.25)"/>
+                <text x="268" y="85" fill="#ccc">Havayolu (%20)</text>
+                <rect x="250" y="96"  width="12" height="12" fill="rgba(129,140,248,.15)" stroke="#818cf8" stroke-width="1"/>
+                <text x="268" y="107" fill="#ccc">Demiryolu (%15)</text>
+              </svg>
+            </div>
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><strong>Daire grafiği:</strong> Parçaların bütüne oranı önemliyse (pay dağılımı, bütçe).<br><strong>Çubuk grafiği:</strong> Mutlak değerler karşılaştırılacaksa veya zaman içindeki değişim gösterilecekse.</div></div>
         </div>
       </div>
     </div>
@@ -243,26 +467,63 @@
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir inşaat şirketinin tamamladığı projelerin maliyetine (Milyon TL) ilişkin çokluk dağılımı:
+          Bir inşaat şirketinin tamamladığı projelerin maliyetine (M TL) ilişkin çokluk dağılımı:
           <table>
             <tr><th class="th-indigo">Maliyet (M TL)</th><th class="th-indigo">f</th></tr>
             <tr><td>x &lt; 5</td><td>20</td></tr>
-            <tr><td>5 ≤ x &lt; 15</td><td>60</td></tr>
-            <tr><td>15 ≤ x &lt; 25</td><td>80</td></tr>
-            <tr><td>25 ≤ x &lt; 35</td><td>20</td></tr>
-            <tr><td>35 ≤ x &lt; 45</td><td>20</td></tr>
-            <tr><td>45 ≤ x</td><td>10</td></tr>
+            <tr><td>5 &le; x &lt; 15</td><td>60</td></tr>
+            <tr><td>15 &le; x &lt; 25</td><td>80</td></tr>
+            <tr><td>25 &le; x &lt; 35</td><td>20</td></tr>
+            <tr><td>35 &le; x &lt; 45</td><td>20</td></tr>
+            <tr><td>45 &le; x</td><td>10</td></tr>
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bu dağılım için histogram çizmek mümkün mü? Hangi sınıflar histogram dışında tutulur?</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Histogram için uygun sınıfları belirleyiniz ve histogramı tanımlayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Hangi sınıflar histogram dışında tutulur? Neden?</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Uygun sınıfların histogramını çiziniz.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Açık uçlu sınıflar (x&lt;5 ve 45≤x) genişliği belli olmadığından <strong>histogram dışında tutulur</strong>. Bu iki sınıf işlem dışı bırakılır ve birim sayısı 200'den 180'e düşer.</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">Kullanılacak sınıflar (hepsi c=10):<br>5–15: 60, 15–25: 80, 25–35: 20, 35–45: 20<br>Bitişik dikdörtgenler; her birinin tabanı 10 birim; en yüksek çubuk 15–25 sınıfında (f=80).<br>Dağılım sağa hafif çarpıktır (yüksek maliyetli projeler kuyruğu oluşturur).</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Açık uçlu sınıflar (x&lt;5 ve 45≤x) genişliği bilinemez → dikdörtgen çizilemez → <strong>işlem dışı</strong>. N 210'dan 180'e düşer.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b &mdash; Histogram</span><div class="step-text">
+            <!-- f: 60,80,20,20  maks=80  barW=70  y=120-f*1.25 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 400 155" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <line x1="50" y1="10" x2="50"  y2="125" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="50" y1="125" x2="380" y2="125" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="50" y1="25" x2="380" y2="25" stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="50" y1="75" x2="380" y2="75" stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <text x="45" y="128" text-anchor="end" fill="#7a8099">0</text>
+                <text x="45" y="78"  text-anchor="end" fill="#7a8099">40</text>
+                <text x="45" y="28"  text-anchor="end" fill="#7a8099">80</text>
+                <!-- bars c=10, barW=70, start x=50 -->
+                <!-- 5-15: f=60 y=125-60*1.25=50  15-25: f=80 y=25  25-35: f=20 y=100  35-45: f=20 y=100 -->
+                <rect x="50"  y="50"  width="70" height="75" fill="rgba(129,140,248,.45)" stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="120" y="25"  width="70" height="100" fill="rgba(129,140,248,.6)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="190" y="100" width="70" height="25" fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/>
+                <rect x="260" y="100" width="70" height="25" fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/>
+                <!-- f labels -->
+                <text x="85"  y="45"  text-anchor="middle" fill="#818cf8">60</text>
+                <text x="155" y="20"  text-anchor="middle" fill="#818cf8">80</text>
+                <text x="225" y="95"  text-anchor="middle" fill="#818cf8">20</text>
+                <text x="295" y="95"  text-anchor="middle" fill="#818cf8">20</text>
+                <!-- x labels -->
+                <text x="50"  y="139" text-anchor="middle" fill="#7a8099">5</text>
+                <text x="120" y="139" text-anchor="middle" fill="#7a8099">15</text>
+                <text x="190" y="139" text-anchor="middle" fill="#7a8099">25</text>
+                <text x="260" y="139" text-anchor="middle" fill="#7a8099">35</text>
+                <text x="330" y="139" text-anchor="middle" fill="#7a8099">45</text>
+                <text x="210" y="152" text-anchor="middle" fill="#7a8099" font-size="8">Maliyet (M TL)</text>
+                <!-- açık uçlu gösterimi -->
+                <text x="22"  y="120" text-anchor="middle" fill="#f43f5e" font-size="8">x&lt;5</text>
+                <text x="22"  y="111" text-anchor="middle" fill="#f43f5e" font-size="8">dışarıda</text>
+                <text x="368" y="120" text-anchor="middle" fill="#f43f5e" font-size="8">45≤x</text>
+                <text x="368" y="111" text-anchor="middle" fill="#f43f5e" font-size="8">dışarıda</text>
+              </svg>
+            </div>
+            Dağılım sağa hafif çarpık; doruk 15–25 M TL sınıfında (f=80).
+          </div></div>
         </div>
       </div>
     </div>
@@ -291,14 +552,51 @@
           </table>
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Her kategori için yüzdeyi ve daire açısını hesaplayınız.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Her kategori için yüzdeyi ve açıyı hesaplayınız. Daire grafiğini çiziniz.</span></div>
           <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Daire grafiğinden elde edilebilecek iki anlamlı yorumu yazınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">Zamanında: 240/500=0.48 → %48 → <span class="result">172.8°</span><br>1 yıl uzama: 90/500=0.18 → %18 → <span class="result">64.8°</span><br>2+ uzama: 45/500=0.09 → %9 → <span class="result">32.4°</span><br>Mezun olamadı: 25/500=0.05 → %5 → <span class="result">18.0°</span><br>Hâlâ devam: 100/500=0.20 → %20 → <span class="result">72.0°</span><br>Toplam: 360° ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">1. Öğrencilerin yaklaşık yarısı (%48) programı zamanında tamamlamaktadır; bu olumlu bir performans göstergesidir.<br>2. Gecikmeli mezun olanların toplamı %27'ye ulaşmaktadır; müfredatın yoğunluğu veya öğrenci danışmanlık süreçleri gözden geçirilmelidir.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">
+            Zamanında: %48 → <span class="result">172.8°</span> &nbsp;|&nbsp; Hâlâ devam: %20 → <span class="result">72°</span><br>
+            1 yıl uzama: %18 → <span class="result">64.8°</span> &nbsp;|&nbsp; 2+ uzama: %9 → <span class="result">32.4°</span> &nbsp;|&nbsp; Mezun olamadı: %5 → <span class="result">18°</span>
+            <!-- Daire: cx=150 cy=100 r=80 -->
+            <!-- Sıra: Zamanında(172.8), Devam(72), 1yıl(64.8), 2+(32.4), Olamadı(18) -->
+            <!-- start=-90  -->
+            <!-- Zamanında: -90→82.8  endX=150+80*cos(82.8°)=150+80*0.124=160, endY=100+80*sin(82.8°)=100+80*0.992=179 large=1 -->
+            <!-- Devam: 82.8→154.8  endX=150+80*cos(154.8)=150+80*(-0.905)=77.6, endY=100+80*sin(154.8)=100+80*0.426=134 large=0 -->
+            <!-- 1yıl: 154.8→219.6  endX=150+80*cos(219.6)=150+80*(-0.771)=88.3, endY=100+80*sin(219.6)=100+80*(-0.637)=49 large=0 -->
+            <!-- 2+: 219.6→252  endX=150+80*cos(252)=150+80*(-0.309)=125.3, endY=100+80*sin(252)=100+80*(-0.951)=24 large=0 -->
+            <!-- Olamadı: 252→270  endX=150, endY=100-80=20 large=0 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 420 215" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <!-- Zamanında %48 -->
+                <path d="M150,100 L150,20 A80,80 0 1,1 160,180 Z" fill="rgba(129,140,248,.65)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Hâlâ devam %20 -->
+                <path d="M150,100 L160,180 A80,80 0 0,1 78,134 Z" fill="rgba(52,211,153,.5)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- 1 yıl uzama %18 -->
+                <path d="M150,100 L78,134 A80,80 0 0,1 88,49 Z" fill="rgba(249,115,22,.5)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- 2+ uzama %9 -->
+                <path d="M150,100 L88,49 A80,80 0 0,1 125,24 Z" fill="rgba(244,63,94,.5)" stroke="var(--surface)" stroke-width="2"/>
+                <!-- Mezun olamadı %5 -->
+                <path d="M150,100 L125,24 A80,80 0 0,1 150,20 Z" fill="rgba(129,140,248,.2)" stroke="var(--surface)" stroke-width="2"/>
+                <circle cx="150" cy="100" r="80" fill="none" stroke="#818cf8" stroke-width="1"/>
+                <!-- Lejant -->
+                <rect x="255" y="20" width="11" height="11" fill="rgba(129,140,248,.65)"/>
+                <text x="272" y="30" fill="#ccc">Zamanında (%48)</text>
+                <rect x="255" y="40" width="11" height="11" fill="rgba(52,211,153,.5)"/>
+                <text x="272" y="50" fill="#ccc">Hâlâ devam (%20)</text>
+                <rect x="255" y="60" width="11" height="11" fill="rgba(249,115,22,.5)"/>
+                <text x="272" y="70" fill="#ccc">1 yıl uzama (%18)</text>
+                <rect x="255" y="80" width="11" height="11" fill="rgba(244,63,94,.5)"/>
+                <text x="272" y="90" fill="#ccc">2+ uzama (%9)</text>
+                <rect x="255" y="100" width="11" height="11" fill="rgba(129,140,248,.2)" stroke="#818cf8" stroke-width="1"/>
+                <text x="272" y="110" fill="#ccc">Mezun olamadı (%5)</text>
+              </svg>
+            </div>
+          </div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">1. Öğrencilerin yaklaşık yarısı (%48) programı zamanında tamamlamaktadır.<br>2. Gecikmeli mezun olanların toplamı %27 — müfredat yoğunluğu veya danışmanlık süreçleri gözden geçirilmelidir.</div></div>
         </div>
       </div>
     </div>
@@ -314,9 +612,7 @@
         <span class="q-toggle">&#9662;</span>
       </div>
       <div class="q-body">
-        <div class="q-text">
-          Aşağıdaki beş senaryodan her biri için en uygun grafik türünü seçiniz ve gerekçenizi belirtiniz:
-        </div>
+        <div class="q-text">Aşağıdaki dört senaryo için en uygun grafik türünü seçip gerekçenizi belirtiniz:</div>
         <div class="q-parts">
           <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">Bir fabrikada saatlik üretim miktarının (sürekli) dağılımını göstermek.</span></div>
           <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Farklı ülkelerin toplam ihracat rakamlarını karşılaştırmak.</span></div>
@@ -326,10 +622,10 @@
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text"><span class="result">Histogram</span> — Sürekli sayısal değişkenin dağılımı için; bitişik dikdörtgenler, sınıf aralıkları.</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><span class="result">Çubuk grafiği</span> — Kategorik (ülke) karşılaştırması; mutlak değer karşılaştırması ön planda.</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">c</span><div class="step-text"><span class="result">Daire grafiği</span> — Toplam içindeki pay ve oranları görselleştirmek için; parçaların bütüne oranı önemli.</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">d</span><div class="step-text"><span class="result">Çubuk grafiği</span> — Hata türleri kategorik değişkendir; her türün sıklığını karşılaştırmak için çubuk grafiği (veya Pareto diyagramı) uygundur.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text"><span class="result">Histogram</span> — Sürekli sayısal değişkenin dağılımı; bitişik dikdörtgenler, sınıf aralıkları.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text"><span class="result">Çubuk grafiği</span> — Kategorik (ülke) karşılaştırması; mutlak değer ön planda.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">c</span><div class="step-text"><span class="result">Daire grafiği</span> — Parçaların bütüne oranı önemli; pay dağılımı.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">d</span><div class="step-text"><span class="result">Çubuk grafiği</span> — Hata türleri kategorik; her türün sıklığını karşılaştırmak için.</div></div>
         </div>
       </div>
     </div>
@@ -339,27 +635,67 @@
       <div class="q-header" onclick="toggleCard(this)">
         <span class="q-num qn-indigo">GR&ndash;09</span>
         <div class="q-title-wrap">
-          <div class="q-title">Histogram ve Çokluk Dağılımı — Tam Hesap</div>
-          <div class="q-badges"><span class="badge badge-topic-i">Histogram · Çokluk Dağılımı · İleri</span><span class="badge badge-hard">İleri</span></div>
+          <div class="q-title">Ham Veriden Histogram — Tam Hesap</div>
+          <div class="q-badges"><span class="badge badge-topic-i">Histogram · Ham Veri · İleri</span><span class="badge badge-hard">İleri</span></div>
         </div>
         <span class="q-toggle">&#9662;</span>
       </div>
       <div class="q-body">
         <div class="q-text">
-          Bir lojistik firmasının 30 teslimatının süresine (saat) ilişkin ham veriler:<br><br>
+          Bir lojistik firmasının 30 teslimatının süresi (saat):<br><br>
           26, 24, 12, 9, 6, 4, 16, 27, 32, 41, 44, 28, 30, 19, 17, 12, 27, 39, 36, 30, 14, 12, 12, 14, 27, 38, 42, 25, 20, 21
         </div>
         <div class="q-parts">
-          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">m ≥ √n ve c ≥ L/m kurallarını kullanarak 7 sınıflı çokluk dağılımını oluşturunuz.</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Nispi ve birikimli çokluk dağılımlarını ekleyiniz.</span></div>
-          <div class="q-part"><span class="part-label pl-indigo">c)</span><span class="part-text">Histogramı tanımlayınız ve dağılımın şekli hakkında yorum yapınız.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">a)</span><span class="part-text">m ≥ √n ve c ≥ L/m kurallarını kullanarak çokluk dağılımını oluşturunuz.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">b)</span><span class="part-text">Nispi ve birikimli dağılımları ekleyiniz.</span></div>
+          <div class="q-part"><span class="part-label pl-indigo">c)</span><span class="part-text">Histogramı çiziniz ve dağılımın şekli hakkında yorum yapınız.</span></div>
         </div>
         <button class="sol-btn sol-btn-i" onclick="toggleSolution(this)">&#9658; Çözümü Göster</button>
         <div class="solution solution-i">
           <div class="sol-title sol-title-i">Çözüm</div>
-          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">n=30, m≥√30≈5.5 → m=7 sınıf seçilir (kitap yaklaşımı: m≅6)<br>L=44&minus;4=40, c≥40/7≈5.7 → c=6<br>4≤x&lt;10: f=3 &nbsp;| 10≤x&lt;16: f=6 &nbsp;| 16≤x&lt;22: f=5 &nbsp;| 22≤x&lt;28: f=6<br>28≤x&lt;34: f=4 &nbsp;| 34≤x&lt;40: f=3 &nbsp;| 40≤x&lt;46: f=3<br>Toplam: 30 ✓</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">Nispi: 0.10, 0.20, 0.17, 0.20, 0.13, 0.10, 0.10<br>Birikimli: 3, 9, 14, 20, 24, 27, 30</div></div>
-          <div class="sol-step"><span class="step-n sn-indigo">c</span><div class="step-text">En yüksek sınıflar 10–16 ve 22–28 aralığında; dağılım ortada yoğunlaşıyor ve her iki yanda hafif azalıyor → <span class="result">Hafif sağa çarpık</span>; büyük çoğunluk 10–34 saat aralığında yığılmış.</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">a</span><div class="step-text">n=30 → m ≥ √30 ≈ 5.5 → m=6 (kitap yaklaşımı)<br>L=44&minus;4=40, c ≥ 40/6 ≈ 6.7 → c=7<br>4&le;x&lt;11: f=3 &nbsp;|&nbsp; 11&le;x&lt;18: f=7 &nbsp;|&nbsp; 18&le;x&lt;25: f=5 &nbsp;|&nbsp; 25&le;x&lt;32: f=8 &nbsp;|&nbsp; 32&le;x&lt;39: f=4 &nbsp;|&nbsp; 39&le;x&lt;46: f=3<br>Toplam: 30 ✓</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">b</span><div class="step-text">Nispi: 0.10, 0.23, 0.17, 0.27, 0.13, 0.10<br>Birikimli: 3, 10, 15, 23, 27, 30</div></div>
+          <div class="sol-step"><span class="step-n sn-indigo">c &mdash; Histogram</span><div class="step-text">
+            <!-- f: 3,7,5,8,4,3  maks=8  barH=f/8*100  barW=60 -->
+            <!-- y=120-f*12.5 -->
+            <div class="svg-wrap">
+              <svg viewBox="0 0 460 155" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="9">
+                <line x1="40" y1="10" x2="40"  y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="40" y1="120" x2="440" y2="120" stroke="var(--border)" stroke-width="1.5"/>
+                <line x1="40" y1="20"  x2="440" y2="20"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <line x1="40" y1="70"  x2="440" y2="70"  stroke="var(--border)" stroke-width=".5" stroke-dasharray="3,3"/>
+                <text x="35" y="123" text-anchor="end" fill="#7a8099">0</text>
+                <text x="35" y="73"  text-anchor="end" fill="#7a8099">4</text>
+                <text x="35" y="23"  text-anchor="end" fill="#7a8099">8</text>
+                <!-- bars barW=67, start=40 -->
+                <!-- f: 3,7,5,8,4,3  y=120-f*12.5 -->
+                <rect x="40"  y="82"  width="67" height="37" fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=3 -->
+                <rect x="107" y="32"  width="67" height="87" fill="rgba(129,140,248,.55)" stroke="#818cf8" stroke-width="1.2"/><!-- f=7 -->
+                <rect x="174" y="57"  width="67" height="62" fill="rgba(129,140,248,.4)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=5 -->
+                <rect x="241" y="20"  width="67" height="100" fill="rgba(129,140,248,.65)" stroke="#818cf8" stroke-width="1.2"/><!-- f=8 -->
+                <rect x="308" y="70"  width="67" height="50" fill="rgba(129,140,248,.38)" stroke="#818cf8" stroke-width="1.2"/><!-- f=4 -->
+                <rect x="375" y="82"  width="67" height="37" fill="rgba(129,140,248,.3)"  stroke="#818cf8" stroke-width="1.2"/><!-- f=3 -->
+                <!-- f labels -->
+                <text x="73"  y="77"  text-anchor="middle" fill="#818cf8">3</text>
+                <text x="140" y="27"  text-anchor="middle" fill="#818cf8">7</text>
+                <text x="207" y="52"  text-anchor="middle" fill="#818cf8">5</text>
+                <text x="274" y="15"  text-anchor="middle" fill="#818cf8">8</text>
+                <text x="341" y="65"  text-anchor="middle" fill="#818cf8">4</text>
+                <text x="408" y="77"  text-anchor="middle" fill="#818cf8">3</text>
+                <!-- x labels -->
+                <text x="40"  y="134" text-anchor="middle" fill="#7a8099">4</text>
+                <text x="107" y="134" text-anchor="middle" fill="#7a8099">11</text>
+                <text x="174" y="134" text-anchor="middle" fill="#7a8099">18</text>
+                <text x="241" y="134" text-anchor="middle" fill="#7a8099">25</text>
+                <text x="308" y="134" text-anchor="middle" fill="#7a8099">32</text>
+                <text x="375" y="134" text-anchor="middle" fill="#7a8099">39</text>
+                <text x="442" y="134" text-anchor="middle" fill="#7a8099">46</text>
+                <text x="240" y="150" text-anchor="middle" fill="#7a8099" font-size="8">Süre (saat)</text>
+                <text x="14" y="65" text-anchor="middle" fill="#7a8099" font-size="8" transform="rotate(-90,14,65)">f</text>
+              </svg>
+            </div>
+            Doruk 25–32 saat sınıfında (f=8). Değerler bu aralık etrafında yoğunlaşıyor, hafif sağa çarpık görünüm.
+          </div></div>
         </div>
       </div>
     </div>
@@ -372,7 +708,7 @@
       <div class="f-card">
         <div class="f-title">Histogram Kuralları</div>
         <div class="f-body">
-          <span class="hi">Sürekli değişken</span> için kullanılır<br>
+          <span class="hi">Sayısal/sürekli değişken</span> için<br>
           Çubuklar <strong>bitişik</strong> (boşluk yok)<br>
           Sınıf aralıkları eşit olmalı<br>
           <span class="dim">Dengesiz: en sık aralığa böl<br>Açık uçlu sınıflar: işlem dışı</span>
@@ -383,17 +719,17 @@
         <div class="f-body">
           <span class="hi">Kategorik değişken</span> için<br>
           Çubuklar <strong>ayrık</strong> (boşluk var)<br>
-          x ekseni kullanılmaz (kategoriler)<br>
-          <span class="dim">Yatay ya da dikey olabilir</span>
+          x ekseninde kategoriler (etiket)<br>
+          <span class="dim">Mutlak değer karşılaştırması için</span>
         </div>
       </div>
       <div class="f-card">
         <div class="f-title">Daire Grafiği</div>
         <div class="f-body">
           <span class="hi">Açı = (f/N) &times; 360°</span><br>
-          <span class="hi">Yüzde = (f/N) &times; 100</span><br>
+          <span class="hi">Pay = (f/N) &times; 100%</span><br>
           Toplam açı = 360°<br>
-          <span class="dim">Oranları göstermek için ideal<br>Çok kategori varsa okunması güç</span>
+          <span class="dim">Oranları göstermek için ideal</span>
         </div>
       </div>
     </div>

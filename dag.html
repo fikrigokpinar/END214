@@ -386,7 +386,95 @@
         <div class="solution solution-e">
           <div class="sol-title sol-title-e">Çözüm</div>
           <div class="sol-step"><span class="step-n sn-emerald">a &mdash; Yeni hat</span><div class="step-text">Alt: Q₁ &minus; 1.5&middot;IQR = 8.2 &minus; 2.4 = <span class="result">5.8</span><br>Üst: Q₃ + 1.5&middot;IQR = 9.8 + 2.4 = <span class="result">12.2</span><br>5.5 &lt; 5.8 → <span class="result">5.5 aykırı değer</span>. Diğer tüm değerler [5.8, 12.2] aralığında.</div></div>
-          <div class="sol-step"><span class="step-n sn-emerald">b &mdash; Karşılaştırma</span><div class="step-text">Alt: Q₁ &minus; 1.5&middot;0.5 = 5.6&minus;0.75 = 4.85 &nbsp;|&nbsp; Üst: 6.1+0.75 = 6.85 → aykırı değer yok.<br><br>Yeni hat: merkez 9, IQR=1.6 — geniş kutu, yüksek üretim, daha değişken.<br>Eski hat: merkez 5.85, IQR=0.5 — dar kutu, düşük üretim, çok homojen.<br><span class="result">Yeni hat daha yüksek ama daha değişken; eski hat kararlı ama düşük verimli.</span></div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b &mdash; Eski hat sınırları</span><div class="step-text">Alt: Q₁ &minus; 1.5·0.5 = 5.6 &minus; 0.75 = <span class="result">4.85</span> &nbsp;|&nbsp; Üst: 6.1 + 0.75 = <span class="result">6.85</span><br>Tüm değerler [4.85, 6.85] aralığında → aykırı değer yok. Min bıyık = 5.4, Maks bıyık = 6.3</div></div>
+          <div class="sol-step"><span class="step-n sn-emerald">b &mdash; Kutu grafiği (ortak eksen)</span><div class="step-text">
+            <div class="boxplot-wrap">
+              <!-- Ölçek: x=4 → px=40, x=11 → px=470, aralık 7 → 430px, 1 birim=61.4px -->
+              <!-- px = 40 + (değer-4)*61.4 -->
+              <!-- 4→40  5→101  5.4→ 5.4-4=1.4→126  5.5→128  5.6→159  5.8→110+... -->
+              <!-- Kesin hesap: px(v) = 40 + (v-4)*61.4 -->
+              <!-- px(4)=40  px(4.85)=92  px(5.4)=124  px(5.5)=130  px(5.6)=136  px(5.85)=151  px(6.1)=166  px(6.3)=178  px(6.85)=174→207  px(8.2)=257  px(9)=307  px(9.8)=358  px(10.2)=382  px(11)=431 -->
+              <svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg">
+                <!-- x ekseni çizgisi -->
+                <line x1="40" y1="110" x2="470" y2="110" stroke="var(--border)" stroke-width="1"/>
+
+                <!-- Eksen etiketleri -->
+                <text x="40"  y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">4</text>
+                <text x="101" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">5</text>
+                <text x="163" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">6</text>
+                <text x="224" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">7</text>
+                <text x="285" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">8</text>
+                <text x="347" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">9</text>
+                <text x="408" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">10</text>
+                <text x="470" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">11</text>
+                <text x="254" y="124" font-size="9" fill="#7a8099" font-family="monospace" text-anchor="middle">adet/saat</text>
+
+                <!-- Etiketler sol -->
+                <text x="8" y="38" font-size="9" fill="#34d399" font-family="monospace" font-weight="bold">Yeni</text>
+                <text x="8" y="85" font-size="9" fill="#818cf8" font-family="monospace" font-weight="bold">Eski</text>
+
+                <!-- ═══ YENİ HAT (y merkez=32) ═══ -->
+                <!-- px(v)=40+(v-4)*61.4 -->
+                <!-- Q1=8.2 → 40+4.2*61.4=298  Q2=9 → 40+5*61.4=347  Q3=9.8 → 40+5.8*61.4=396 -->
+                <!-- bıyık sol: min normal=8.2 (5.5 aykırı) → bıyık=Q1=298 (tek nokta) -->
+                <!-- bıyık sağ: max=10.2 → 40+6.2*61.4=420 -->
+                <!-- aykırı: 5.5 → 40+1.5*61.4=132 -->
+
+                <!-- Aykırı değer -->
+                <circle cx="132" cy="32" r="4" fill="none" stroke="#f97316" stroke-width="1.5"/>
+                <text x="120" y="20" font-size="8" fill="#f97316" font-family="monospace">5.5</text>
+
+                <!-- Sol bıyık: Q1'den başlar (aykırı olduğu için bıyık yok, kutu direkt başlar) -->
+                <!-- Bıyık solu: bir sonraki min normal değer = 8.2 = Q1, yani sol bıyık yok -->
+
+                <!-- Kutu Q1→Q3 -->
+                <rect x="298" y="17" width="98" height="30" fill="rgba(52,211,153,.15)" stroke="#34d399" stroke-width="1.5"/>
+                <!-- Medyan Q2=9 → x=347 -->
+                <line x1="347" y1="17" x2="347" y2="47" stroke="#34d399" stroke-width="2.5"/>
+                <!-- Sağ bıyık: Q3=396 → maks=10.2=420 -->
+                <line x1="396" y1="32" x2="420" y2="32" stroke="#34d399" stroke-width="1.5"/>
+                <line x1="420" y1="25" x2="420" y2="39" stroke="#34d399" stroke-width="1.5"/>
+
+                <!-- Q1 sol çizgisi (bıyık olmamalı, aykırı var) -->
+                <!-- Sol bıyık: en küçük normal = 8.6 → 40+4.6*61.4=323 -->
+                <line x1="323" y1="32" x2="298" y2="32" stroke="#34d399" stroke-width="1.5"/>
+                <line x1="323" y1="25" x2="323" y2="39" stroke="#34d399" stroke-width="1.5"/>
+
+                <!-- Değer etiketleri yeni hat -->
+                <text x="298" y="13" font-size="8" fill="#34d399" font-family="monospace" text-anchor="middle">8.2</text>
+                <text x="347" y="13" font-size="8" fill="#34d399" font-family="monospace" text-anchor="middle">9</text>
+                <text x="396" y="13" font-size="8" fill="#34d399" font-family="monospace" text-anchor="middle">9.8</text>
+                <text x="420" y="13" font-size="8" fill="#34d399" font-family="monospace" text-anchor="middle">10.2</text>
+
+                <!-- ═══ ESKİ HAT (y merkez=80) ═══ -->
+                <!-- Q1=5.6 → 40+1.6*61.4=138  Q2=5.85 → 40+1.85*61.4=154  Q3=6.1 → 40+2.1*61.4=169 -->
+                <!-- bıyık sol: min=5.4 → 40+1.4*61.4=126  bıyık sağ: max=6.3 → 40+2.3*61.4=181 -->
+
+                <!-- Sol bıyık: min=5.4=126 → Q1=138 -->
+                <line x1="126" y1="80" x2="138" y2="80" stroke="#818cf8" stroke-width="1.5"/>
+                <line x1="126" y1="73" x2="126" y2="87" stroke="#818cf8" stroke-width="1.5"/>
+
+                <!-- Kutu Q1→Q3: 138→169, genişlik=31 -->
+                <rect x="138" y="65" width="31" height="30" fill="rgba(129,140,248,.15)" stroke="#818cf8" stroke-width="1.5"/>
+                <!-- Medyan Q2=5.85 → x=154 -->
+                <line x1="154" y1="65" x2="154" y2="95" stroke="#818cf8" stroke-width="2.5"/>
+                <!-- Sağ bıyık: Q3=169 → maks=6.3=181 -->
+                <line x1="169" y1="80" x2="181" y2="80" stroke="#818cf8" stroke-width="1.5"/>
+                <line x1="181" y1="73" x2="181" y2="87" stroke="#818cf8" stroke-width="1.5"/>
+
+                <!-- Değer etiketleri eski hat -->
+                <text x="126" y="61" font-size="8" fill="#818cf8" font-family="monospace" text-anchor="middle">5.4</text>
+                <text x="138" y="61" font-size="8" fill="#818cf8" font-family="monospace" text-anchor="middle">5.6</text>
+                <text x="154" y="61" font-size="8" fill="#818cf8" font-family="monospace" text-anchor="middle">5.85</text>
+                <text x="169" y="61" font-size="8" fill="#818cf8" font-family="monospace" text-anchor="middle">6.1</text>
+                <text x="181" y="61" font-size="8" fill="#818cf8" font-family="monospace" text-anchor="middle">6.3</text>
+              </svg>
+            </div>
+            <span class="dim">Yeşil = Yeni hat &nbsp;|&nbsp; Mor = Eski hat &nbsp;|&nbsp; ○ = aykırı değer (5.5)</span><br><br>
+            Yeni hat: merkez 9, IQR=1.6 → geniş kutu, yüksek üretim, daha değişken.<br>
+            Eski hat: merkez 5.85, IQR=0.5 → son derece dar kutu, kararlı ama düşük verimli.<br>
+            <span class="result">Yeni hat daha yüksek ama değişken; eski hat kararlı ama düşük verimli.</span>
+          </div></div>
         </div>
       </div>
     </div>

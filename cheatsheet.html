@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>END214 – Formül Özeti</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── CHEATSHEET ÖZEL STİL ── */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 1.5rem auto;
+  padding: 0 1.5rem 3rem;
+}
+.cs-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cs-block-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--border);
+}
+.cs-icon { font-size: 1rem; }
+.cs-topic {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.cs-body { padding: .75rem .9rem; display: flex; flex-direction: column; gap: .55rem; }
+.cs-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .4rem .7rem;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  padding-bottom: .45rem;
+}
+.cs-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cs-formula {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+.cs-note {
+  font-size: .72rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+/* renk bantları */
+.cs-rose   .cs-block-header { background: rgba(244,63,94,.08);  border-bottom-color: rgba(244,63,94,.2); }
+.cs-rose   .cs-topic         { color: var(--rose); }
+.cs-orange .cs-block-header { background: rgba(249,115,22,.08); border-bottom-color: rgba(249,115,22,.2); }
+.cs-orange .cs-topic         { color: var(--orange); }
+.cs-emerald .cs-block-header { background: rgba(52,211,153,.08); border-bottom-color: rgba(52,211,153,.2); }
+.cs-emerald .cs-topic        { color: var(--emerald); }
+.cs-indigo .cs-block-header { background: rgba(129,140,248,.08); border-bottom-color: rgba(129,140,248,.2); }
+.cs-indigo .cs-topic         { color: var(--indigo); }
+.cs-violet .cs-block-header { background: rgba(167,139,250,.08); border-bottom-color: rgba(167,139,250,.2); }
+.cs-violet .cs-topic         { color: #a78bfa; }
+.cs-amber  .cs-block-header { background: rgba(232,184,109,.08); border-bottom-color: rgba(232,184,109,.2); }
+.cs-amber  .cs-topic         { color: var(--amber); }
+.cs-blue   .cs-block-header { background: rgba(109,158,232,.08); border-bottom-color: rgba(109,158,232,.2); }
+.cs-blue   .cs-topic         { color: var(--blue); }
+.cs-teal   .cs-block-header { background: rgba(109,232,184,.08); border-bottom-color: rgba(109,232,184,.2); }
+.cs-teal   .cs-topic         { color: var(--teal); }
+
+/* section ayraç */
+.cs-section {
+  max-width: var(--max);
+  margin: 2rem auto 0;
+  padding: 0 1.5rem .5rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="brand">END<span>214</span></a>
+  <div class="nav-links">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="temel.html">Temel Tanımlar</a>
+    <a href="me.html">Merkezi Eğilim Ölçüleri</a>
+    <a href="dag.html">Merkezi Dağılım Ölçüleri</a>
+    <a href="grafik.html">Grafikler</a>
+    <a href="tahmin.html">Nokta Tahmini</a>
+    <a href="ga.html">Güven Aralığı</a>
+    <a href="ht.html">Hipotez Testi</a>
+    <a href="reg.html">Regresyon</a>
+    <a href="tablolar.html">Tablolar</a>
+    <a href="cheatsheet.html" class="active">Formül Özeti</a>
+  </div>
+</nav>
+
+<header class="page-header page-header-home">
+  <div class="page-header-inner">
+    <span class="topic-tag tag-home">END 214 · Hızlı Başvuru</span>
+    <h1>Formül <em style="color:var(--amber)">Özeti</em></h1>
+    <p class="subtitle">8 konu · Tüm formüller ve kısa açıklamalar tek sayfada.</p>
+    <div class="meta-row">
+      <span class="meta-item"><span class="dot"></span>Prof. Dr. Fikri Gökpınar</span>
+      <span class="meta-item"><span class="dot"></span>Bahar 2025–2026</span>
+      <button onclick="window.print()" style="margin-left:auto;background:rgba(232,184,109,.12);border:1px solid rgba(232,184,109,.3);color:var(--amber);padding:.35rem .9rem;border-radius:5px;cursor:pointer;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;">⬇ PDF / Yazdır</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ▲ ARASINAV ÖNCESİ -->
+<div class="cs-section">▲ Arasınav Öncesi</div>
+<div class="cs-grid">
+
+  <!-- 1. Temel Tanımlar -->
+  <div class="cs-block cs-rose">
+    <div class="cs-block-header"><span class="cs-icon">🔑</span><span class="cs-topic">Temel Tanımlar</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">N, μ, σ²</span>
+        <span class="cs-note">Yığın büyüklüğü, ortalaması, varyansı (parametre)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">n, x̄, s²</span>
+        <span class="cs-note">Örneklem büyüklüğü, ortalaması, varyansı (istatistik)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">m ≥ √n</span>
+        <span class="cs-note">Çokluk dağılımı sınıf sayısı (m), n: gözlem sayısı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">c ≥ L/m</span>
+        <span class="cs-note">Sınıf aralığı; L = maks − min</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">f/N</span>
+        <span class="cs-note">Nispi (oransal) çokluk</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Ölçme düzeyleri</span>
+        <span class="cs-note">Sınıflama → Sıralama → Eşit aralıklı → Oranlama</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Merkezi Eğilim -->
+  <div class="cs-block cs-orange">
+    <div class="cs-block-header"><span class="cs-icon">📊</span><span class="cs-topic">Merkezi Eğilim Ölçüleri</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">μ = Σxᵢ/N</span>
+        <span class="cs-note">Basit dizi aritmetik ortalama</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">μ = Σx̄ⱼfⱼ/N</span>
+        <span class="cs-note">Çokluk dağılımı AO; x̄ⱼ: sınıf orta değeri</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Me = a<sub>(N+1)/2</sub></span>
+        <span class="cs-note">N tek iken medyan; N çift → iki ortanın ort.</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Me = L+(c/f)(N/2−d)</span>
+        <span class="cs-note">Çokluk dağılımı medyan; d: önceki birikimli f</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Mo = L+f<sub>s</sub>/(f<sub>s</sub>+f<sub>o</sub>)·c</span>
+        <span class="cs-note">Mod; f<sub>o</sub>: önceki, f<sub>s</sub>: sonraki sınıf çokluğu</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Simetrik</span>
+        <span class="cs-note">AO = Me = Mo &nbsp;|&nbsp; Sağa çarpık: Mo&lt;Me&lt;AO &nbsp;|&nbsp; Sola: AO&lt;Me&lt;Mo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Merkezi Dağılım -->
+  <div class="cs-block cs-emerald">
+    <div class="cs-block-header"><span class="cs-icon">📉</span><span class="cs-topic">Merkezi Dağılım Ölçüleri</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">Açıklık = maks−min</span>
+        <span class="cs-note">Yalnızca iki uç değeri kullanır</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Q = (Q₃−Q₁)/2</span>
+        <span class="cs-note">Çeyrek ayrılış; IQR = Q₃−Q₁</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">OA = (1/N)Σ|xᵢ−μ|</span>
+        <span class="cs-note">Ortalama ayrılış</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">σ² = (1/N)Σ(xᵢ−μ)²</span>
+        <span class="cs-note">Varyans (tanımlama)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">σ² = (1/N)Σxᵢ²−μ²</span>
+        <span class="cs-note">Varyans (hesaplama); σ = √σ²</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">DK = σ/μ</span>
+        <span class="cs-note">Değişim katsayısı; DK küçük → homojen</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Q₁−1.5·IQR</span>
+        <span class="cs-note">Kutu grafiği alt/üst sınır (aykırı değer eşiği)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Grafikler -->
+  <div class="cs-block cs-indigo">
+    <div class="cs-block-header"><span class="cs-icon">📈</span><span class="cs-topic">Grafikler</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">Histogram</span>
+        <span class="cs-note">Sürekli değişken; çubuklar bitişik; eşit sınıf aralığı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Dengesiz hist.</span>
+        <span class="cs-note">En sık aralığı bul, büyük sınıfları eşit parçalara böl</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Çubuk grafiği</span>
+        <span class="cs-note">Kategorik değişken; çubuklar ayrık (boşluk var)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Açı = (f/N)×360°</span>
+        <span class="cs-note">Daire grafiği dilim açısı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Açık uçlu sınıf</span>
+        <span class="cs-note">Histogram ve AO/σ² hesabında işlem dışı tutulur</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cs-grid arasinav önce -->
+
+<!-- ▼ ARASINAV SONRASI -->
+<div class="cs-section">▼ Arasınav Sonrası</div>
+<div class="cs-grid">
+
+  <!-- 5. Nokta Tahmini -->
+  <div class="cs-block cs-violet">
+    <div class="cs-block-header"><span class="cs-icon">🎯</span><span class="cs-topic">Nokta Tahmini</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">L(θ) = Πf(xᵢ;θ)</span>
+        <span class="cs-note">Olabilirlik fonksiyonu; ∂lnL/∂θ = 0 → EÇO</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">E(Xʳ) = μʳ</span>
+        <span class="cs-note">Momentler yöntemi: örnek momentini yığın momentine eşitle</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">E(θ̂) = θ</span>
+        <span class="cs-note">Yansızlık; MSE = Var(θ̂) + Bias²</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">I(θ) = −nE[∂²lnf/∂θ²]</span>
+        <span class="cs-note">Fisher bilgisi (n gözlem için)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Var(θ̂) ≥ 1/I(θ)</span>
+        <span class="cs-note">Cramér–Rao alt sınırı; eşitlikte → etkin tahmin</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">θ̂ → θ (n→∞)</span>
+        <span class="cs-note">Tutarlılık: n büyüdükçe tahmin θ'ya yaklaşır</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Güven Aralığı -->
+  <div class="cs-block cs-amber">
+    <div class="cs-block-header"><span class="cs-icon">📐</span><span class="cs-topic">Güven Aralığı</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">x̄ ± z<sub>α/2</sub>·σ/√n</span>
+        <span class="cs-note">μ için GA — σ bilinir (z dağılımı)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">x̄ ± t<sub>α/2,n−1</sub>·s/√n</span>
+        <span class="cs-note">μ için GA — σ bilinmez (t, df=n−1)</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">p ± z<sub>α/2</sub>√(p(1−p)/n)</span>
+        <span class="cs-note">Oran π için GA; p: örneklem oranı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">(x̄₁−x̄₂) ± z<sub>α/2</sub>·SE</span>
+        <span class="cs-note">İki grup μ farkı için GA — σ bilinir</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">s<sub>p</sub>² = ((n₁−1)s₁²+(n₂−1)s₂²)/(n₁+n₂−2)</span>
+        <span class="cs-note">Pooled varyans; df = n₁+n₂−2</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">n = (z<sub>α/2</sub>·σ/E)²</span>
+        <span class="cs-note">Gerekli örneklem büyüklüğü; E: hata payı</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Hipotez Testi -->
+  <div class="cs-block cs-blue">
+    <div class="cs-block-header"><span class="cs-icon">🔬</span><span class="cs-topic">Hipotez Testi</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">Z = (x̄−μ₀)/(σ/√n)</span>
+        <span class="cs-note">Tek örneklem z-testi — σ bilinir</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">T = (x̄−μ₀)/(s/√n)</span>
+        <span class="cs-note">Tek örneklem t-testi — σ bilinmez; df = n−1</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">Z = (p−π₀)/√(π₀(1−π₀)/n)</span>
+        <span class="cs-note">Oran testi; π: yığın oranı, p: örneklem oranı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">T = d̄/(s<sub>d</sub>/√n)</span>
+        <span class="cs-note">Eşleştirilmiş t; d̄: fark ort., df = n−1</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">T = (x̄₁−x̄₂)/(s<sub>p</sub>√(1/n₁+1/n₂))</span>
+        <span class="cs-note">İki bağımsız grup pooled t; df = n₁+n₂−2</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">|T|&gt;t<sub>krit</sub> → H₀ ret</span>
+        <span class="cs-note">Karar kuralı; tek kuyruk: T&gt;t ya da T&lt;−t</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Regresyon -->
+  <div class="cs-block cs-teal">
+    <div class="cs-block-header"><span class="cs-icon">📈</span><span class="cs-topic">Doğrusal Regresyon</span></div>
+    <div class="cs-body">
+      <div class="cs-row">
+        <span class="cs-formula">β̂₁ = S<sub>xy</sub>/S<sub>xx</sub></span>
+        <span class="cs-note">EKK eğim; S<sub>xy</sub>=Σxᵢyᵢ−nȳx̄, S<sub>xx</sub>=Σxᵢ²−nx̄²</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">β̂₀ = ȳ − β̂₁x̄</span>
+        <span class="cs-note">EKK sabit terim</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">TKT = Σ(yᵢ−ȳ)²</span>
+        <span class="cs-note">Toplam Kareler Toplamı</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">RKT = β̂₁·S<sub>xy</sub></span>
+        <span class="cs-note">Regresyon KT = Σ(ŷᵢ−ȳ)²</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">AKT = TKT − RKT</span>
+        <span class="cs-note">Artık Kareler Toplamı = Σ(yᵢ−ŷᵢ)²</span>
+      </div>
+      <div class="cs-row">
+        <span class="cs-formula">R² = RKT/TKT</span>
+        <span class="cs-note">Belirlilik katsayısı; 0 ≤ R² ≤ 1</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cs-grid arasinav sonra -->
+
+</main>
+
+<footer>
+  <strong>END 214 – Olasılık ve İstatistik II</strong> · TOBB ETÜ Mühendislik Fakültesi Endüstri Mühendisliği Bölümü<br>
+  Prof. Dr. Fikri Gökpınar · Bahar 2025–2026
+</footer>
+
+<script>
+function toggleCard(h){ h.closest('.q-card').classList.toggle('open'); }
+function toggleSolution(btn){
+  const s=btn.nextElementSibling; s.classList.toggle('visible');
+  btn.textContent=s.classList.contains('visible')?'▼ Çözümü Gizle':'▶ Çözümü Göster';
+}
+</script>
+</body>
+</html>

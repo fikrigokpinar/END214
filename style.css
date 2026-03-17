@@ -58,13 +58,13 @@ body::before {
   white-space: nowrap;
 }
 .topnav .brand span { color: var(--muted); }
-.nav-links { display: flex; gap: .25rem; flex-wrap: wrap; }
+.nav-links { display: flex; gap: .15rem; flex-wrap: wrap; }
 .nav-links a {
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 500;
   color: var(--muted);
   text-decoration: none;
-  padding: .35rem .85rem;
+  padding: .3rem .6rem;
   border-radius: 4px;
   transition: color .18s, background .18s;
   white-space: nowrap;
